@@ -28,7 +28,7 @@ class ProductSearch extends React.Component {
 
       Client.search(value, (products) => {
         this.setState({
-          products: products.slice(0, MATCHING_ITEM_LIMIT),
+          products: products.slice(0, MATCHING_ITEM_LIMIT),//Change to top 5 instead of first 5
         });
       });
     }
@@ -49,10 +49,6 @@ class ProductSearch extends React.Component {
     const productRows = products.map((product, idx) => (
       <tr key={idx} onClick={() => this.props.onProductClick(product)}>
         <td>{product.title}</td>
-        {/*<td className='right aligned'>{product.kcal}</td>
-        <td className='right aligned'>{product.protein_g}</td>
-        <td className='right aligned'>{product.fat_g}</td>
-        <td className='right aligned'>{product.carbohydrate_g}</td>*/}
       </tr>
     ));
 

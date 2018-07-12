@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SelectedProducts from './SelectedProducts';
+import Cart from './Cart';
 import ProductSearch from './ProductSearch';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
     this.setState({ selectedProducts: filteredProducts });
   }
 
-  addProduct = (product) => {
+  addProductToCart = (product) => {
     const newProducts = this.state.selectedProducts.concat(product);
     this.setState({ selectedProducts: newProducts });
   }
@@ -25,8 +25,8 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='ui text container'>
-          <ProductSearch onProductClick={this.addProduct}/>
-          <SelectedProducts products={selectedProducts} onProductClick={this.removeProduct}/>    
+          <ProductSearch onProductClick={this.addProductToCart}/>
+          <Cart products={selectedProducts} onProductClick={this.removeProduct}/>    
         </div>
       </div>
     );

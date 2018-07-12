@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SelectedProducts(props) {
+export default function Cart(props) {
   const { products } = props;
 
   const productRows = products.map((product, idx) => (
