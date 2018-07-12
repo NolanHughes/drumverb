@@ -1,37 +1,32 @@
 import React, { Component } from 'react';
-import SelectedFoods from './SelectedFoods';
-import FoodSearch from './FoodSearch';
+import SelectedProducts from './SelectedProducts';
+import ProductSearch from './ProductSearch';
 
 class App extends Component {
   state = {
-    selectedFoods: [],
+    selectedProducts: [],
   }
 
-  removeFoodItem = (itemIndex) => {
-    const filteredFoods = this.state.selectedFoods.filter(
+  removeProduct = (itemIndex) => {
+    const filteredProducts = this.state.selectedProducts.filter(
       (item, idx) => itemIndex !== idx,
     );
-    this.setState({ selectedFoods: filteredFoods });
+    this.setState({ selectedProducts: filteredProducts });
   }
 
-  addFood = (food) => {
-    const newFoods = this.state.selectedFoods.concat(food);
-    this.setState({ selectedFoods: newFoods });
+  addProduct = (product) => {
+    const newProducts = this.state.selectedProducts.concat(product);
+    this.setState({ selectedProducts: newProducts });
   }
 
   render() {
-    const { selectedFoods } = this.state;
+    const { selectedProducts } = this.state;
 
     return (
       <div className='App'>
         <div className='ui text container'>
-          <SelectedFoods
-            foods={selectedFoods}
-            onFoodClick={this.removeFoodItem}
-          />
-          <FoodSearch
-            onFoodClick={this.addFood}
-          />
+          <ProductSearch onProductClick={this.addProduct}/>
+          <SelectedProducts products={selectedProducts} onProductClick={this.removeProduct}/>    
         </div>
       </div>
     );

@@ -1,4 +1,4 @@
-class FoodsController < ApplicationController
+class ProductsController < ApplicationController
   def index
     q = params[:q]
 
@@ -7,7 +7,7 @@ class FoodsController < ApplicationController
     else
       render(
         status: 200,
-        json: Food.where(["description LIKE ?", "%#{q}%"]).limit(100)
+        json: Product.where(["title LIKE ? OR description LIKE ?", "%#{q}%", "%#{q}%"]).limit(100)#Maybe modify this
       )
     end
   end
