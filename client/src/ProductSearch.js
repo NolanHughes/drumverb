@@ -53,7 +53,7 @@ class ProductSearch extends React.Component {
     // ));
 
     // New way
-    const productRows = products.map((product, idx) => (
+    const productRow = products.map((product, idx) => (
       <tr key={idx} onClick={() => this.props.displayProduct(product)}>
         <td>{product.title}</td>
       </tr>
@@ -85,7 +85,7 @@ class ProductSearch extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {productRows}
+            {productRow}
           </tbody>
         </table>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Cart.css'
 
 export default function Cart(props) {
   const { cart } = props;
@@ -7,9 +8,8 @@ export default function Cart(props) {
     <tr key={idx} onClick={() => props.onProductClick(idx)}>
       <td>{product.title}</td>
       <td className='right aligned'>{product.description}</td>     
-      <td className='right aligned'>{product.placeholder}</td>
       <td className='right aligned'>{product.image}</td>
-      <td className='right aligned'>${product.price}</td>
+      <td className='right aligned' id="item-price">${product.price}</td>
     </tr>
   ));
 
@@ -24,21 +24,19 @@ export default function Cart(props) {
         <tr>
           <th className='eight wide'>Title</th>
           <th className='two wide'>Description</th>
-          <th className='two wide'>Placeholder</th>
-          <th className='two wide'>Image</th>
-          <th className='four wide'>Price</th>
+          <th className='four wide'>Image</th>
+          <th className='two wide right aligned' id="cart-label-price">Price</th>
         </tr>
       </thead>
       <tbody>
         {productRows}
       </tbody>
       <tfoot>
-        <tr>
-          <th>Total</th>
-          <th className='right aligned' id='blank'></th>
-          <th className='right aligned' id='blank'></th>
-          <th className='right aligned' id='blank'></th>
-          <th className='right aligned' id='total-price'> ${sum(cart, 'price')} </th>
+        <tr id="total">
+          <td>Total</td>
+          <td className='right aligned' id='blank'></td>
+          <td className='right aligned' id='blank'></td>
+          <td className='right aligned' > ${sum(cart, 'price')} </td>
         </tr>
       </tfoot>
     </table>

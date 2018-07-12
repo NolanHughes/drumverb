@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Cart from './Cart';
 import ProductSearch from './ProductSearch';
 import ProductDisplay from './ProductDisplay'
-// import Greeting from './ProductDisplay'
 
 class App extends Component {
   state = {
@@ -35,9 +34,9 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='ui text container'>
-          <ProductSearch displayProduct={this.displayProduct} onProductClick={this.addProductToCart}/>
+          <ProductSearch displayProduct={this.displayProduct} />
           <Cart cart={cart} onProductClick={this.removeProduct}/> 
-          <ProductDisplay hasSearched={queriedProduct === []} product={queriedProduct}/>  
+          <ProductDisplay product={queriedProduct} onProductClick={this.addProductToCart}/>  
         </div>
       </div>
     );
