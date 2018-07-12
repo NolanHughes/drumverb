@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default function Cart(props) {
-  const { products } = props;
+  const { cart } = props;
 
-  const productRows = products.map((product, idx) => (
+  const productRows = cart.map((product, idx) => (
     <tr key={idx} onClick={() => props.onProductClick(idx)}>
       <td>{product.title}</td>
       <td className='right aligned'>{product.description}</td>     
@@ -25,7 +25,7 @@ export default function Cart(props) {
           <th className='eight wide'>Title</th>
           <th className='two wide'>Description</th>
           <th className='two wide'>Placeholder</th>
-          <th className='two wide'>image</th>
+          <th className='two wide'>Image</th>
           <th className='four wide'>Price</th>
         </tr>
       </thead>
@@ -38,7 +38,7 @@ export default function Cart(props) {
           <th className='right aligned' id='blank'></th>
           <th className='right aligned' id='blank'></th>
           <th className='right aligned' id='blank'></th>
-          <th className='right aligned' id='total-price'> ${sum(products, 'price')} </th>
+          <th className='right aligned' id='total-price'> ${sum(cart, 'price')} </th>
         </tr>
       </tfoot>
     </table>

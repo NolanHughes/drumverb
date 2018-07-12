@@ -1,32 +1,42 @@
 import React, { Component } from 'react';
 import Cart from './Cart';
 import ProductSearch from './ProductSearch';
+import ProductDisplay from './ProductDisplay'
 
 class App extends Component {
   state = {
-    selectedProducts: [],
+    cart: [],
+    queriedProduct: []
   }
 
   removeProduct = (itemIndex) => {
-    const filteredProducts = this.state.selectedProducts.filter(
+    const filteredProducts = this.state.cart.filter(
       (item, idx) => itemIndex !== idx,
     );
-    this.setState({ selectedProducts: filteredProducts });
+    this.setState({ cart: filteredProducts });
   }
 
   addProductToCart = (product) => {
-    const newProducts = this.state.selectedProducts.concat(product);
-    this.setState({ selectedProducts: newProducts });
+    const newProducts = this.state.cart.concat(product);
+    this.setState({ cart: newProducts });
+  }
+
+  displayProduct = (product) => {
+    this.setState({
+      queriedProduct: product
+    })
   }
 
   render() {
-    const { selectedProducts } = this.state;
+    const { cart } = this.state;
+    const { queriedProduct } = this.state.queriedProduct;
 
     return (
       <div className='App'>
         <div className='ui text container'>
-          <ProductSearch onProductClick={this.addProductToCart}/>
-          <Cart products={selectedProducts} onProductClick={this.removeProduct}/>    
+          <ProductSearch displayProduct={this.displayProduct} onProductClick={this.addProductToCart}/>
+          <Cart cart={cart} onProductClick={this.removeProduct}/> 
+          <ProductDisplay product={queriedProduct}/>   
         </div>
       </div>
     );

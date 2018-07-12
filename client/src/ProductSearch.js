@@ -45,13 +45,19 @@ class ProductSearch extends React.Component {
   render() {
     const { showRemoveIcon, products } = this.state;
     const removeIconStyle = showRemoveIcon ? {} : { visibility: 'hidden' };
+    // Old way
+    // const productRows = products.map((product, idx) => (
+    //   <tr key={idx} onClick={() => this.props.onProductClick(product)}>
+    //     <td>{product.title}</td>
+    //   </tr>
+    // ));
 
+    // New way
     const productRows = products.map((product, idx) => (
-      <tr key={idx} onClick={() => this.props.onProductClick(product)}>
+      <tr key={idx} onClick={() => this.props.displayProduct(product)}>
         <td>{product.title}</td>
       </tr>
     ));
-
     return (
       <div id='product-search'>
         <table className='ui selectable structured large table'>
