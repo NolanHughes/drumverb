@@ -15,7 +15,7 @@ export default function ProductDisplay(props) {
         <thead>
           <tr>
             <th colSpan='4'>
-              <h3>Cart</h3>
+              <h3>Products</h3>
             </th>
           </tr>
           <tr>
