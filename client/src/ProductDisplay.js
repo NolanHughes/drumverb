@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function ProductDisplay(props) {
   const { product } = props;
-  const { displayedProduct } = <p>hello there</p> //Change this
   
   function UserGreeting() {
     return <h1>Please search for your desired drum!</h1>;
@@ -27,7 +26,6 @@ export default function ProductDisplay(props) {
           </tr>
         </thead>
         <tbody>
-        {displayedProduct}
           <tr onClick={() => props.onProductClick(product)}>
             <td>{product.title}</td>
             <td className='right aligned'>{product.description}</td>
