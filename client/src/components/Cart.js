@@ -1,11 +1,9 @@
 import React from 'react';
-import './Cart.css'
+import '../Cart.css'
 
-export default function Cart(props) {
-  const { cart } = props;
-
+const Cart = ({cart, onProductClick}) => {
   const productRows = cart.map((product, idx) => (
-    <tr key={idx} onClick={() => props.onProductClick(idx)}>
+    <tr key={idx} onClick={() => onProductClick(idx)}>
       <td>{product.title}</td>
       <td className='right aligned'>{product.description}</td>     
       <td className='right aligned'>{product.image}</td>
@@ -42,6 +40,8 @@ export default function Cart(props) {
     </table>
   );
 }
+
+export default Cart
 
 function sum(products, prop) {
   return products.reduce((memo, product) => (

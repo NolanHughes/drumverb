@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ProductDisplay(props) {
-  const { product } = props;
+  const { product, onProductClick } = props;
   
   function UserGreeting() {
     return <h1>Please search for your desired drum!</h1>;
@@ -26,7 +26,7 @@ export default function ProductDisplay(props) {
           </tr>
         </thead>
         <tbody>
-          <tr onClick={() => props.onProductClick(product)}>
+          <tr onClick={() => onProductClick(product)}> 
             <td>{product.title}</td>
             <td className='right aligned'>{product.description}</td>
             <td className='right aligned'>{product.image}</td>

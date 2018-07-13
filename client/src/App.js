@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Cart from './Cart';
-import ProductSearch from './ProductSearch';
-import ProductDisplay from './ProductDisplay'
+import Cart from './components/Cart';
+import ProductSearch from './containers/ProductSearch';
+import ProductDisplay from './components/ProductDisplay'
 
 class App extends Component {
   state = {
