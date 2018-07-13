@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Products = ({products, searchValue, searchChange, searchCancel, displayProduct, helloThere}) => {
-	const productRow = products.map((product, idx) => (
+const Products = ({products, searchValue, searchChange, searchCancel, displayProduct, searchButton}) => {
+	const productRows = products.map((product, idx) => (
 		<tr key={idx} onClick={() => { displayProduct(product); searchCancel();}}>
 			<td>{product.title}</td>
 		</tr>
@@ -15,14 +15,16 @@ const Products = ({products, searchValue, searchChange, searchCancel, displayPro
             <th colSpan='5'>
               <div className='ui fluid search'>
                 <div className='ui icon input'>
-                  <input
-                    className='prompt'
-                    type='text'
-                    placeholder='Search drums...'//Change to product upon expanding
-                    value={searchValue}
-                    onChange={searchChange}
-                  />
-                  <button onClick={helloThere}>Search</button>
+                <form onSubmit={searchButton}>
+                    <input
+                      id='product-input'
+                      type='text'
+                      placeholder='Search drums...'//Change to product upon expanding
+                      value={searchValue}
+                      onChange={searchChange}
+                    />
+                    <button>Search</button>
+                  </form>
                 </div>
                 
               </div>
@@ -30,7 +32,7 @@ const Products = ({products, searchValue, searchChange, searchCancel, displayPro
           </tr>
         </thead>
         <tbody>
-          {productRow}
+          {productRows}
         </tbody>
       </table>
     </div>

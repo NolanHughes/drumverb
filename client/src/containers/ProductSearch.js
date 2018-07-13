@@ -31,12 +31,14 @@ class ProductSearch extends React.Component {
   };
 
 
-  helloThere = () => {
-    alert("Hello There")
+  searchButton = (e) => {
+    e.preventDefault
+    const value = document.getElementById("product-input").value
+    alert(`Your input is ${value}`) //Make this not reload page
   }
 
   render() {   
-    const { showRemoveIcon, products, searchValue } = this.state;
+    const { products, searchValue } = this.state;
     
     return (
       <Products 
@@ -45,7 +47,7 @@ class ProductSearch extends React.Component {
         searchChange={this.searchChange} 
         searchCancel={this.searchCancel} 
         displayProduct={this.props.displayProduct}
-        helloThere={this.helloThere}
+        searchButton={this.searchButton}
       />
     );
   }
