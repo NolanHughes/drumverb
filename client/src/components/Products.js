@@ -32,7 +32,7 @@ const Products = ({products, searchValue, searchChange, searchCancel, displayPro
           </tr>
         </thead>
         <tbody>
-          {/*productRows*/}
+          {productRows}
         </tbody>
       </table>
     </div>

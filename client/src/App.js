@@ -7,7 +7,7 @@ import { productsFetchData } from './actions/products';
 
 class App extends React.Component {
   state = {
-    cart: [],
+    // cart: [],
     queriedProduct: []
   }
 
@@ -41,9 +41,10 @@ class App extends React.Component {
     return (
       <div className='App'>
         <div className='ui text container'>
-          <ProductSearch products={products} displayProduct={this.displayProduct} />
+          {/*<ProductSearch products={products} displayProduct={this.displayProduct} />*/}
           {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/} 
-          <ProductDisplay products={products} />
+          <ProductSearch products={products} displayProduct={this.displayProduct}/>
+          <ProductDisplay products={products} />{/*Should be ProductsIndexDisplay*/}
         </div>
       </div>
     );
@@ -53,7 +54,6 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
-    hasErrored: state.productsHasErrored,
     isLoading: state.productsIsLoading
   };
 };
