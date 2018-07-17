@@ -28,7 +28,7 @@ class App extends React.Component {
       queriedProduct: product
     })
   }
-  //Move to Client.js and set to products you want to display on index page
+
   componentDidMount() {
     this.props.fetchData('http://localhost:3000/api/products');
   }

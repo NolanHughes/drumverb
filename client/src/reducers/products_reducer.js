@@ -1,12 +1,3 @@
-// export default (state = {products: []}, action) => {
-//   switch (action.type) {
-//     case 'FETCH_PRODUCTS':
-//       return {products: action.payload};
-//     default:
-//       return state;
-//   }
-// };
-
 export function productsIsLoading(state = false, action) {//Change to are
 	switch (action.type) {
 		case 'PRODUCTS_IS_LOADING'://Change to are

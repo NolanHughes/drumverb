@@ -16,5 +16,5 @@ ReactDOM.render(
 	<Provider store={store}>
   	<App />
   </Provider>,
-  document.getElementById('root'), // eslint-disable-line no-undef
+  document.getElementById('root')
 );
