@@ -2,8 +2,12 @@ import React from 'react';
 import Cart from './components/Cart';
 import ProductSearch from './containers/ProductSearch';
 import ProductIndexDisplay from './components/ProductIndexDisplay';
-import { connect } from 'react-redux';
 import { productsFetchData } from './actions/products';
+import ProductShow from './components/ProductShow'
+import Header from './components/Header'
+
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class App extends React.Component {
   state = {
@@ -41,12 +45,20 @@ class App extends React.Component {
     return (
       <div className='App'>
         <div className='ui text container'>
-          {/*<ProductSearch products={products} displayProduct={this.displayProduct} />*/}
+        <ProductSearch products={products} displayProduct={this.displayProduct}/>
+          <Router>
+            <div>
+              <Header />
+              <Switch>
+                <Route exact path='/' render={(props) => <ProductIndexDisplay products={products} />} />
+                <Route path="/product" component={ProductShow}/>
+              </Switch>
+            </div>
+          </Router>
           {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/} 
-          <ProductSearch products={products} displayProduct={this.displayProduct}/>
-          <ProductIndexDisplay products={products} />
         </div>
       </div>
+
     );
   }
 }
@@ -65,3 +77,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+

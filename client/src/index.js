@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import App from './App';
+import ProductsPage from './containers/ProductsPage'
 import rootReducer from './reducers';
 
 import './index.css';
