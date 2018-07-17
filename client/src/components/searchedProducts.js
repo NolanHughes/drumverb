@@ -1,11 +1,10 @@
 //***Could still be named better***
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SearchedProducts = ({products, searchValue, searchChange, searchCancel, displayProduct, searchButton}) => {
 	const productRows = products.map((product, idx) => (
-		<tr key={idx} onClick={() => { displayProduct(product); searchCancel();}}>
-			<td>{product.title}</td>
-		</tr>
+    <Link style={{ display: 'block' }} key={product.id} to={`/products/${product.id}`}>{product.title}</Link>
 	));
 
   return (
@@ -31,11 +30,9 @@ const SearchedProducts = ({products, searchValue, searchChange, searchCancel, di
               </div>
             </th>
           </tr>
-        </thead>
-        <tbody>
-          {productRows}
-        </tbody>
+        </thead>     
       </table>
+      {productRows}
     </div>
   );
 };
