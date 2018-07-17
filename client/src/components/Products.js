@@ -19,7 +19,7 @@ const Products = ({products, searchValue, searchChange, searchCancel, displayPro
                     <input
                       id='product-input'
                       type='text'
-                      placeholder='Search drums...'//Change to product upon expanding
+                      placeholder='Search drums...'//Change to products upon expanding
                       value={searchValue}
                       onChange={searchChange}
                     />
@@ -32,7 +32,7 @@ const Products = ({products, searchValue, searchChange, searchCancel, displayPro
           </tr>
         </thead>
         <tbody>
-          {productRows}
+          {/*productRows*/}
         </tbody>
       </table>
     </div>

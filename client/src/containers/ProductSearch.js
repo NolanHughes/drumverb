@@ -1,15 +1,19 @@
+//This should all be in app
 import React from 'react';
 import Client from '../Client';
 import Products from '../components/Products'
 
+
 const MATCHING_ITEM_LIMIT = 5;
 
 class ProductSearch extends React.Component {
-  state = {
-    products: [],
-    searchValue: '',
-  };
+  // constructor() {
+  //   super()
 
+  //   this.state = {
+  //     searchValue: ''
+  //   }
+  // }
   searchChange = (e) => {
     const value = e.target.value;
     this.setState({
@@ -30,17 +34,17 @@ class ProductSearch extends React.Component {
     });
   };
 
-
   searchButton = (e) => {
-    e.preventDefault
+    e.preventDefault()
     const value = document.getElementById("product-input").value
-    alert(`Your input is ${value}`) //Make this not reload page
+    alert(`Your input is ${value}`)
   }
 
   render() {   
-    const { products, searchValue } = this.state;
-    
+    const { products, searchValue } = this.props;
+
     return (
+      <div>
       <Products 
         products={products} 
         searchValue={searchValue} 
@@ -49,7 +53,8 @@ class ProductSearch extends React.Component {
         displayProduct={this.props.displayProduct}
         searchButton={this.searchButton}
       />
-    );
+      </div>
+    )
   }
 }
 
