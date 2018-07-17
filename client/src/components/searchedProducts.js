@@ -1,7 +1,7 @@
 //***Could still be named better***
 import React from 'react'
 
-const searchedProducts = ({products, searchValue, searchChange, searchCancel, displayProduct, searchButton}) => {
+const SearchedProducts = ({products, searchValue, searchChange, searchCancel, displayProduct, searchButton}) => {
 	const productRows = products.map((product, idx) => (
 		<tr key={idx} onClick={() => { displayProduct(product); searchCancel();}}>
 			<td>{product.title}</td>
@@ -40,6 +40,6 @@ const searchedProducts = ({products, searchValue, searchChange, searchCancel, di
   );
 };
 
-export default searchedProducts;
+export default SearchedProducts;
 
      

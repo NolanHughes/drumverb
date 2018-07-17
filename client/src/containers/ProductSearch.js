@@ -1,6 +1,6 @@
 import React from 'react';
 import Client from '../Client';
-import searchedProducts from '../components/searchedProducts'
+import SearchedProducts from '../components/SearchedProducts'
 
 
 const MATCHING_ITEM_LIMIT = 5;
@@ -46,7 +46,7 @@ class ProductSearch extends React.Component {
 
     return (
       <div>
-      <searchedProducts 
+      <SearchedProducts 
         products={queriedProducts} 
         searchValue={searchValue} 
         searchChange={this.searchChange} 

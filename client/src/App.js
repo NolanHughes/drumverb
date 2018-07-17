@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 class App extends React.Component {
   state = {
-    // cart: [],
+    cart: [],
     queriedProduct: []
   }
 
@@ -50,12 +50,15 @@ class App extends React.Component {
             <div>
               <Header />
               <Switch>
-                <Route exact path='/' render={(props) => <ProductIndexDisplay products={products} />} />
+                <Route exact path='/' render={(props) => <ProductIndexDisplay 
+                  products={products} 
+                  onProductClick={this.addProductToCart} />} 
+                  />
                 <Route path="/product" component={ProductShow}/>
               </Switch>
             </div>
           </Router>
-          {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/} 
+          <Cart cart={cart} onProductClick={this.removeProduct}/>
         </div>
       </div>
 

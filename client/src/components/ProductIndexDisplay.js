@@ -1,8 +1,6 @@
 import React from 'react';
 
-export default function ProductIndexDisplay(props) {
-  const { products, onProductClick } = props;
-
+const ProductIndexDisplay = ({ products, onProductClick }) => {
   const productRows = products.map((product, idx) => (
     <tr key={idx} onClick={() => onProductClick(product)}> 
       <td>{product.title}</td>
@@ -33,3 +31,5 @@ export default function ProductIndexDisplay(props) {
     </table>
   );
 }
+
+export default ProductIndexDisplay
