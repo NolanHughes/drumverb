@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from './components/Cart';
 import ProductSearch from './containers/ProductSearch';
-import ProductDisplay from './components/ProductDisplay';
+import ProductIndexDisplay from './components/ProductIndexDisplay';
 import { connect } from 'react-redux';
 import { productsFetchData } from './actions/products';
 
@@ -44,7 +44,7 @@ class App extends React.Component {
           {/*<ProductSearch products={products} displayProduct={this.displayProduct} />*/}
           {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/} 
           <ProductSearch products={products} displayProduct={this.displayProduct}/>
-          <ProductDisplay products={products} />{/*Should be ProductsIndexDisplay*/}
+          <ProductIndexDisplay products={products} />
         </div>
       </div>
     );
@@ -54,7 +54,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
-    isLoading: state.productsIsLoading
+    isLoading: state.productsAreLoading
   };
 };
 

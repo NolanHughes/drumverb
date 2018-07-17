@@ -1,4 +1,3 @@
-//This should all be in app
 import React from 'react';
 import Client from '../Client';
 import Products from '../components/Products'
@@ -23,7 +22,7 @@ class ProductSearch extends React.Component {
 
     Client.search(value, (products) => {
       this.setState({
-        queriedProducts: products.slice(0, MATCHING_ITEM_LIMIT),//Change to top 5 instead of first 5
+        queriedProducts: products.slice(0, MATCHING_ITEM_LIMIT),//Change to top 5 instead of first 5 and make categories or whatever.
       });
     });
   };

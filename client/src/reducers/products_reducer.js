@@ -1,6 +1,6 @@
-export function productsIsLoading(state = false, action) {//Change to are
+export function productsAreLoading(state = false, action) {
 	switch (action.type) {
-		case 'PRODUCTS_IS_LOADING'://Change to are
+		case 'PRODUCTS_ARE_LOADING':
 			return action.isLoading;
 		default:
 			return state;

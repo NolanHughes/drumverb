@@ -1,16 +1,7 @@
 import React from 'react';
 
-export default function ProductDisplay(props) {
-  const { products, onProductClick } = props;
-
-  const productRows = products.map((product, idx) => (
-    <tr key={idx} onClick={() => onProductClick(product)}> 
-      <td>{product.title}</td>
-      <td className='right aligned'>{product.description}</td>
-      <td className='right aligned'>{product.image}</td>
-      <td className='right aligned'>${product.price}</td>
-    </tr>
-  ));
+export default function ProductShow(props) {
+  const { product } = props;
   
   return (
     <table className='ui selectable structured large table'>
@@ -28,7 +19,12 @@ export default function ProductDisplay(props) {
         </tr>
       </thead>
       <tbody>
-        {productRows}
+        <tr key={product.id} onClick={() => onProductClick(product)}> 
+          <td>{product.title}</td>
+          <td className='right aligned'>{product.description}</td>
+          <td className='right aligned'>{product.image}</td>
+          <td className='right aligned'>${product.price}</td>
+        </tr>
       </tbody>
     </table>
   );

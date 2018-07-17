@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import {products, productsIsLoading} from './products_reducer';//Change to are
+import {products, productsAreLoading} from './products_reducer';
 
 export default combineReducers({
   products,
-  productsIsLoading
+  productsAreLoading
 });

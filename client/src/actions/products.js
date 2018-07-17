@@ -1,6 +1,6 @@
-export function productsIsLoading(bool) {
+export function productsAreLoading(bool) {
   return {
-    type: 'PRODUCTS_IS_LOADING',//Change to are
+    type: 'PRODUCTS_ARE_LOADING',
     isLoading: bool
   };
 }
@@ -14,7 +14,7 @@ export function productsFetchDataSuccess(products) {
 
 export function productsFetchData(url) {
   return (dispatch) => {
-    dispatch(productsIsLoading(true));//Change to are
+    dispatch(productsAreLoading(true));
 
     fetch(url)
     .then((response) => {
@@ -22,7 +22,7 @@ export function productsFetchData(url) {
           throw Error(response.statusText);
         }
 
-        dispatch(productsIsLoading(false));//Change to are
+        dispatch(productsAreLoading(false));
 
         return response;
     })
