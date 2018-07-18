@@ -40,9 +40,7 @@ class ProductsPage extends React.Component {
     const { cart } = this.state;//Figure out what to do with this
     const { products, 
             match, 
-            queriedProducts, 
             queryProducts, 
-            searchValue, 
             clearQueriedProducts,
             clearSearchValue 
           } = this.props
@@ -52,10 +50,8 @@ class ProductsPage extends React.Component {
         <div className='ui text container'>
         <ProductSearch 
           searchChange={queryProducts}
-          queriedProducts={queriedProducts}
           searchCancel={clearQueriedProducts}
           clearSearchValue={clearSearchValue}
-          searchValue={searchValue}
         /> 
         <Header />
           <div>

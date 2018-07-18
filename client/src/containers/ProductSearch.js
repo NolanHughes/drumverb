@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchedProducts from '../components/SearchedProducts'
+import { connect } from 'react-redux';
 
 class ProductSearch extends React.Component {
   //***use value to trigger queriedProductsFetchData() on search bar is set up for categories/tags***
@@ -32,4 +33,11 @@ class ProductSearch extends React.Component {
   }
 }
 
-export default ProductSearch;
+const mapStateToProps = (state) => {
+  return {
+    queriedProducts: state.queriedProducts,
+    searchValue: state.searchValue
+  };
+};
+
+export default connect(mapStateToProps)(ProductSearch);
