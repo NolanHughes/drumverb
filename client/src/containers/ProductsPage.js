@@ -4,6 +4,7 @@ import ProductSearch from './ProductSearch';
 import ProductIndexDisplay from '../components/ProductIndexDisplay';
 import { productsFetchData, queriedProductsFetchData, clearQueriedProducts, clearSearchValue } from '../actions/products';
 import ProductShow from '../components/ProductShow'
+import Header from '../components/Header'
 
 import { BrowserRouter as Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -56,18 +57,21 @@ class ProductsPage extends React.Component {
           clearSearchValue={clearSearchValue}
           searchValue={searchValue}
         /> 
+        <Header />
           <div>
             <Switch>
               <Route 
                 exact path='/products' 
-                render={(props) => <ProductIndexDisplay 
+                render={
+                  (props) => <ProductIndexDisplay 
                   products={products} 
-                  onProductClick={this.addProductToCart} />} 
+                  onProductClick={this.addProductToCart} />
+                } 
               />
               <Route path={`${match.url}/:productId`} component={ProductShow}/>
             </Switch>
           </div>        
-          <Cart cart={cart} onProductClick={this.removeProduct}/>
+          {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/}
         </div>
       </div>
     );
