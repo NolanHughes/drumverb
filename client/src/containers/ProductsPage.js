@@ -2,7 +2,7 @@ import React from 'react';
 import Cart from '../components/Cart';
 import ProductSearch from './ProductSearch';
 import ProductIndexDisplay from '../components/ProductIndexDisplay';
-import { productsFetchData, queriedProductsFetchData, clearQueriedProducts, clearSearchValue } from '../actions/products';
+import { productsFetchData, queriedProductsFetchData, clearSearchValue } from '../actions/products';
 import ProductShow from '../components/ProductShow'
 import Header from '../components/Header'
 
@@ -40,8 +40,7 @@ class ProductsPage extends React.Component {
     const { cart } = this.state;//Figure out what to do with this
     const { products, 
             match, 
-            queryProducts, 
-            clearQueriedProducts,
+            queryProducts,
             clearSearchValue 
           } = this.props
 
@@ -50,7 +49,6 @@ class ProductsPage extends React.Component {
         <div className='ui text container'>
         <ProductSearch 
           searchChange={queryProducts}
-          searchCancel={clearQueriedProducts}
           clearSearchValue={clearSearchValue}
         /> 
         <Header />
@@ -77,17 +75,15 @@ class ProductsPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
-    areLoading: state.productsAreLoading,
-    queriedProducts: state.queriedProducts,
-    searchValue: state.searchValue
+    areLoading: state.productsAreLoading
   };
 };
 
+//Rename fetchData to be more specific about fetch all products
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchData: (url) => dispatch(productsFetchData(url)),
     queryProducts: (query) => dispatch(queriedProductsFetchData(query)),
-    clearQueriedProducts: () => dispatch(clearQueriedProducts()),
     clearSearchValue: () => dispatch(clearSearchValue())
   };
 };

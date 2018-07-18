@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 const SearchedProducts = ({
   queriedProducts, 
   searchChange, 
-  searchCancel, 
+  clearQueriedProducts, 
   searchButton, 
   searchValue, 
   clearSearchValue}) => {
 
 	const productRows = queriedProducts.map((product, idx) => (
-    <Link style={{ display: 'block' }} key={product.id} to={`/products/${product.id}`} onClick={() => {searchCancel(); clearSearchValue();}}>{product.title}</Link>
+    <Link style={{ display: 'block' }} key={product.id} to={`/products/${product.id}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{product.title}</Link>
 	));
 
   return (
