@@ -24,3 +24,11 @@
 .list-item {
 	margin-bottom: 23px;
 }
+
+#main-div {
+  background: #f1f1f1;
+}
+
+#switch-div {
+  margin-top: 30px;
+}

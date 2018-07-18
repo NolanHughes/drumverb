@@ -1,4 +1,3 @@
-//***Could still be named better***
 import React from 'react'
 import { Link } from 'react-router-dom'
 

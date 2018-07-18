@@ -41,11 +41,11 @@ class ProductsPage extends React.Component {
     const { products, match } = this.props
 
     return (
-      <div style={{ background: '#f1f1f1' }}>      
+      <div id="main-div">      
         <Header />
         <div>
           <Intro />        
-          <div className='ui container' style={{marginTop: "30px"}}>
+          <div className='ui container' id="switch-div">
             <Switch>
               <Route 
                 exact path='/products' 
