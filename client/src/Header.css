@@ -1,0 +1,23 @@
+header {
+	border-bottom: 1px solid black;
+}
+
+#nav-logo {
+	font-size: 2.5em;
+	text-align: center;
+	color: #414141;
+}
+
+.nav-element {
+	display: table-cell; 
+	vertical-align: middle; 
+}
+
+#main-nav {
+	margin: 0px;
+	padding: 5px;
+}
+
+#nav-sell {
+	color: #414141;
+}

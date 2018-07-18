@@ -1,6 +1,5 @@
 import React from 'react';
 import Cart from '../components/Cart';
-import ProductSearch from './ProductSearch';
 import ProductIndexDisplay from '../components/ProductIndexDisplay';
 import { productsFetchData } from '../actions/products';
 import ProductShow from '../components/ProductShow'
@@ -38,30 +37,25 @@ class ProductsPage extends React.Component {
 
   render() {
     const { cart } = this.state;//Figure out what to do with this
-    const { products, 
-            match
-          } = this.props
+    const { products, match } = this.props
 
     return (
-      <div className='App'>
-        <div className='ui text container'>
-        <ProductSearch /> 
+      <div>      
         <Header />
-          <div>
-            <Switch>
-              <Route 
-                exact path='/products' 
-                render={
-                  (props) => <ProductIndexDisplay 
-                  products={products} 
-                  onProductClick={this.addProductToCart} />
-                } 
-              />
-              <Route path={`${match.url}/:productId`} component={ProductShow}/>
-            </Switch>
-          </div>        
-          {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/}
-        </div>
+        <div className='ui container'>
+          <Switch>
+            <Route 
+              exact path='/products' 
+              render={
+                (props) => <ProductIndexDisplay 
+                products={products} 
+                onProductClick={this.addProductToCart} />
+              } 
+            />
+            <Route path={`${match.url}/:productId`} component={ProductShow}/>
+          </Switch>
+        </div>        
+        {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/}
       </div>
     );
   }

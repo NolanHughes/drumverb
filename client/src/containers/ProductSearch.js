@@ -1,10 +1,10 @@
 import React from 'react';
-import SearchedProducts from '../components/SearchedProducts'
+import QueriedProducts from '../components/QueriedProducts'
 import { connect } from 'react-redux';
 import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/products';
 
 class ProductSearch extends React.Component {
-  //***use value to trigger queriedProductsFetchData() on search bar is set up for categories/tags***
+  //***use value to trigger queriedProductsFetchData() on search bar when it is set up for categories/tags***
   searchButton = (e) => {
     e.preventDefault()
     const value = e.target.firstChild.value
@@ -20,8 +20,7 @@ class ProductSearch extends React.Component {
       clearSearchValue } = this.props
 
     return (
-      <div>
-      <SearchedProducts 
+      <QueriedProducts 
         queriedProducts={queriedProducts}
         queryProducts={queryProducts} 
         clearQueriedProducts={clearQueriedProducts} 
@@ -29,7 +28,6 @@ class ProductSearch extends React.Component {
         clearSearchValue={clearSearchValue}
         searchButton={this.searchButton}
       />
-      </div>
     )
   }
 }
