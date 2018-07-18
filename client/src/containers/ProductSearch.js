@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchedProducts from '../components/SearchedProducts'
 import { connect } from 'react-redux';
-import { clearQueriedProducts } from '../actions/products';
+import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/products';
 
 class ProductSearch extends React.Component {
   //***use value to trigger queriedProductsFetchData() on search bar is set up for categories/tags***
@@ -15,15 +15,15 @@ class ProductSearch extends React.Component {
     const { 
       queriedProducts, 
       clearQueriedProducts, 
-      searchChange, 
+      queryProducts, 
       searchValue,
       clearSearchValue } = this.props
-      
+
     return (
       <div>
       <SearchedProducts 
         queriedProducts={queriedProducts}
-        searchChange={searchChange} 
+        queryProducts={queryProducts} 
         clearQueriedProducts={clearQueriedProducts} 
         searchValue={searchValue}
         clearSearchValue={clearSearchValue}
@@ -43,7 +43,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    clearQueriedProducts: () => dispatch(clearQueriedProducts())
+    clearQueriedProducts: () => dispatch(clearQueriedProducts()),
+    clearSearchValue: () => dispatch(clearSearchValue()),
+    queryProducts: (query) => dispatch(queriedProductsFetchData(query))
   };
 };
 

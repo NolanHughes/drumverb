@@ -2,7 +2,7 @@ import React from 'react';
 import Cart from '../components/Cart';
 import ProductSearch from './ProductSearch';
 import ProductIndexDisplay from '../components/ProductIndexDisplay';
-import { productsFetchData, queriedProductsFetchData, clearSearchValue } from '../actions/products';
+import { productsFetchData } from '../actions/products';
 import ProductShow from '../components/ProductShow'
 import Header from '../components/Header'
 
@@ -39,18 +39,13 @@ class ProductsPage extends React.Component {
   render() {
     const { cart } = this.state;//Figure out what to do with this
     const { products, 
-            match, 
-            queryProducts,
-            clearSearchValue 
+            match
           } = this.props
 
     return (
       <div className='App'>
         <div className='ui text container'>
-        <ProductSearch 
-          searchChange={queryProducts}
-          clearSearchValue={clearSearchValue}
-        /> 
+        <ProductSearch /> 
         <Header />
           <div>
             <Switch>
@@ -82,9 +77,7 @@ const mapStateToProps = (state) => {
 //Rename fetchData to be more specific about fetch all products
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchData: (url) => dispatch(productsFetchData(url)),
-    queryProducts: (query) => dispatch(queriedProductsFetchData(query)),
-    clearSearchValue: () => dispatch(clearSearchValue())
+    fetchData: (url) => dispatch(productsFetchData(url))
   };
 };
 

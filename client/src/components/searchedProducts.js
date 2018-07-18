@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const SearchedProducts = ({
   queriedProducts, 
-  searchChange, 
+  queryProducts, 
   clearQueriedProducts, 
   searchButton, 
   searchValue, 
@@ -28,7 +28,7 @@ const SearchedProducts = ({
                       type='text'
                       placeholder='Search drums...'//Change to products upon expanding
                       value={searchValue}
-                      onChange={searchChange}
+                      onChange={queryProducts}
                     />
                     <button>Search</button>
                   </form>
