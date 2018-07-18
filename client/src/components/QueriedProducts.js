@@ -17,7 +17,7 @@ const QueriedProducts = ({
 	));
 
   return (
-		<div id='product-search' className="nav-element ten wide column">
+		<div id='product-search' className="nav-element nine wide column">
       <form onSubmit={searchButton}>
         <input
           id='product-input'

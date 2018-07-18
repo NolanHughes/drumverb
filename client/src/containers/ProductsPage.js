@@ -4,6 +4,7 @@ import ProductIndexDisplay from '../components/ProductIndexDisplay';
 import { productsFetchData } from '../actions/products';
 import ProductShow from '../components/ProductShow'
 import Header from '../components/Header'
+import Intro from '../components/Intro'
 
 import { BrowserRouter as Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -42,6 +43,7 @@ class ProductsPage extends React.Component {
     return (
       <div>      
         <Header />
+        <Intro />
         <div className='ui container'>
           <Switch>
             <Route 

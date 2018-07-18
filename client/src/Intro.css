@@ -1,0 +1,12 @@
+#intro {
+	background-image: url(./reverb-drum-header.jpg);
+	background-size: cover;
+}
+
+#page-title {
+	color: white;
+  font-size: 4.2rem;
+  text-align: center;
+  padding: 1.1em 3vw .1em;
+  text-shadow: 0 0 0.4rem rgba(33,33,33,.7);
+}

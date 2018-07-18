@@ -1,10 +1,11 @@
 #product-search {
 	display: inline-block;
 	padding-bottom: 0.5em;
+	border-right: 2px solid #ececec;
 }
 
 #product-input {
-	width: 85%;
+	width: 95%;
 	height: 36px;
 	background: linear-gradient(180deg,#f6f6f6,#fff);
 	font-family: Lato,Helvetica,sans-serif;
@@ -35,7 +36,7 @@ form {
   height: 36px;
   border-bottom-right-radius: 4px;
   font-size: 1.4em;
-  width: 38px;
+  width: 5%;
   color: #414141;
   border-left: none;
   background: linear-gradient(180deg,#f6f6f6,#fff);
