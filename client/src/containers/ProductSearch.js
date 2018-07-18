@@ -2,13 +2,12 @@ import React from 'react';
 import SearchedProducts from '../components/SearchedProducts'
 
 class ProductSearch extends React.Component {
-  //***Make this actually work***
-  // searchButton = (e) => {
-  //   debugger
-  //   e.preventDefault()
-  //   const value = document.getElementById("product-input").value
-  //   alert(`Your input is ${value}`)
-  // }
+  //***use value to trigger queriedProductsFetchData() on search bar is set up for categories/tags***
+  searchButton = (e) => {
+    e.preventDefault()
+    const value = e.target.firstChild.value
+    alert(`Your input is ${value}`)
+  }
 
   render() {   
     const { 
@@ -26,7 +25,7 @@ class ProductSearch extends React.Component {
         searchCancel={searchCancel} 
         searchValue={searchValue}
         clearSearchValue={clearSearchValue}
-        // searchButton={this.searchButton}
+        searchButton={this.searchButton}
       />
       </div>
     )

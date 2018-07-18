@@ -6,7 +6,7 @@ const SearchedProducts = ({
   queriedProducts, 
   searchChange, 
   searchCancel, 
-  // searchButton, 
+  searchButton, 
   searchValue, 
   clearSearchValue}) => {
 
@@ -22,8 +22,7 @@ const SearchedProducts = ({
             <th colSpan='5'>
               <div className='ui fluid search'>
                 <div className='ui icon input'>
-                {/*<form {onSubmit={searchButton}}>*/}
-                  <form>
+                <form onSubmit={searchButton}>
                     <input
                       id='product-input'
                       type='text'
@@ -31,7 +30,7 @@ const SearchedProducts = ({
                       value={searchValue}
                       onChange={searchChange}
                     />
-                    {/*<button>Search</button>*/}
+                    <button>Search</button>
                   </form>
                 </div>
                 
