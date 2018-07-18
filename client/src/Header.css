@@ -1,7 +1,3 @@
-header {
-	border-bottom: 1px solid black;
-}
-
 #nav-logo {
 	font-size: 2.5em;
 	text-align: center;
@@ -16,6 +12,13 @@ header {
 #main-nav {
 	margin: 0px;
 	padding: 5px;
+	position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 0 5px rgba(65,65,65,.3);
 }
 
 #nav-sell {

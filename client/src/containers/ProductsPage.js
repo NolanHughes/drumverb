@@ -41,22 +41,24 @@ class ProductsPage extends React.Component {
     const { products, match } = this.props
 
     return (
-      <div>      
+      <div style={{ background: '#f1f1f1' }}>      
         <Header />
-        <Intro />
-        <div className='ui container'>
-          <Switch>
-            <Route 
-              exact path='/products' 
-              render={
-                (props) => <ProductIndexDisplay 
-                products={products} 
-                onProductClick={this.addProductToCart} />
-              } 
-            />
-            <Route path={`${match.url}/:productId`} component={ProductShow}/>
-          </Switch>
-        </div>        
+        <div>
+          <Intro />        
+          <div className='ui container' style={{marginTop: "30px"}}>
+            <Switch>
+              <Route 
+                exact path='/products' 
+                render={
+                  (props) => <ProductIndexDisplay 
+                  products={products} 
+                  onProductClick={this.addProductToCart} />
+                } 
+              />
+              <Route path={`${match.url}/:productId`} component={ProductShow}/>
+            </Switch>
+          </div>  
+        </div>      
         {/*<Cart cart={cart} onProductClick={this.removeProduct}/>*/}
       </div>
     );

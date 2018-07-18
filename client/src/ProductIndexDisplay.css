@@ -1,0 +1,26 @@
+.productImage {
+	width: 100%;
+}
+
+.product-info {
+	background: white;
+  padding: 0px;
+  margin-top: -5px;
+  color: #414141;
+  height: 100px;
+}
+
+.product-info * {
+	padding: 7px;
+  font-size: 1.3em;
+}
+
+#product-list > * {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0px;
+  width: 23%!important;
+}
+
+.list-item {
+	margin-bottom: 23px;
+}
