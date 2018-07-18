@@ -6,10 +6,33 @@ export function productsAreLoading(state = false, action) {
 			return state;
 	}
 }
+
 export function products(state = [], action) {
 	switch (action.type) {
 		case 'PRODUCTS_FETCH_DATA_SUCCESS':
 			return action.products;
+		default:
+			return state;
+	}
+}
+
+export function queriedProducts(state = [], action) {
+	switch (action.type) {
+		case 'QUERIED_PRODUCTS_FETCH_DATA_SUCCESS':
+			return action.products;
+		case 'CLEAR_QUERIED_PRODUCTS':
+			return [];
+		default:
+			return state;
+	}
+}
+
+export function searchValue(state = '', action) {
+	switch (action.type) {
+		case 'SET_SEARCH_VALUE':
+			return action.value;
+		case 'CLEAR_SEARCH_VALUE':
+			return "";
 		default:
 			return state;
 	}

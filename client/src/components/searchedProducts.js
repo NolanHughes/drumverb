@@ -2,9 +2,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SearchedProducts = ({products, searchValue, searchChange, searchCancel, displayProduct, searchButton}) => {
-	const productRows = products.map((product, idx) => (
-    <Link style={{ display: 'block' }} key={product.id} to={`/products/${product.id}`}>{product.title}</Link>
+const SearchedProducts = ({
+  queriedProducts, 
+  searchChange, 
+  searchCancel, 
+  // searchButton, 
+  searchValue, 
+  clearSearchValue}) => {
+
+	const productRows = queriedProducts.map((product, idx) => (
+    <Link style={{ display: 'block' }} key={product.id} to={`/products/${product.id}`} onClick={() => {searchCancel(); clearSearchValue();}}>{product.title}</Link>
 	));
 
   return (
@@ -15,7 +22,8 @@ const SearchedProducts = ({products, searchValue, searchChange, searchCancel, di
             <th colSpan='5'>
               <div className='ui fluid search'>
                 <div className='ui icon input'>
-                <form onSubmit={searchButton}>
+                {/*<form {onSubmit={searchButton}}>*/}
+                  <form>
                     <input
                       id='product-input'
                       type='text'
@@ -23,7 +31,7 @@ const SearchedProducts = ({products, searchValue, searchChange, searchCancel, di
                       value={searchValue}
                       onChange={searchChange}
                     />
-                    <button>Search</button>
+                    {/*<button>Search</button>*/}
                   </form>
                 </div>
                 

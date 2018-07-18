@@ -8,7 +8,7 @@ const ProductShow = ({ product }) =>
   </div>;
  
 const mapStateToProps = (state, ownProps) => {
-  const product = state.products.find(product => product.id === parseInt(ownProps.match.params.productId))
+  const product = state.products.find(product => product.id === parseInt(ownProps.match.params.productId, 10))
 
   if (product) {
     return { product }

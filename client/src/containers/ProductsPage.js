@@ -2,20 +2,19 @@ import React from 'react';
 import Cart from '../components/Cart';
 import ProductSearch from './ProductSearch';
 import ProductIndexDisplay from '../components/ProductIndexDisplay';
-import { productsFetchData } from '../actions/products';
+import { productsFetchData, queriedProductsFetchData, clearQueriedProducts, clearSearchValue } from '../actions/products';
 import ProductShow from '../components/ProductShow'
-import Header from '../components/Header'
 
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class ProductsPage extends React.Component {
+  //***change all this shit!
   constructor(props) {
     super(props)
 
     this.state = {
-      cart: [],
-      queriedProduct: []
+      cart: []
     }
   }
 
@@ -30,13 +29,7 @@ class ProductsPage extends React.Component {
     const newProducts = this.state.cart.concat(product);
     this.setState({ cart: newProducts });
   }
-
-  displayProduct = (product) => {
-    debugger
-    this.setState({
-      queriedProduct: product
-    })
-  }
+  //***
 
   componentDidMount() {
     this.props.fetchData('http://localhost:3000/api/products');
@@ -44,18 +37,32 @@ class ProductsPage extends React.Component {
 
   render() {
     const { cart } = this.state;//Figure out what to do with this
-    const { queriedProduct } = this.state;//Figure out what to do with this
-    const { products, match } = this.props
+    const { products, 
+            match, 
+            queriedProducts, 
+            queryProducts, 
+            searchValue, 
+            clearQueriedProducts,
+            clearSearchValue 
+          } = this.props
 
     return (
       <div className='App'>
         <div className='ui text container'>
-        <ProductSearch products={products} displayProduct={this.displayProduct}/> 
+        <ProductSearch 
+          searchChange={queryProducts}
+          queriedProducts={queriedProducts}
+          searchCancel={clearQueriedProducts}
+          clearSearchValue={clearSearchValue}
+          searchValue={searchValue}
+        /> 
           <div>
             <Switch>
               <Route 
                 exact path='/products' 
-                render={(props) => <ProductIndexDisplay products={products} onProductClick={this.addProductToCart} />} 
+                render={(props) => <ProductIndexDisplay 
+                  products={products} 
+                  onProductClick={this.addProductToCart} />} 
               />
               <Route path={`${match.url}/:productId`} component={ProductShow}/>
             </Switch>
@@ -70,13 +77,18 @@ class ProductsPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
-    isLoading: state.productsAreLoading
+    areLoading: state.productsAreLoading,
+    queriedProducts: state.queriedProducts,
+    searchValue: state.searchValue
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchData: (url) => dispatch(productsFetchData(url))
+    fetchData: (url) => dispatch(productsFetchData(url)),
+    queryProducts: (query) => dispatch(queriedProductsFetchData(query)),
+    clearQueriedProducts: () => dispatch(clearQueriedProducts()),
+    clearSearchValue: () => dispatch(clearSearchValue())
   };
 };
 

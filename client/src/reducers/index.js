@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
-import {products, productsAreLoading} from './products_reducer';
+import {products, productsAreLoading, queriedProducts, searchValue} from './products_reducer';
 
 export default combineReducers({
   products,
-  productsAreLoading
+  productsAreLoading,
+  queriedProducts,
+  searchValue
 });
