@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
+import '../css/ProductShow.css'
  
 const ProductShow = ({ product }) =>
-  <div className="col-md-8">
+  <div id="product-show" className="col-md-8">
     <h2>{product.title}</h2>
     <p>{product.description}</p>
   </div>;

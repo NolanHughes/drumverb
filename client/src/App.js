@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Header from './components/Header'
-import Intro from './components/Intro'
 import ProductShow from './components/ProductShow'
 import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
@@ -36,14 +35,16 @@ class App extends React.Component {
     this.props.fetchData('http://localhost:3000/api/products');
   }
   render() {
+    const { cart } = this.state
+
     return (
       <Router>
         <div>          
           <Header />
-          <Intro />            
+                   
           <Switch>
             <Route exact path='/' component={ProductsPage} />
-            <Route path='/cart' render={(props) => <Cart />} />
+            <Route path='/cart' render={(props) => <Cart cart={cart} />} />
             <Route path='/products/:productId' component={ProductShow}/>           
           </Switch>
         </div>
