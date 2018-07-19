@@ -18,11 +18,12 @@
 #cart-item-section {
 	margin-top: 113px;
 	width: 720px;
+	background-color: white;
+  border-radius: 6px;
 }
 
 .cart-row {
-	height: 151;
-	border: 1px solid black;
+	height: 151px;
 }
 
 .cart-item-paragraph {
@@ -30,7 +31,18 @@
 	font-size: 16px;
 }
 
-.price-column {
+#cart-item-section .price-column {
 	text-align: right;
 	font-size: 16px;
+	padding-right: 28px;
+}
+
+#cart-item-section .image-div {
+	padding-left: 28px;
+}
+
+.in-cart-product-image {
+	height: 120px;
+	width: 120px;
+	border-radius: 6px;
 }

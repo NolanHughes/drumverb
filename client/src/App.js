@@ -8,6 +8,8 @@ import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
 import { productsFetchData } from './actions/products';
 
+import './css/App.css'
+
 class App extends React.Component {
   //***change all this shit!
   constructor(props) {
@@ -36,7 +38,7 @@ class App extends React.Component {
 
     return (
       <Router>
-        <div>          
+        <div id='main-div'>          
           <Header />                  
           <Switch>
             <Route exact path='/' component={ProductsPage} />
