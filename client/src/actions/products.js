@@ -89,3 +89,12 @@ export function addProductToCart(product) {
     product
   }
 }
+                
+export function removeProductFromCart(index) {
+  return {
+    type: 'REMOVE_PRODUCT_FROM_CART',
+    index
+  }
+}
+
+

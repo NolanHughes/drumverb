@@ -6,7 +6,7 @@ import Header from './components/Header'
 import ProductShow from './components/ProductShow'
 import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
-import { productsFetchData } from './actions/products';
+import { productsFetchData, removeProductFromCart } from './actions/products';
 
 import './css/App.css'
 
@@ -33,8 +33,7 @@ class App extends React.Component {
   }
 
   render() {
-    // const { cart } = this.state
-    const {  cart } = this.props
+    const { cart, removeProductFromCart } = this.props
 
     return (
       <Router>
@@ -42,7 +41,7 @@ class App extends React.Component {
           <Header />                  
           <Switch>
             <Route exact path='/' component={ProductsPage} />
-            <Route path='/cart' render={(props) => <Cart cart={cart} />} />
+            <Route path='/cart' render={(props) => <Cart cart={cart} removeProductFromCart={removeProductFromCart}/>} />
             <Route path='/products/:productId' component={ProductShow}/>           
           </Switch>
         </div>
@@ -61,7 +60,8 @@ const mapStateToProps = (state) => {
 //Rename fetchData to be more specific about fetch all products
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchData: (url) => dispatch(productsFetchData(url))
+    fetchData: (url) => dispatch(productsFetchData(url)),
+    removeProductFromCart: (product) => dispatch(removeProductFromCart(product))
   };
 };
 
