@@ -16,11 +16,6 @@
   border: 1px solid #dbdbdb;
 }
 
-#product-input:focus {
-/*	outline-width: 0px; 
-  box-shadow: 0px 0px 7px #000000; */
-}
-
 #products-link {
 	color: #F6870F;
 	font-size: 1.2em;
