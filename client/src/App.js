@@ -44,7 +44,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={ProductsPage} />
             <Route path='/cart' render={(props) => <Cart />} />
-            <Route path='/:productId' component={ProductShow}/>           
+            <Route path='/products/:productId' component={ProductShow}/>           
           </Switch>
         </div>
       </Router>

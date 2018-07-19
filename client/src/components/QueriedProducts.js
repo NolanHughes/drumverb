@@ -6,7 +6,7 @@ import '../css/ProductSearch.css'
 const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchValue }) => {
 
 	const productRows = queriedProducts.map((product, idx) => (
-    <Link style={{ display: 'block' }} key={product.id} to={`${product.id}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{product.title}</Link>
+    <Link style={{ display: 'block' }} key={product.id} to={`/products/${product.id}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{product.title}</Link>
 	));
 
   return (
