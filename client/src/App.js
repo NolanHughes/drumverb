@@ -9,7 +9,7 @@ import Cart from './components/Cart'
 import { productsFetchData } from './actions/products';
 
 class App extends React.Component {
-    //***change all this shit!
+  //***change all this shit!
   constructor(props) {
     super(props)
 
@@ -24,11 +24,6 @@ class App extends React.Component {
     );
     this.setState({ cart: filteredProducts });
   }
-
-  // addProductToCart = (product) => {
-  //   const newProducts = this.state.cart.concat(product);
-  //   this.setState({ cart: newProducts });
-  // }
   //***
 
   componentDidMount() {
@@ -57,7 +52,6 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    // products: state.products,
     cart: state.cart
   };
 };

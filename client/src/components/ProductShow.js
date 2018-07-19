@@ -5,31 +5,12 @@ import { addProductToCart } from '../actions/products';
 
 import '../css/ProductShow.css'
  
-// const ProductShow = ({ product }) =>
-//   <div id="product-show" className="col-md-8">
-//     <h2>{product.title}</h2>
-//     <p>{product.description}</p>
-//     <button>Add to cart</button>
-//   </div>;
-
-class ProductShow extends React.Component {
-  // addProductToCart = (product) => {
-  //   const newProducts = this.state.cart.concat(product);
-  //   this.setState({ cart: newProducts });
-  // }
-
-  render() {
-    const { product, addProductToCart } = this.props
-
-    return(
-      <div id="product-show" className="col-md-8">
-        <h2>{product.title}</h2>
-        <p>{product.description}</p>
-        <button onClick={() => addProductToCart(product)}>Add to cart</button>
-      </div>
-    )
-  }
-}
+const ProductShow = ({ product, addProductToCart }) =>
+  <div id="product-show" className="col-md-8">
+    <h2>{product.title}</h2>
+    <p>{product.description}</p>
+    <button onClick={() => addProductToCart(product)}>Add to cart</button>
+  </div>;
  
 const mapStateToProps = (state, ownProps) => {
   const product = state.products.find(product => product.id === parseInt(ownProps.match.params.productId, 10))

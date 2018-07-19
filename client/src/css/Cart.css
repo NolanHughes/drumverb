@@ -15,6 +15,22 @@
 	border-top: 1px solid rgba(34,36,38,.15)
 }
 
-#cart-table {
-	margin-top: 97px;
+#cart-item-section {
+	margin-top: 113px;
+	width: 720px;
+}
+
+.cart-row {
+	height: 151;
+	border: 1px solid black;
+}
+
+.cart-item-paragraph {
+	margin-bottom: 0px;
+	font-size: 16px;
+}
+
+.price-column {
+	text-align: right;
+	font-size: 16px;
 }
