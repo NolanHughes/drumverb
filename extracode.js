@@ -1,0 +1,1 @@
+render={(props) => <ProductShow products={products}/>}

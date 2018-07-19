@@ -82,3 +82,10 @@ export function clearSearchValue() {
     type: 'CLEAR_SEARCH_VALUE'  
   };
 }
+
+export function addProductToCart(product) {
+  return {
+    type: 'ADD_PRODUCT_TO_CART',
+    product
+  }
+}

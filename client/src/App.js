@@ -34,14 +34,15 @@ class App extends React.Component {
   componentDidMount() {
     this.props.fetchData('http://localhost:3000/api/products');
   }
+
   render() {
     const { cart } = this.state
+    const { products } = this.props
 
     return (
       <Router>
         <div>          
-          <Header />
-                   
+          <Header />                  
           <Switch>
             <Route exact path='/' component={ProductsPage} />
             <Route path='/cart' render={(props) => <Cart cart={cart} />} />

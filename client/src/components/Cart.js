@@ -8,6 +8,7 @@ const Cart = ({ cart, onProductClick }) => {
       <td className='right aligned'>{product.description}</td>     
       <td className='right aligned'>{product.image}</td>
       <td className='right aligned' id="item-price">${product.price}</td>
+      
     </tr>
   ));
 
