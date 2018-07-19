@@ -1,15 +1,15 @@
 import React from 'react';
 import '../css/Cart.css'
 
-const Cart = ({cart, onProductClick}) => {
-  const productRows = cart.map((product, idx) => (
-    <tr key={idx} onClick={() => onProductClick(idx)}>
-      <td>{product.title}</td>
-      <td className='right aligned'>{product.description}</td>     
-      <td className='right aligned'>{product.image}</td>
-      <td className='right aligned' id="item-price">${product.price}</td>
-    </tr>
-  ));
+const Cart = ({ cart, onProductClick }) => {
+  // const productRows = cart.map((product, idx) => (
+  //   <tr key={idx} onClick={() => onProductClick(idx)}>
+  //     <td>{product.title}</td>
+  //     <td className='right aligned'>{product.description}</td>     
+  //     <td className='right aligned'>{product.image}</td>
+  //     <td className='right aligned' id="item-price">${product.price}</td>
+  //   </tr>
+  // ));
 
   return (
     <table className='ui selectable structured large table'>
@@ -27,14 +27,14 @@ const Cart = ({cart, onProductClick}) => {
         </tr>
       </thead>
       <tbody>
-        {productRows}
+        {/*{productRows}*/}
       </tbody>
       <tfoot>
         <tr id="total">
           <td>Total</td>
           <td className='right aligned' id='blank'></td>
           <td className='right aligned' id='blank'></td>
-          <td className='right aligned' > ${sum(cart, 'price')} </td>
+          {/*<td className='right aligned' > ${sum(cart, 'price')} </td>*/}
         </tr>
       </tfoot>
     </table>
@@ -43,8 +43,8 @@ const Cart = ({cart, onProductClick}) => {
 
 export default Cart
 
-function sum(products, prop) {
-  return products.reduce((memo, product) => (
-    parseInt(product[prop], 10) + memo
-  ), 0.0).toFixed(2);
-}
+// function sum(products, prop) {
+//   return products.reduce((memo, product) => (
+//     parseInt(product[prop], 10) + memo
+//   ), 0.0).toFixed(2);
+// }

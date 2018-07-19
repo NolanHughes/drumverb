@@ -34,7 +34,7 @@ class ProductSearch extends React.Component {
           />
           <button id="search-button"><i className="search icon"></i></button>
         </form>     
-        <Link to='/products' id="products-link">Products</Link>
+        <Link to='/' id="products-link">Products</Link>
         <QueriedProducts 
           queriedProducts={queriedProducts}
           clearQueriedProducts={clearQueriedProducts} 

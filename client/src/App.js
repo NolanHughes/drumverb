@@ -1,21 +1,69 @@
 import React from 'react';
-import ProductsPage from './containers/ProductsPage';
-import './css/App.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/Header'
+import Intro from './components/Intro'
+import ProductShow from './components/ProductShow'
+import ProductsPage from './containers/ProductsPage';
+import Cart from './components/Cart'
+import { productsFetchData } from './actions/products';
 
 class App extends React.Component {
-  //Eventually change so /products is landing page
+    //***change all this shit!
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      cart: []
+    }
+  }
+
+  removeProduct = (itemIndex) => {
+    const filteredProducts = this.state.cart.filter(
+      (item, idx) => itemIndex !== idx,
+    );
+    this.setState({ cart: filteredProducts });
+  }
+
+  addProductToCart = (product) => {
+    const newProducts = this.state.cart.concat(product);
+    this.setState({ cart: newProducts });
+  }
+  //***
+
+  componentDidMount() {
+    this.props.fetchData('http://localhost:3000/api/products');
+  }
   render() {
     return (
       <Router>
-        <div>
-          <Route exact path="/" component={() => <div id="welcome-div">Welcome to Drumverb! Click on the products link to get started.</div>}/>
-          <Route path='/products' component={ProductsPage}/>
+        <div>          
+          <Header />
+          <Intro />            
+          <Switch>
+            <Route exact path='/' component={ProductsPage} />
+            <Route path='/cart' render={(props) => <Cart />} />
+            <Route path='/:productId' component={ProductShow}/>           
+          </Switch>
         </div>
       </Router>
     );
   }
 }
 
-export default App;
+
+const mapStateToProps = (state) => {
+  return {
+    products: state.products
+  };
+};
+
+//Rename fetchData to be more specific about fetch all products
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchData: (url) => dispatch(productsFetchData(url))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
