@@ -6,6 +6,10 @@
 	border-right: 1px solid rgba(34,36,38,.15);
 }
 
+#cart-price {
+	border-right: 1px solid rgba(34,36,38,.15);
+}
+
 #total {
 	border-right: 1px solid black;
 	border-top: 1px solid rgba(34,36,38,.15)

@@ -25,10 +25,10 @@ class App extends React.Component {
     this.setState({ cart: filteredProducts });
   }
 
-  addProductToCart = (product) => {
-    const newProducts = this.state.cart.concat(product);
-    this.setState({ cart: newProducts });
-  }
+  // addProductToCart = (product) => {
+  //   const newProducts = this.state.cart.concat(product);
+  //   this.setState({ cart: newProducts });
+  // }
   //***
 
   componentDidMount() {
@@ -36,8 +36,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { cart } = this.state
-    const { products } = this.props
+    // const { cart } = this.state
+    const {  cart } = this.props
 
     return (
       <Router>
@@ -57,7 +57,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products
+    // products: state.products,
+    cart: state.cart
   };
 };
 

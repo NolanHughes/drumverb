@@ -19,8 +19,8 @@ class ProductShow extends React.Component {
   // }
 
   render() {
-    const { product, products, addProductToCart } = this.props
-    
+    const { product, addProductToCart } = this.props
+
     return(
       <div id="product-show" className="col-md-8">
         <h2>{product.title}</h2>
@@ -36,8 +36,7 @@ const mapStateToProps = (state, ownProps) => {
 
   if (product) {
     return { 
-      product,
-      products: state.products
+      product
     }
   } else {
     return { product: {} }
