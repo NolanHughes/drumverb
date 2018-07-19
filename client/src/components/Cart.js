@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Cart.css'
+import '../css/Cart.css'
 
 const Cart = ({cart, onProductClick}) => {
   const productRows = cart.map((product, idx) => (

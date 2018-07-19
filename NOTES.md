@@ -7,4 +7,6 @@
 4. Implement categories/tags/more properties on rails side so querying, filtering, and sorting can be implemented like the real website.
 		-Have sidebar and dropdowns for filtering/sorting
 5. Get search button to work in SearchedProducts
-6. Finish styling it just like reverb
+6. Change landing page to be current products
+7. Finish styling it just like reverb
+8. Organize images and css files

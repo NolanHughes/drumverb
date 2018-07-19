@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Intro.css'
+import '../css/Intro.css'
 
 const Intro = () => (
 	<div id="intro">

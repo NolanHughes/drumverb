@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import '../ProductSearch.css'
+import '../css/ProductSearch.css'
 
 const QueriedProducts = ({
   queriedProducts, 

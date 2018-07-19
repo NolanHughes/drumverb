@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import ProductSearch from '../containers/ProductSearch';
-import '../Header.css'
+import '../css/Header.css'
 
 const Header = () => (
   <header>

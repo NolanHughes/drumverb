@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import '../ProductIndexDisplay.css'
+import '../css/ProductIndexDisplay.css'
 
 const ProductIndexDisplay = ({ products, onProductClick }) => {
   const renderProducts = products.map(product => (
