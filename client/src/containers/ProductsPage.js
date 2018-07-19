@@ -47,8 +47,7 @@ class ProductsPage extends React.Component {
           <Intro />        
           <div className='ui container' id="switch-div">
             <Switch>
-              <Route 
-                exact path='/products' 
+              <Route exact path='/products' 
                 render={
                   (props) => <ProductIndexDisplay 
                   products={products} 

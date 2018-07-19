@@ -1,7 +1,10 @@
 import React from 'react';
-import QueriedProducts from '../components/QueriedProducts'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+
 import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/products';
+import QueriedProducts from '../components/QueriedProducts'
+import '../css/ProductSearch.css'
 
 class ProductSearch extends React.Component {
   //***use value to trigger queriedProductsFetchData() on search bar when it is set up for categories/tags***
@@ -20,14 +23,24 @@ class ProductSearch extends React.Component {
       clearSearchValue } = this.props
 
     return (
-      <QueriedProducts 
-        queriedProducts={queriedProducts}
-        queryProducts={queryProducts} 
-        clearQueriedProducts={clearQueriedProducts} 
-        searchValue={searchValue}
-        clearSearchValue={clearSearchValue}
-        searchButton={this.searchButton}
-      />
+      <div id='product-search' className="nav-element nine wide column">
+        <form onSubmit={this.searchButton}>
+          <input
+            id='product-input'
+            type='text'
+            placeholder='Shop for new & used drums...'//Change to products upon expanding
+            value={searchValue}
+            onChange={queryProducts}
+          />
+          <button id="search-button"><i className="search icon"></i></button>
+        </form>     
+        <Link to='/products' id="products-link">Products</Link>
+        <QueriedProducts 
+          queriedProducts={queriedProducts}
+          clearQueriedProducts={clearQueriedProducts} 
+          clearSearchValue={clearSearchValue}
+        />
+      </div>     
     )
   }
 }
