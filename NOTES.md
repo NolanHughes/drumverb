@@ -3,7 +3,8 @@
 		-Have this post to api (Maybe add users so the functionality is better, but not necessary)
 		-Minimal styling
 		-Make buy button that deletes the cart
-		-Make alerts when products added to cart
+		-Make alerts when products are added to cart
+		-Dont have multiple instances of same product. Set quantities and render a number besides if added multiple times.
 2. Create a new product route/component/reducer/action
 		-Have this post to api (Maybe add users so the functionality is better, but not necessary)
 3. Refactor products.js actions

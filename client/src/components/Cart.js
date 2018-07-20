@@ -1,52 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux';
 
-import { removeProductFromCart } from '../actions/products';
+import EmptyCart from './EmptyCart'
+import CartProductRows from './CartProductRows'
 import '../css/Cart.css'
 
 const Cart = ({ cart, removeProductFromCart }) => {
-  const productRows = cart.map((product, index) => (
-    <div className="ui grid row cart-row" key={product.id}>
-      <div className="four wide column image-div">
-        <Link to={`/products/${product.id}`}>
-          <img className="in-cart-product-image" src="https://images.reverb.com/image/upload/s--E8z-Spvm--/a_exif,c_thumb,f_jpg,fl_progressive,g_south,h_226,q_auto:eco,w_226/v1531944161/mwfsjtzjruqblf6n5wbq.jpg" alt="title"/>
-        </Link>
-      </div>
-      <div className="eight wide column">
-        <p className="cart-item-paragraph">{product.title}</p>
-        <p className="cart-item-paragraph">Seller: A seller</p>
-        <p className="cart-item-paragraph">Ships from: A place</p>
-        <ul>
-          <li>
-            <a onClick={() => removeProductFromCart(index)}>Remove</a>
-          </li>
-        </ul>
-      </div>
-      <div className="four wide column price-column">
-        <p>${product.price}</p>
-      </div>
-    </div>
-  ));
+  let cartSection
+
+  if(cart.length === 0) {
+    cartSection = <div>
+                    <EmptyCart />
+                  </div>
+  } else {
+    cartSection = <div id="cart-item-section" className="ui container">
+                    <h3>Cart</h3>
+                    <CartProductRows cart={cart} />
+                  </div>
+  }
 
   return (
-      <section id="cart-item-section" className="ui container">
-        <h3>Cart</h3>
-        {productRows}
-      </section>
+    <section id="cart-section">
+      {cartSection}
+    </section>
   );
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeProductFromCart: (product) => dispatch(removeProductFromCart(product))
-  };
-};
-
-export default connect(null, mapDispatchToProps)(Cart)
-
-function sum(products, prop) {
-  return products.reduce((memo, product) => (
-    parseInt(product[prop], 10) + memo
-  ), 0.0).toFixed(2);
-}
+export default Cart

@@ -6,7 +6,7 @@ import { addProductToCart } from '../actions/products';
 import '../css/ProductShow.css'
  
 const ProductShow = ({ product, addProductToCart }) =>
-  <div id="product-show" className="col-md-8">
+  <div id="product-show" className="col-md-8 ui container">
     <h2>{product.title}</h2>
     <p>{product.description}</p>
     <button onClick={() => addProductToCart(product)}>Add to cart</button>

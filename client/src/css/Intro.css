@@ -1,7 +1,8 @@
 #intro {
 	background-image: url(../images/reverb-drum-header.jpg);
 	background-size: cover;
-	margin-top: 97px;
+	position: relative;
+  top: 97px;
 }
 
 #page-title {
