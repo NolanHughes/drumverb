@@ -10,7 +10,17 @@ const Header = () => (
 	    <Link to='/' id={"nav-logo"} className="nav-element three wide column">Drumverb</Link>
 	  	<ProductSearch />
 	  	{/*Add in new/selling routes as well*/}
-	  	<Link to='/cart' id="cart-link" className="nav-element four wide column">Cart</Link> 
+	  	<ul>
+		  	<li id="cart-li">
+			  	<Link to='/cart' id="cart-link" className="nav-element four wide column">
+			  		<i className="shopping cart icon" id="shoping-cart-icon">
+			  		</i>
+			  		<div id='cart-icon-label'>
+			  			Cart
+			  		</div>
+			  	</Link>
+		  	</li>
+	  	</ul>
 	  </nav>
   </header>
 

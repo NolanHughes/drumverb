@@ -23,4 +23,19 @@
 
 #cart-link {
 	color: #414141;
+	text-align: center;
+}
+
+#shoping-cart-icon {
+  font-size: 1.8em;
+}
+
+#cart-icon-label {
+	font-size: .8em;
+  line-height: .9em;
+}
+
+#cart-li {
+	list-style: none;
+  margin-top: 20px;
 }
