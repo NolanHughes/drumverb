@@ -1,19 +1,27 @@
 class ProductsController < ApplicationController
   def index
-    q = params[:q]
-
     render(
       status: 200,
-      json: Product.where(["title LIKE ? OR description LIKE ?", "%#{q}%", "%#{q}%"]).limit(100)#Maybe modify this
+      json: Product.all
     )
+    #Old way
+    # q = params[:q]
+
+    # render(
+    #   status: 200,
+    #   json: Product.all(["title LIKE ? OR description LIKE ?", "%#{q}%", "%#{q}%"]).limit(100)#Maybe modify this
+    # )
+
   end
 
-  def new
+  # def create
+  # 	Product.create(product_params)
+  # end
 
-  end
+  # private
 
-  def create
-  	
-  end
+	 #  def product_params
+	 #    params.require(:item).permit(:title, :description, :price, :image_url)
+	 #  end
 
 end
