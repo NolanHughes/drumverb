@@ -7,4 +7,13 @@ class ProductsController < ApplicationController
       json: Product.where(["title LIKE ? OR description LIKE ?", "%#{q}%", "%#{q}%"]).limit(100)#Maybe modify this
     )
   end
+
+  def new
+
+  end
+
+  def create
+  	
+  end
+
 end
