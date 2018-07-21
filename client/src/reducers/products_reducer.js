@@ -51,3 +51,13 @@ export function cart(state = [], action) {
 			return state
 	}
 }
+
+export function addProduct(state = [], action) {
+	debugger
+	switch (action.type) {
+		case 'ADD_NEW_PRODUCT_SUCCESS':
+			return [...state, action.product];
+		default:
+			return state;
+	}
+}
