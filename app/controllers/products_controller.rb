@@ -14,14 +14,15 @@ class ProductsController < ApplicationController
 
   end
 
-  # def create
-  # 	Product.create(product_params)
-  # end
+  def create  	
+  	product = Product.create(product_params)
+    render json: product
+  end
 
-  # private
+  private
 
-	 #  def product_params
-	 #    params.require(:item).permit(:title, :description, :price, :image_url)
-	 #  end
+	  def product_params
+	    params.require(:product).permit(:title, :description, :price, :image_url)
+	  end
 
 end
