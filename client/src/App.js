@@ -6,7 +6,7 @@ import Header from './components/Header'
 import ProductShow from './components/ProductShow'
 import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
-import { fetchAllProducts } from './actions/products';
+import { fetchAllProducts } from './actions/index';//***
 import SellProduct from './components/SellProduct'
 
 import './css/App.css'

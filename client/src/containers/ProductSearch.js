@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
-import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/products';
+import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/index';
 import QueriedProducts from '../components/QueriedProducts'
 import '../css/ProductSearch.css'
 
