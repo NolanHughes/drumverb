@@ -113,7 +113,7 @@ export function addNewProduct(product) {
   const image_url = product.refs.image_url.value;
 
   const data = { product: {title: title, description: description, price: price, image_url: image_url} }
-
+  debugger
   return (dispatch) => {
     fetch(url, {
       method: 'post',
