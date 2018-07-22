@@ -5,10 +5,8 @@
 		-Make buy button that deletes the cart
 		-Make alerts when products are added to cart
 		-Dont have multiple instances of same product. Set quantities and render a number besides if added multiple times.
-2. Create a new product route/component/reducer/action
-		-Have this post to api (Maybe add users so the functionality is better, but not necessary)
-3. Refactor products.js actions
-4. Implement categories/tags/more properties on rails side so querying, filtering, and sorting can be implemented like the real website.
+2. Refactor products.js actions
+3. Implement categories/tags/more properties on rails side so querying, filtering, and sorting can be implemented like the real website.
 		-Have sidebar and dropdowns for filtering/sorting
-5. Get search button to work in SearchedProducts
-6. Finish styling it just like reverb
+4. Get search button to work in SearchedProducts
+5. Finish styling it just like reverb

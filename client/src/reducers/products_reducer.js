@@ -8,9 +8,8 @@ export function productsAreLoading(state = false, action) {
 }
 
 export function products(state = [], action) {
-	debugger
 	switch (action.type) {
-		case 'PRODUCTS_FETCH_DATA_SUCCESS':
+		case 'PRODUCTS_FETCH_SUCCESS':
 			return action.products;
 		case 'ADD_NEW_PRODUCT_SUCCESS':
 			return [...state, action.product ]
@@ -21,7 +20,7 @@ export function products(state = [], action) {
 
 export function queriedProducts(state = [], action) {
 	switch (action.type) {
-		case 'QUERIED_PRODUCTS_FETCH_DATA_SUCCESS':
+		case 'QUERIED_PRODUCTS_FETCH_SUCCESS':
 			return action.products;
 		case 'CLEAR_QUERIED_PRODUCTS':
 			return [];
