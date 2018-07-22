@@ -8,9 +8,12 @@ export function productsAreLoading(state = false, action) {
 }
 
 export function products(state = [], action) {
+	// debugger
 	switch (action.type) {
 		case 'PRODUCTS_FETCH_DATA_SUCCESS':
 			return action.products;
+		case 'ADD_NEW_PRODUCT_SUCCESS':
+			return [...state, action.product ]//work on this one
 		default:
 			return state;
 	}
@@ -52,12 +55,16 @@ export function cart(state = [], action) {
 	}
 }
 
-export function addProduct(state = [], action) {
-	debugger
-	switch (action.type) {
-		case 'ADD_NEW_PRODUCT_SUCCESS':
-			return [...state, action.product];
-		default:
-			return state;
-	}
-}
+// export function addProduct(state = [], action) {
+// 	// debugger
+// 	switch (action.type) {
+// 		case 'ADD_NEW_PRODUCT_SUCCESS':
+// 			// return [...state, action.product];
+// 			 return { 
+//         ...state,
+//         arr: [...state.arr, action.product]
+//     	}
+// 		default:
+// 			return state;
+// 	}
+// }

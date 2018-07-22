@@ -97,8 +97,7 @@ export function removeProductFromCart(index) {
   }
 }
 
-export function addNewProductSuccess(product) {
-  debugger
+export function addNewProductSuccess(product, products) {
   return {
     type: 'ADD_NEW_PRODUCT_SUCCESS',
     product
@@ -106,7 +105,6 @@ export function addNewProductSuccess(product) {
 }
 
 export function addNewProduct(product) {
-  debugger
   const url = `http://localhost:3000/api/products`
 
   const title = product.refs.title.value;
@@ -135,5 +133,4 @@ export function addNewProduct(product) {
     .then((product) => dispatch(addNewProductSuccess(product)))
   };
 }
-
 
