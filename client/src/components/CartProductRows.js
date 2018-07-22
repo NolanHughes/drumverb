@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
-import { removeProductFromCart } from '../actions/products';
+import { removeProductFromCart } from '../actions/index';
 import '../css/Cart.css'
 
 const CartProductRows = ({ cart, removeProductFromCart }) => {

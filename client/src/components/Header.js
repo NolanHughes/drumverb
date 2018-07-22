@@ -9,8 +9,12 @@ const Header = () => (
 	  <nav id="main-nav" className="ui grid middle aligned">
 	    <Link to='/' id={"nav-logo"} className="nav-element three wide column">Drumverb</Link>
 	  	<ProductSearch />
-	  	{/*Add in new/selling routes as well*/}
 	  	<ul>
+	  		<li id="sell-product-li">
+			  	<Link to='/sell' id="sell-product-link" className="nav-element four wide column">
+			  			Sell
+			  	</Link>
+		  	</li>
 		  	<li id="cart-li">
 			  	<Link to='/cart' id="cart-link" className="nav-element four wide column">
 			  		<i className="shopping cart icon" id="shoping-cart-icon">

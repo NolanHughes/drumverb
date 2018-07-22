@@ -7,7 +7,7 @@ import ProductShow from './components/ProductShow'
 import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
 import { fetchAllProducts } from './actions/products';
-import NewProduct from './components/NewProduct'
+import SellProduct from './components/SellProduct'
 
 import './css/App.css'
 
@@ -27,7 +27,7 @@ class App extends React.Component {
             <Route exact path='/' component={ProductsPage} />
             <Route path='/cart' render={(props) => <Cart cart={cart} />} />
             <Route path='/products/:productId' component={ProductShow}/>
-            <Route path='/new' component={NewProduct}/>            
+            <Route path='/sell' component={SellProduct}/>            
           </Switch>
         </div>
       </Router>
