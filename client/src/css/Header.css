@@ -37,12 +37,11 @@
 
 #cart-li {
 	list-style: none;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 #sell-product-li {
 	list-style: none;
-  margin-top: 20px;
   margin-right: 15px;
 }
 
@@ -56,6 +55,22 @@
   font-weight: 700;
 }
 
+#cart-count {
+  position: absolute;
+  display: block;
+  background: #f6870f;
+  color: white;
+  border-radius: 4px;
+  line-height: 0.6;
+  padding: 4px;
+  text-align: center;
+  font-weight: 700;
+  top: 21px;
+  right: 237px;
+  font-size: 12px;
+}
+
 ul li{
 	display: inline-block;
+  vertical-align: middle;
 }
