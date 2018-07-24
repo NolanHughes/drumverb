@@ -81,3 +81,22 @@
 	color: #414141;
 	font-size: 19px;
 }
+
+.remove-product-icon {
+	margin-right: 3px;
+  font-weight: 900;
+  font-size: 17px;
+}
+
+#remove-link {
+	color: #414141;
+}
+
+#remove-link:hover {
+	cursor: pointer;
+}
+
+#remove-link-ul {
+	padding: 0px;
+  margin: 0px;
+}

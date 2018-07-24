@@ -1,5 +1,4 @@
 1. Cart
-		-Display the number of products on button
 		-Have this post to api (Maybe add users so the functionality is better, but not necessary)
 		-Minimal styling
 		-Make buy button that deletes the cart
