@@ -141,3 +141,20 @@
 #table-separator {
 	width: 95%;
 }
+
+#buy-container {
+	width: 720px;
+}
+
+#buy-container button {
+	float: right;
+  color: #fff;
+  border: 1px solid #56b156;
+  background: #59b359;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-top: 20px;
+  height: 39px;
+  width: 318px;
+}
