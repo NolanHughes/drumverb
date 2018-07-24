@@ -1,12 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import EmptyCart from './EmptyCart'
 import CartProductRows from './CartProductRows'
 import CartSumTable from './CartSumTable'
-import BuyButton from './BuyButton'
+import { deleteCart } from '../actions/index'
+
 import '../css/Cart.css'
 
-const Cart = ({ cart, removeProductFromCart }) => {
+const Cart = ({ cart, removeProductFromCart, deleteCart }) => {
   let cartSection
 
   if(cart.length === 0) {
@@ -22,7 +24,7 @@ const Cart = ({ cart, removeProductFromCart }) => {
                       <CartSumTable cart={cart} />                     
                     </div>
                     <div className="ui container" id="buy-container">
-                      <button onClick={() => alert("Hello There")}>Buy</button>
+                      <button onClick={() => {deleteCart(cart); alert("Your cart has been purchased")}}>Buy</button>
                     </div>
                   </div>
                   
@@ -35,4 +37,11 @@ const Cart = ({ cart, removeProductFromCart }) => {
   );
 }
 
-export default Cart
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteCart: (cart) => dispatch(deleteCart(cart))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Cart);

@@ -1,4 +1,4 @@
-import {addProductToCart, removeProductFromCart } from './cart'
+import {addProductToCart, removeProductFromCart, deleteCart } from './cart'
 import { 
 	queriedProductsFetchData, 
 	queriedProductsFetchDataSuccess,
@@ -16,6 +16,7 @@ import {
 
 export {addProductToCart}
 export {removeProductFromCart}
+export {deleteCart}
 export {queriedProductsFetchData}
 export {queriedProductsFetchDataSuccess}
 export {searchValue}

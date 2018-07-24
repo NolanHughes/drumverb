@@ -49,6 +49,8 @@ export function cart(state = [], action) {
 				...state.slice(0, action.index),
         ...state.slice(action.index + 1)
       ];
+    case 'DELETE_CART':
+    	return []
 		default:
 			return state
 	}

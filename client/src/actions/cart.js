@@ -11,3 +11,10 @@ export function removeProductFromCart(index) {
     index
   }
 }
+
+export function deleteCart(cart) {
+	return {
+		type: 'DELETE_CART',
+		cart
+	}
+}
