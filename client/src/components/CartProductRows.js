@@ -24,7 +24,7 @@ const CartProductRows = ({ cart, removeProductFromCart }) => {
         </ul>
       </div>
       <div className="four wide column price-column">
-        <p>${product.price}</p>
+        <p>${product.price}.00</p>
       </div>
     </div>
   ));
@@ -43,9 +43,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(CartProductRows)
-
-function sum(products, prop) {
-  return products.reduce((memo, product) => (
-    parseInt(product[prop], 10) + memo
-  ), 0.0).toFixed(2);
-}

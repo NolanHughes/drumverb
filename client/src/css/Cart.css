@@ -100,3 +100,44 @@
 	padding: 0px;
   margin: 0px;
 }
+
+.align-right {
+	text-align: right;
+}
+
+#sum-table {
+	width: 95%;
+  margin: auto;
+  line-height: 1.6em;
+  color: #414141;
+}
+
+#sum-table td {
+	padding-bottom: 5px;
+}
+
+#total-label {
+	font-size: 24px;
+  font-weight: 700;
+}
+
+.total {
+	font-size: 24px;
+  color: #59b359;
+  font-weight: 700;
+}
+
+.price-currency {
+	font-size: 14px;
+}
+
+#cart-label {
+	padding: 18px 0 0 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #414141;
+}
+
+#table-separator {
+	width: 95%;
+}
