@@ -5,7 +5,7 @@
 		-Make buy button that deletes the cart
 		-Make alerts when products are added to cart
 		-Dont have multiple instances of same product. Set quantities and render a number besides if added multiple times.
-3. Implement categories/tags/more properties on rails side so querying, filtering, and sorting can be implemented like the real website.
+2. Implement categories/tags/more properties on rails side so querying, filtering, and sorting can be implemented like the real website.
 		-Have sidebar and dropdowns for filtering/sorting
-4. Get search button to work in SearchedProducts
-5. Finish styling it just like reverb
+3. Get search button to work better in SearchedProducts after adjusting for categories, tags, etc.
+4. Finish styling it just like reverb
