@@ -12,6 +12,7 @@ class Product < ActiveRecord::Base
   	finish
   	category
   	made_in
+    created_at
   }
   def as_json(opts = {})
     super.slice(*JSON_KEYS)
