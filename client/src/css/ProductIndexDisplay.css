@@ -42,3 +42,24 @@
   height: 259px;
   width: auto;
 }
+
+.search-overview {
+  margin-bottom: 30px;
+}
+
+.search-overview .product-count {
+  color: #414141;
+  margin-bottom: 24px;
+  margin-left: 11px;
+  font-weight: 400;
+}
+
+#filtered-by {
+  margin-left: 11px;
+  padding-left: 25px;
+}
+
+#sort-dropdown {
+  text-align: right;
+  width: 23%!important;
+}
