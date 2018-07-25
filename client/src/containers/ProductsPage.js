@@ -2,13 +2,13 @@ import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import ProductIndexDisplay from '../components/ProductIndexDisplay';
+import DisplayIndexProducts from '../components/DisplayIndexProducts';
 import SearchOverview from '../components/SearchOverview';
 import Intro from '../components/Intro'
 
 class ProductsPage extends React.Component { 
   render() {
-    const { products, sortValue, searchValue } = this.props
+    const { products, sortValue, match } = this.props
     {/*Maybe move dynamicSort and if/else statement?*/}
     function dynamicSort(property) {
       var sortOrder = 1;
@@ -35,17 +35,9 @@ class ProductsPage extends React.Component {
     return (
       <div>
         <Intro />      
-        <div className='ui container' id="switch-div">  
+        <div className='ui container switch-div' id="switch-div">  
           <SearchOverview />
-          <Switch>
-            <Route 
-              exact path='/' 
-              render={
-                (props) => <ProductIndexDisplay 
-                products={products} />
-              } 
-            />
-          </Switch>
+          <DisplayIndexProducts products={products} />
         </div>
       </div>
     );
@@ -55,8 +47,7 @@ class ProductsPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
-    sortValue: state.sortValue,
-    searchValue: state.searchValue
+    sortValue: state.sortValue
   };
 };
 
