@@ -1,17 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { withRouter } from 'react-router'
 
 import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/index';
 import QueriedProducts from '../components/QueriedProducts'
 import '../css/ProductSearch.css'
 
 class ProductSearch extends React.Component {
-  //***use value to trigger queriedProductsFetchData() on search bar when it is set up for categories/tags***
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  }
+
   searchButton = (e) => {
     e.preventDefault()
-    const value = e.target.firstChild.value
-    alert(`Your input is ${value}`)
+
+    this.props.history.push(`/filtered-products/${this.props.searchValue}`);
+    this.props.clearQueriedProducts()
+    this.props.clearSearchValue()
   }
 
   render() {   
@@ -24,7 +31,7 @@ class ProductSearch extends React.Component {
 
     return (
       <div id='product-search' className="nav-element nine wide column">
-        <form onSubmit={this.searchButton}>
+        <form onSubmit={this.searchButton.bind(this)}>
           <input
             id='product-input'
             type='text'
@@ -60,4 +67,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductSearch);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductSearch));

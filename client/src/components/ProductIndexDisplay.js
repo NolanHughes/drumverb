@@ -5,8 +5,6 @@ import '../css/ProductIndexDisplay.css'
 
 const ProductIndexDisplay = ({ products, onProductClick }) => {
   const renderProducts = products.map(product => (
-
-
     <li key={product.id} className="four wide column centered list-item ">
       <Link to={`/products/${product.id}`}>
         <div className="reframe">

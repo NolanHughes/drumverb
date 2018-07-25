@@ -8,7 +8,7 @@ import Intro from '../components/Intro'
 
 class ProductsPage extends React.Component { 
   render() {
-    const { products, sortValue } = this.props
+    const { products, sortValue, searchValue } = this.props
     {/*Maybe move dynamicSort and if/else statement?*/}
     function dynamicSort(property) {
       var sortOrder = 1;
@@ -25,7 +25,7 @@ class ProductsPage extends React.Component {
     }
 
     if (sortValue === "published_at|desc") {
-        products.sort(dynamicSort("created_at"))
+        products.sort(dynamicSort("-created_at"))
     } else if (sortValue === "price|asc") {
         products.sort(dynamicSort("price"))
     } else if (sortValue === "price|desc") {
@@ -39,7 +39,7 @@ class ProductsPage extends React.Component {
           <SearchOverview />
           <Switch>
             <Route 
-              path='/' 
+              exact path='/' 
               render={
                 (props) => <ProductIndexDisplay 
                 products={products} />
@@ -55,7 +55,8 @@ class ProductsPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products,
-    sortValue: state.sortValue
+    sortValue: state.sortValue,
+    searchValue: state.searchValue
   };
 };
 

@@ -8,6 +8,7 @@ import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
 import { fetchAllProducts } from './actions/index';//***
 import SellProduct from './components/SellProduct'
+import DisplayFilteredProducts from './components/DisplayFilteredProducts'
 
 import './css/App.css'
 
@@ -27,7 +28,8 @@ class App extends React.Component {
             <Route exact path='/' component={ProductsPage} />
             <Route path='/cart' render={(props) => <Cart cart={cart} />} />
             <Route path='/products/:productId' component={ProductShow}/>
-            <Route path='/sell' component={SellProduct}/>            
+            <Route path='/sell' component={SellProduct}/> 
+            <Route path={`/filtered-products/:searchValue`} component={DisplayFilteredProducts}/>               
           </Switch>
         </div>
       </Router>
@@ -38,7 +40,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    cart: state.cart
+    cart: state.cart,
+    // searchValue: state.searchValue
   };
 };
 

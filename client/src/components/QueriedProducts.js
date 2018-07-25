@@ -1,21 +1,30 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import '../css/ProductSearch.css'
 
-const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchValue }) => {
-
+const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchValue, searchValue }) => {
 	const productRows = queriedProducts.map((product, idx) => (
-    <Link style={{ display: 'block' }} key={product.id} to={`/products/${product.id}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{product.title}</Link>
+    <Link style={{ display: 'block' }} key={product.id} to={`/filtered-products/${product.title}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{product.title}</Link>
 	));
+
+	const searchValueLink = <Link style={{ display: 'block' }} key={0} to={`/filtered-products/${searchValue}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{searchValue}</Link>
 
   return (
 		<div>
+			{searchValueLink}
       {productRows}
     </div>
   );
 };
 
-export default QueriedProducts;
+const mapStateToProps = (state) => {
+	return {
+		searchValue: state.searchValue
+	}
+}
+
+export default connect(mapStateToProps)(QueriedProducts);
 
      
