@@ -1,3 +1,4 @@
+// Refactor these into separate files
 export function productsAreLoading(state = false, action) {
 	switch (action.type) {
 		case 'PRODUCTS_ARE_LOADING':
@@ -51,6 +52,15 @@ export function cart(state = [], action) {
       ];
     case 'DELETE_CART':
     	return []
+		default:
+			return state
+	}
+}
+
+export function sortValue(state = 'published_at|desc', action) {
+	switch (action.type) {
+		case 'SET_SORT_VALUE':
+			return action.value;
 		default:
 			return state
 	}

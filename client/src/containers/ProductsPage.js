@@ -6,22 +6,10 @@ import ProductIndexDisplay from '../components/ProductIndexDisplay';
 import SearchOverview from '../components/SearchOverview';
 import Intro from '../components/Intro'
 
-class ProductsPage extends React.Component {  
-  constructor() {
-    super()
-
-    this.state = {
-      sortValue: 'published_at|desc'
-    }
-  }
-
-  change = (event) => {
-    this.setState({sortValue: event.target.value})
-  }
-
+class ProductsPage extends React.Component { 
   render() {
-    const { products } = this.props
-
+    const { products, sortValue } = this.props
+    {/*Maybe move dynamicSort and if/else statement?*/}
     function dynamicSort(property) {
       var sortOrder = 1;
 
@@ -36,11 +24,11 @@ class ProductsPage extends React.Component {
       }
     }
 
-    if (this.state.sortValue === "published_at|desc") {
+    if (sortValue === "published_at|desc") {
         products.sort(dynamicSort("created_at"))
-    } else if (this.state.sortValue === "price|asc") {
+    } else if (sortValue === "price|asc") {
         products.sort(dynamicSort("price"))
-    } else if (this.state.sortValue === "price|desc") {
+    } else if (sortValue === "price|desc") {
         products.sort(dynamicSort("-price"))
     }
 
@@ -48,7 +36,7 @@ class ProductsPage extends React.Component {
       <div>
         <Intro />      
         <div className='ui container' id="switch-div">  
-          <SearchOverview change={this.change} sortValue={this.state.sortValue}/>
+          <SearchOverview />
           <Switch>
             <Route 
               path='/' 
@@ -66,7 +54,8 @@ class ProductsPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products
+    products: state.products,
+    sortValue: state.sortValue
   };
 };
 
