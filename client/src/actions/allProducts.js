@@ -1,14 +1,11 @@
 export function fetchAllProducts(url) {
   return (dispatch) => {
-    dispatch(productsAreLoading(true));
 
     fetch(url)
     .then((response) => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-
-        dispatch(productsAreLoading(false));
 
         return response;
     })
@@ -17,12 +14,6 @@ export function fetchAllProducts(url) {
   };
 }
 
-export function productsAreLoading(bool) {
-  return {
-    type: 'PRODUCTS_ARE_LOADING',
-    isLoading: bool
-  };
-}
 
 export function fetchAllProductsSuccess(products) {
   return {

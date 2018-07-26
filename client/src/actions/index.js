@@ -9,7 +9,6 @@ import {
 import { addNewProduct, addNewProductSuccess } from './newProduct'
 import {
 	fetchAllProducts, 
-	productsAreLoading, 
 	fetchAllProductsSuccess
 } from './allProducts'
 import { setSortValue } from './sort'
@@ -26,6 +25,5 @@ export { clearQueriedProducts }
 export { addNewProduct }
 export { addNewProductSuccess }
 export { fetchAllProducts }
-export { productsAreLoading }
 export { fetchAllProductsSuccess }
 export { setSortValue }
