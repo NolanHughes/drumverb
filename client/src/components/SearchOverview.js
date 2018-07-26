@@ -29,7 +29,7 @@ const SearchOverview = ({products, setSortValue, sortValue}) => {
 {/*Have a filteredProducts state where it changes based on whatever filters the users specifies*/}
 const mapStateToProps = (state) => {
   return {
-    products: state.products,
+    // products: state.products,
     sortValue: state.sortValue
   }
 }

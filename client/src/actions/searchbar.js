@@ -17,10 +17,7 @@ export function queriedProductsFetchData(query) {
   };
 }
 
-export function queriedProductsFetchDataSuccess(manyProducts) {
-  const MATCHING_ITEM_LIMIT = 4;//Change to top 5 instead of first 5 and make categories or whatever.
-  const products = manyProducts.slice(0, MATCHING_ITEM_LIMIT)
-
+export function queriedProductsFetchDataSuccess(products) {
   return {
     type: 'QUERIED_PRODUCTS_FETCH_SUCCESS',
     products

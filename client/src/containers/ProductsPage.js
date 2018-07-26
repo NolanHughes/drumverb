@@ -36,7 +36,7 @@ class ProductsPage extends React.Component {
       <div>
         <Intro />      
         <div className='ui container switch-div' id="switch-div">  
-          <SearchOverview />
+          <SearchOverview products={products}/>
           <DisplayIndexProducts products={products} />
         </div>
       </div>

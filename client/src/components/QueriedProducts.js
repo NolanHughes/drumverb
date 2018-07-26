@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import '../css/ProductSearch.css'
 
 const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchValue, searchValue }) => {
-	const productRows = queriedProducts.map((product, idx) => (
+	const productRows = queriedProducts.slice(0, 4).map((product, idx) => (
     <Link style={{ display: 'block' }} key={product.id} to={`/filtered-products/${product.title}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{product.title}</Link>
 	));
 

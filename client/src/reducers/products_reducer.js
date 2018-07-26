@@ -1,19 +1,20 @@
 // Refactor these into separate files
-// export function productsAreLoading(state = false, action) {
-// 	switch (action.type) {
-// 		case 'PRODUCTS_ARE_LOADING':
-// 			return action.isLoading;
-// 		default:
-// 			return state;
-// 	}
-// }
-
 export function products(state = [], action) {
 	switch (action.type) {
 		case 'PRODUCTS_FETCH_SUCCESS':
 			return action.products;
 		case 'ADD_NEW_PRODUCT_SUCCESS':
 			return [...state, action.product ]
+		default:
+			return state;
+	}
+}
+
+export function filteredProducts(state = [], action) {
+	// debugger
+	switch (action.type) {
+		case 'SET_FILTERED_PRODUCTS':
+			return action.products;
 		default:
 			return state;
 	}
