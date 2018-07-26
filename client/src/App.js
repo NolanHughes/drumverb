@@ -8,7 +8,7 @@ import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
 import { fetchAllProducts } from './actions/index';//***
 import SellProduct from './components/SellProduct'
-import FilteredProductsPage from './components/FilteredProductsPage'
+import FilteredProductsPage from './containers/FilteredProductsPage'
 
 import './css/App.css'
 
@@ -18,15 +18,13 @@ class App extends React.Component {
   }
 
   render() {
-    const {cart} = this.props
-
     return (
       <Router>
         <div id='main-div'>          
           <Header />                  
           <Switch>
             <Route exact path='/' component={ProductsPage} />
-            <Route path='/cart' render={(props) => <Cart cart={cart} />} />
+            <Route path='/cart' component={Cart} />
             <Route path='/products/:productId' component={ProductShow}/>
             <Route path='/sell' component={SellProduct}/> 
             <Route path={`/filtered-products/:searchValue`} component={FilteredProductsPage}/>               
@@ -37,17 +35,10 @@ class App extends React.Component {
   }
 }
 
-
-const mapStateToProps = (state) => {
-  return {
-    cart: state.cart
-  };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAllProducts: (url) => dispatch(fetchAllProducts(url))
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

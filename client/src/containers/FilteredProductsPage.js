@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import SearchOverview from '../components/SearchOverview';
 import Intro from '../components/Intro'
-import DisplayFilteredProducts from './DisplayFilteredProducts'
+import DisplayFilteredProducts from '../components/DisplayFilteredProducts'
  
 const FilteredProductsPage = ({ products, sortValue }) => {
 

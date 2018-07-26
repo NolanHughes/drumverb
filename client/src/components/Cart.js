@@ -8,7 +8,7 @@ import { deleteCart } from '../actions/index'
 
 import '../css/Cart.css'
 
-const Cart = ({ cart, removeProductFromCart, deleteCart }) => {
+const Cart = ({ cart, deleteCart }) => {
   let cartSection
 
   if(cart.length === 0) {
@@ -38,6 +38,12 @@ const Cart = ({ cart, removeProductFromCart, deleteCart }) => {
   );
 }
 
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -45,4 +51,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
