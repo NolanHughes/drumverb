@@ -56,21 +56,25 @@
 }
 
 #cart-count {
-  position: absolute;
-  display: block;
+  position: relative;
   background: #f6870f;
   color: white;
   border-radius: 4px;
   line-height: 0.6;
   padding: 4px;
-  text-align: center;
   font-weight: 700;
-  top: 15px;
-  right: 233px;
+  bottom: 16px;
+  right: 15px;
   font-size: 12px;
+  float: right;
 }
 
 ul li{
 	display: inline-block;
   vertical-align: middle;
+}
+
+#header-right-li {
+  padding: 0 14px;
+  margin-top: 0;
 }
