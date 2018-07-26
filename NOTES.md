@@ -11,3 +11,5 @@
 4. Finish styling it just like reverb
 
 5. Check to see if you can make components stateless at end
+
+6. Maybe fix navbar changing size? when the intro component is present vs not.
