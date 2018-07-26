@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 import { setSortValue } from '../actions/index';
-  {/*Make sure it displays filtered products count and not all.*/}
+
 const SearchOverview = ({products, setSortValue, sortValue}) => {
 
   return (
@@ -26,10 +26,9 @@ const SearchOverview = ({products, setSortValue, sortValue}) => {
   )
 }
 
-{/*Have a filteredProducts state where it changes based on whatever filters the users specifies*/}
+{/*Make FilteredProducts state work better so it can be implemented*/}
 const mapStateToProps = (state) => {
   return {
-    // products: state.products,
     sortValue: state.sortValue
   }
 }

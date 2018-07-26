@@ -8,7 +8,6 @@
 
 3. Implement real image upload
 
-4. Get search button to work better in SearchedProducts after adjusting for categories, brand, model, etc.
+4. Finish styling it just like reverb
 
-5. Finish styling it just like reverb
-
+5. Check to see if you can make components stateless at end

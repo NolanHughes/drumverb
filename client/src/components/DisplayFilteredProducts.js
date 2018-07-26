@@ -1,9 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-
-import SearchOverview from '../components/SearchOverview';
-import Intro from '../components/Intro'
  
 const DisplayFilteredProducts = ({ products }) => {
 

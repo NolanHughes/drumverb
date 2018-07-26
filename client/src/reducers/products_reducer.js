@@ -1,4 +1,3 @@
-// Refactor these into separate files
 export function products(state = [], action) {
 	switch (action.type) {
 		case 'PRODUCTS_FETCH_SUCCESS':
@@ -10,15 +9,14 @@ export function products(state = [], action) {
 	}
 }
 
-export function filteredProducts(state = [], action) {
-	// debugger
-	switch (action.type) {
-		case 'SET_FILTERED_PRODUCTS':
-			return action.products;
-		default:
-			return state;
-	}
-}
+// export function filteredProducts(state = [], action) {
+// 	switch (action.type) {
+// 		case 'SET_FILTERED_PRODUCTS':
+// 			return action.products;
+// 		default:
+// 			return state;
+// 	}
+// }
 
 export function queriedProducts(state = [], action) {
 	switch (action.type) {

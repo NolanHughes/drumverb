@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import SearchOverview from '../components/SearchOverview';
 import Intro from '../components/Intro'
 import DisplayFilteredProducts from '../components/DisplayFilteredProducts'
-import { setFilteredProducts } from '../actions/index'
+// import { setFilteredProducts } from '../actions/index'
  
 class FilteredProductsPage extends React.Component {
   // componentDidMount() {

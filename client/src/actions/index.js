@@ -12,7 +12,7 @@ import {
 	fetchAllProductsSuccess
 } from './allProducts'
 import { setSortValue } from './sort'
-import { setFilteredProducts } from './filteredProducts'
+// import { setFilteredProducts } from './filteredProducts'
 
 
 
@@ -29,4 +29,4 @@ export { addNewProductSuccess }
 export { fetchAllProducts }
 export { fetchAllProductsSuccess }
 export { setSortValue }
-export { setFilteredProducts }
+// export { setFilteredProducts }

@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Cart.css'
 
 const CartSumTable = ({cart}) => {
-	const total = cart.sum("price")
+	const total = sum(cart, "price")
 	return(
 	<table id='sum-table'>
 		<tbody>
@@ -37,10 +37,10 @@ const CartSumTable = ({cart}) => {
 
 export default CartSumTable
 
-Array.prototype.sum = function (prop) {
+function sum(cart, prop) {
   var total = 0
-  for ( var i = 0, _len = this.length; i < _len; i++ ) {
-    total += this[i][prop]
+  for ( var i = 0, _len = cart.length; i < _len; i++ ) {
+    total += cart[i][prop]
   }
   return total
 }
