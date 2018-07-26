@@ -1,6 +1,7 @@
 1. Cart
 	-Have this post to api (Add users so the functionality works)(ignore this) 
-	-Make alerts when products are added to cart (style phase) 
+	-Make alert when products are added to cart
+		-Done except it needs to be refactored and maybe have background color overlay
 	-Dont have multiple instances of same product. Set it so in same session you can't add same product twice. Create an “error” or real error message saying you can't do that and disallow users from actually adding it again.
 
 2. Set up querying and filtering that can be implemented like the real website.
