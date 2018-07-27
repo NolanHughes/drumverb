@@ -20,7 +20,7 @@ class FilteredProductsPage extends React.Component {
     return (
       <div>
         <Intro />      
-        <div className='ui container switch-div' id="switch-div">  
+        <div className='ui container display-div'>  
           <SearchOverview products={products}/>
           <DisplayFilteredProducts products={products} />
         </div>

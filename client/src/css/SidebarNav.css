@@ -1,0 +1,47 @@
+#sidebar-nav {
+	width: 200px;
+  position: absolute;
+  z-index: 1;
+  top: 290px;
+  left: 41px;
+  overflow-x: hidden;
+  padding: 8px 0;
+  background: #fff;
+  padding: 13px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0.1rem 0.3rem 0 rgba(33,33,33,.15);
+}
+
+#sidebar-nav ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+#sidebar-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #414141;
+  display: block;
+  cursor: pointer;
+  margin-top: 2.8px;
+}
+
+#sidebar-nav a:hover {
+  color: #064579;
+}
+
+#categories-heading {
+	margin-bottom: 2px;
+	font-weight: 700;
+	font-size: 12.6px;
+}
+
+#sidebar-nav #nested-ul {
+	margin-left: 10px;
+}
+
+.category-count {
+	display: inline-block;
+	font-size: 90%;
+  opacity: .5;
+}
