@@ -10,7 +10,7 @@
 
 3. Implement real image upload and complete sell page with categories**
 
-4. Style show page***
+4. Style show page****
 
 4. Finish styling it just like reverb
 
