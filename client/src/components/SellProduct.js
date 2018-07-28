@@ -30,7 +30,7 @@ class SellProduct extends React.Component {
                 <div className="ten wide column">
                   <label>Model*</label>
                   <input ref="model" />
-                  <p>e.g. Starclassic</p>
+                  <p>e.g. Starclassic Performer B/B Lacquer 5-piece</p>
                 </div>
               </div>
 
