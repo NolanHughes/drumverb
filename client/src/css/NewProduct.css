@@ -2,3 +2,33 @@
 	position: relative;
   top: 140px;
 }
+
+#new-product h1{
+	color: #414141;
+	font-size: 25.6px;
+}
+
+#new-product .listing-editor {
+	background-color: #fff;
+	padding: 0px;
+}
+
+.listing-header {
+	border-bottom: 1px solid #f1f1f1;
+	padding: 14px 18px 12px;
+}
+
+.listing-editor label {
+	display: block;
+}
+
+.listing-editor input {
+	width: 100%;
+  border-radius: 4px;
+  border-style: solid;
+  border: 1px solid #d3d3d3;
+}
+
+#new-product-form {
+	padding: 18px;
+}
