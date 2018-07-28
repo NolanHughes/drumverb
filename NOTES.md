@@ -1,8 +1,6 @@
 1. Cart
 	-Have this post to api (Add users so the functionality works)(ignore this) 
-	-Make alert when products are added to cart
-		-Done except it needs to be refactored and maybe have background color overlay
-	-*Make alert when cart is purchased*
+	-Refactored cart add and buy pop ups and maybe have background color overlay
 
 2. Finish querying and filtering that can be implemented like the real website.***
 	-Have sidebar and filtered_by for filtering

@@ -37,14 +37,10 @@ const Cart = ({ cart, deleteCart }) => {
     <section id="cart-section">
 
       <div id="cartPurchasedPopUp">
-        <button className="ui icon button" id="pop-up-close-button" onClick={() => closePopUp()}>
+        <button className="ui icon button" id="products-pop-up-close-button" onClick={() => closePopUp()}>
           <i className="window close outline icon"></i>
         </button>      
-        <div className="message"><i className="check icon"></i>Your cart has been purchased!</div>  
-        <div id="pop-up-body"> 
-          <Link to='/'><button id="pop-up-cart-button">Products</button></Link>
-        </div>  
-        
+        <div className="message"><i className="check icon"></i>Your cart has been purchased!</div>       
       </div>
 
 
@@ -55,7 +51,7 @@ const Cart = ({ cart, deleteCart }) => {
 
 function cartPurchasedPopUp() {
   const confirmBox = document.getElementById("cartPurchasedPopUp");
-  confirmBox.style.display = "block"
+  confirmBox.style.display = "flex"
 }
 
 function closePopUp() {
