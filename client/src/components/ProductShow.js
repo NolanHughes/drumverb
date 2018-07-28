@@ -12,7 +12,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
   if(cart.includes(product)) {
     addToCartButton = <div>This product is already in your cart</div>   
   } else {
-    addToCartButton = <button onClick={() => { addProductToCart(product); popUp(product) }}>Add to cart</button>
+    addToCartButton = <button onClick={() => { addProductToCart(product); popUp() }}>Add to cart</button>
   }
 
   return(
@@ -65,8 +65,8 @@ const mapStateToProps = (state, ownProps) => {
     }
   }
 }
-
-function popUp(product) {
+//Delete product arg?
+function popUp() {
   const confirmBox = document.getElementById("confirmBox");
   confirmBox.style.display = "block"
 }
