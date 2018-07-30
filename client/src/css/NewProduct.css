@@ -32,3 +32,11 @@
 #new-product-form {
 	padding: 18px;
 }
+
+#product-condition {
+	width: 100%;
+}
+
+#condition-row {
+	border-bottom: 1px solid #f1f1f1;
+}

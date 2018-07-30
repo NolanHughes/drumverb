@@ -13,7 +13,7 @@ class SellProduct extends React.Component {
 
       <div id="new-product" className="ui two column centered grid">
         <div className="column">
-          <h1>Sell on Reverb. No listing fees. Reach millions of musicians.</h1>
+          <h1>Sell on Drumverb. No listing fees. Reach millions of musicians.</h1>
         </div>
         <div className="two column centered row">
           <div className="column listing-editor">
@@ -34,7 +34,7 @@ class SellProduct extends React.Component {
                 </div>
               </div>
 
-              <div className='ui grid'>
+              <div className='ui grid' id="condition-row">
                 <div className="five wide column">
                   <label>Condition*</label>
                   <select id="product-condition">
@@ -57,6 +57,33 @@ class SellProduct extends React.Component {
                 <div className="five wide column">
                   <label>Finish</label>
                   <input ref="finish" />
+                </div>
+              </div>
+
+              <div className="ui grid">
+                <div className="column">
+                  <label>Listing Title*</label>
+                  <input ref="title" />
+                  <p>Feel free to modify this</p>
+                </div>
+              </div>
+
+              <div className="ui grid">
+                <div className="five wide column">
+                  <span>$</span>
+                  <input id="product_price" />
+                  <span>USD</span>
+                </div>
+                <div className="ten wide column">
+                  <label>Where was it made?</label>
+                  <select id="country-select">
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="AU">Australia</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                  </select>
                 </div>
               </div>
               
