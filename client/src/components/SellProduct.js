@@ -145,7 +145,7 @@ class SellProduct extends React.Component {
               </div>
               
               {/*<input ref="image" placeholder="Enter an image url" />Last thing to modify for this page*/}
-                <div class="field">
+                <div className="field">
                   <label>Image</label>
                   <input ref="image" type="file" />
                 </div>

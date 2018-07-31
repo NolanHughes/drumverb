@@ -8,7 +8,7 @@ import '../css/ProductShow.css'
  
 const ProductShow = ({ product, addProductToCart, cart }) =>{
   let addToCartButton 
-  // debugger
+  debugger
   if(cart.includes(product)) {
     addToCartButton = <div>This product is already in your cart</div>   
   } else {
@@ -27,7 +27,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
           <div className="ui grid row cart-row" key={product.id}>
             <div className="three wide column">
               <Link to={`/products/${product.id}`}>
-                <img className="pop-up-image" src={product.image.thumb.url} alt={product.title}/>
+                <img className="pop-up-image" src={'/'} alt={product.title}/>
               </Link>
             </div>
             <div className="eight wide column" id="pop-up-product-title">

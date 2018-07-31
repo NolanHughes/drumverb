@@ -14,9 +14,9 @@ class Product < ActiveRecord::Base
   	made_in
     created_at
   }
+  
   def as_json(opts = {})
+    # binding.pry
     super.slice(*JSON_KEYS)
   end
-
-  mount_uploader :image, ImageUploader
 end
