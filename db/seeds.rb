@@ -13,6 +13,6 @@ product_list = [
   [ "Meinl Dual Hi-Hats 15 inch", "Some sweet hats!", 300, "https://images.reverb.com/image/upload/s--zL-BGuMj--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_620,q_90,w_620/v1513895640/lw6zcaoqhw5ziymmti1r.jpg","Meinl", "Byzance Extra Dry Dual Hi-Hats 15 inch", "Good", 2005, "traditional", "hi-hats", "USA" ]
 ]
 
-product_list.each do |title, description, price, image_url, brand, model, condition, year, finish, category, made_in|
-  Product.create( title: title, description: description, price: price, image_url: image_url, brand: brand, model: model, condition: condition, year: year, finish: finish, category: category, made_in: made_in)
+product_list.each do |title, description, price, image, brand, model, condition, year, finish, category, made_in|
+  Product.create( title: title, description: description, price: price, image: image, brand: brand, model: model, condition: condition, year: year, finish: finish, category: category, made_in: made_in)
 end

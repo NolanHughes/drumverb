@@ -15,6 +15,10 @@ gem 'pry-rails'
 gem 'foreman', '~> 0.82.0'
 # Responders for more dry controller code
 gem 'responders'
+#Carrierwave for uploading images
+gem 'carrierwave', '~> 0.10.0'
+#mini_magick for resizing of images 
+gem 'mini_magick', '~> 4.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

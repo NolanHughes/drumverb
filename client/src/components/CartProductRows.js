@@ -10,7 +10,7 @@ const CartProductRows = ({ cart, removeProductFromCart }) => {
     <div className="ui grid row cart-row" key={product.id}>
       <div className="four wide column image-div">
         <Link to={`/products/${product.id}`}>
-          <img className="in-cart-product-image" src={product.image_url} alt="title"/>
+          <img className="in-cart-product-image" src={product.image.url} alt="title"/>
         </Link>
       </div>
       <div className="eight wide column">

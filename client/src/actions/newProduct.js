@@ -11,10 +11,10 @@ export function addNewProduct(product) {
   const price = product.refs.price.value;
   const made_in = product.refs.made_in.value
   const category = product.refs.category.value
-  const image_url = product.refs.image_url.value;
+  const image = product.refs.image.value;
   const description = product.refs.description.value;
 
-  const data = { product: {brand: brand, model: model, condition: condition, year: year, finish: finish, title: title,  price: price, made_in: made_in, category: category, image_url: image_url, description: description} }
+  const data = { product: {brand: brand, model: model, condition: condition, year: year, finish: finish, title: title,  price: price, made_in: made_in, category: category, image: image, description: description} }
 
   return (dispatch) => {
     fetch(url, {

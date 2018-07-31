@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   	title 
   	description 
   	price 
-  	image_url
+  	image
   	brand
   	model
   	condition
@@ -17,4 +17,6 @@ class Product < ActiveRecord::Base
   def as_json(opts = {})
     super.slice(*JSON_KEYS)
   end
+
+  mount_uploader :image, ImageUploader
 end

@@ -144,7 +144,11 @@ class SellProduct extends React.Component {
                 </div>
               </div>
               
-              <input ref="image_url" placeholder="Enter an image url" />{/*Last thing to modify for this page*/}
+              {/*<input ref="image" placeholder="Enter an image url" />Last thing to modify for this page*/}
+                <div class="field">
+                  <label>Image</label>
+                  <input ref="image" type="file" />
+                </div>
 
               <button onClick={() => addNewProduct(this)}>Save Listing</button>
             </div>
