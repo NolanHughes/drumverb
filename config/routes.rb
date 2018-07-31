@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   scope '/api' do
-    get :products, to: 'products#index'
-    post :products, to: 'products#create'
+  	scope '/products' do
+      get '/' => 'products#index'
+      post '/' => 'products#create'
+      scope '/upload' do
+      	get '/' => 'products#upload'
+      	post '/' => 'products#upload'
+      end
+    end
   end
 end

@@ -9,6 +9,7 @@ import Cart from './components/Cart'
 import { fetchAllProducts } from './actions/index';//***
 import SellProduct from './components/SellProduct'
 import FilteredProductsPage from './containers/FilteredProductsPage'
+import TestNewProduct from './components/TestNewProduct'
 
 import './css/App.css'
 
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Route path='/cart' component={Cart} />
             <Route path='/products/:productId' component={ProductShow}/>
             <Route path='/sell' component={SellProduct}/> 
+            <Route path='/test-product' component={TestNewProduct}/> 
             <Route path={`/filtered-products/:searchValue`} component={FilteredProductsPage}/>               
           </Switch>
         </div>

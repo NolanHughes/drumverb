@@ -1,4 +1,5 @@
 export function addNewProduct(product) {
+  debugger
   const url = `http://localhost:3000/api/products`
   const history = product.props.history
 
@@ -11,10 +12,10 @@ export function addNewProduct(product) {
   const price = product.refs.price.value;
   const made_in = product.refs.made_in.value
   const category = product.refs.category.value
-  const image = product.refs.image.value;
+  // const image = product.refs.image.value;
   const description = product.refs.description.value;
 
-  const data = { product: {brand: brand, model: model, condition: condition, year: year, finish: finish, title: title,  price: price, made_in: made_in, category: category, image: image, description: description} }
+  const data = { product: {brand: brand, model: model, condition: condition, year: year, finish: finish, title: title,  price: price, made_in: made_in, category: category, description: description} }//Add image: image
 
   return (dispatch) => {
     fetch(url, {

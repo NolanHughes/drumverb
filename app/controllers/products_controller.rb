@@ -20,6 +20,10 @@ class ProductsController < ApplicationController
     render json: product
   end
 
+  def upload
+    binding.pry
+  end
+
   private
 
 	  def product_params

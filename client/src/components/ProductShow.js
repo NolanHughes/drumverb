@@ -8,7 +8,7 @@ import '../css/ProductShow.css'
  
 const ProductShow = ({ product, addProductToCart, cart }) =>{
   let addToCartButton 
-  debugger
+
   if(cart.includes(product)) {
     addToCartButton = <div>This product is already in your cart</div>   
   } else {
