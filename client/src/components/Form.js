@@ -268,9 +268,8 @@ class Form extends React.Component {
     }
   }
 
-//This may not work right now until routes are definitive
   handleCancel() {
-    this.props.history.push('/products');
+    this.props.history.push('/');
   }
 
   buildFormData() {
@@ -288,7 +287,7 @@ class Form extends React.Component {
         }
       } else {
         formData.append(
-          `product[images_attributes][${i}][photo]`,
+          `product[product_images_attributes][${i}][photo]`,
           file,
           file.name
         );
@@ -316,7 +315,7 @@ class Form extends React.Component {
         this.setState({
           didFormSubmissionComplete: true
         });
-        this.props.history.push('/products');
+        this.props.history.push('/');
       })
       .catch(error => {
         let { product } = this.state;

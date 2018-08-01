@@ -30,6 +30,7 @@ class Product < ActiveRecord::Base
           name: x.photo_file_name,
           id: x.id
         }
+      end
     }
   end
 end

@@ -1,3 +1,7 @@
+div.ProductForm {
+  margin-top: 150px;
+}
+
 div.ProductForm div.inline-error {
   padding: 5px;
   border-radius: 0 0 4px 4px;

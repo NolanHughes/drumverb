@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :update, :destroy]
+  # before_action :set_product, only: [:show, :update, :destroy]
 
   def index
     # render(
@@ -46,21 +46,18 @@ class ProductsController < ApplicationController
 
 	  def product_params
 	    params.require(:product).permit(
-        :brand, 
-        :model, 
-        :condition, 
-        :year, 
-        :finish, 
-        :title, 
-        :price, 
-        :made_in, 
-        :category, 
-        :description,
-        product_images_attributes: %I [
-          id
-          photo
-          _destroy
-        ]
+       [ :brand, 
+         :model, 
+         :condition, 
+         :year, 
+         :finish, 
+         :title, 
+         :price, 
+         :made_in, 
+         :category, 
+         :description,
+         product_images_attributes: %I[ id photo _destroy ]
+       ]
       )
 	  end
 
