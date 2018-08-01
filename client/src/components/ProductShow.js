@@ -68,7 +68,7 @@ const mapStateToProps = (state, ownProps) => {
     }
   }
 }
-//Delete product arg?
+
 function popUp() {
   const confirmBox = document.getElementById("confirmBox");
   confirmBox.style.display = "block"

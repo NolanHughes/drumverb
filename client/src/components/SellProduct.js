@@ -5,7 +5,6 @@ import axiosClient from '../axiosClient';
 import { addNewProduct } from '../actions/index';//Add to this when implementing filteredProducts***
 
 import '../css/NewProduct.css'
-import '../css/Form.css'
 
 class RefactorForm extends React.Component {
     state = {
