@@ -8,11 +8,16 @@ import '../css/ProductShow.css'
  
 const ProductShow = ({ product, addProductToCart, cart }) =>{
   let addToCartButton 
+  let productImage
 
   if(cart.includes(product)) {
     addToCartButton = <div>This product is already in your cart</div>   
   } else {
     addToCartButton = <button onClick={() => { addProductToCart(product); popUp() }}>Add to cart</button>
+  }
+
+  if(Object.keys(product).length !== 0) {
+    productImage = <img className="pop-up-image" src={product.product_image_photos[0].url} alt={product.title}/>
   }
 
   return(
@@ -27,7 +32,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
           <div className="ui grid row cart-row" key={product.id}>
             <div className="three wide column">
               <Link to={`/products/${product.id}`}>
-                <img className="pop-up-image" src={'/'} alt={product.title}/>
+                {productImage}
               </Link>
             </div>
             <div className="eight wide column" id="pop-up-product-title">
@@ -44,7 +49,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
   
       <h2>{product.title}</h2>
       <p>{product.description}</p>
-      <p>{product.category}</p>
+      <p>${product.price}</p>
       {addToCartButton}
     </div>
     )

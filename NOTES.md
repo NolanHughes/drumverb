@@ -24,3 +24,5 @@
 9. Add NotFound and Edit component
 
 10. Delete Routes.js
+
+11. Paperclip doesn't like certain photos (my oktava)

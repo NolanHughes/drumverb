@@ -18,8 +18,9 @@ class SellProduct extends React.Component {
           <div className="column listing-editor">
             <div className="listing-header">
               <h3>What are you selling?</h3>
-            </div>
+            </div>            
             <div id="new-product-form">
+            
               <div className='ui grid'>
                 <div className="six wide column">
                   <label>Brand*</label>
@@ -32,6 +33,7 @@ class SellProduct extends React.Component {
                   <p>e.g. Starclassic Performer B/B Lacquer 5-piece</p>
                 </div>
               </div>
+
 
               <div className='ui grid' id="condition-row">
                 <div className="five wide column">
