@@ -18,3 +18,7 @@
 
 7. adjust origins and resources in config/application.rb (screenshot)
 		-http://jameshuynh.com/rails/react/upload/2017/09/17/how-to-upload-files-using-react-and-rails-like-a-boss/
+
+8. Look at product.rb in as_json at product_image_photos or routes if not working
+9. Look in product_image model for thumbnail size and styling
+10. Add NotFound and Edit component
