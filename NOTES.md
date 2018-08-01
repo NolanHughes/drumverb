@@ -15,3 +15,6 @@
 5. Check to see if you can make components stateless at end
 
 6. Maybe fix navbar changing size? when the intro component is present vs not.
+
+7. adjust origins and resources in config/application.rb (screenshot)
+		-http://jameshuynh.com/rails/react/upload/2017/09/17/how-to-upload-files-using-react-and-rails-like-a-boss/
