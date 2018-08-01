@@ -12,18 +12,18 @@ class Product < ActiveRecord::Base
   
   def as_json(_opts = {})
     {
-      id 
-      brand:, brand
-      model:, model
-      condition:, condition
-      year:, year
-      finish:, finish
-      title:, title
-      price:, price
-      made_in:, made_in
-      category:, category
-      description:, description 
-      created_at:, created_at,
+      id: id, 
+      brand: brand,
+      model: model,
+      condition: condition,
+      year: year,
+      finish: finish,
+      title: title,
+      price: price,
+      made_in: made_in,
+      category: category,
+      description: description,
+      created_at: created_at,
       product_image_photos: product_images.map do |x|
         {
           url: x.photo.url,
