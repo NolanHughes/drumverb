@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+
   JSON_KEYS = %w{
   	id 
   	title 
@@ -16,7 +17,6 @@ class Product < ActiveRecord::Base
   }
   
   def as_json(opts = {})
-    # binding.pry
     super.slice(*JSON_KEYS)
   end
 end

@@ -1,5 +1,4 @@
 export function addNewProduct(product) {
-  debugger
   const url = `http://localhost:3000/api/products`
   const history = product.props.history
 
