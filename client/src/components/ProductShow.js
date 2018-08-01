@@ -31,9 +31,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
         <div id="pop-up-body"> 
           <div className="ui grid row cart-row" key={product.id}>
             <div className="three wide column">
-              <Link to={`/products/${product.id}`}>
-                {productImage}
-              </Link>
+              {productImage}
             </div>
             <div className="eight wide column" id="pop-up-product-title">
               <p>{product.title}</p>
