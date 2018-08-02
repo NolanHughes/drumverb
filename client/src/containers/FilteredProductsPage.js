@@ -14,9 +14,9 @@ class FilteredProductsPage extends React.Component {
   // }
 
   render(){
-    const { products, sortValue } = this.props
+    const { filteredProducts, sortValue, products } = this.props
 
-    sortProducts(products, sortValue)
+    sortProducts(filteredProducts, sortValue)
 
     return (
       <div>
@@ -24,8 +24,8 @@ class FilteredProductsPage extends React.Component {
         <div>
           <SidebarNav products={products}/>      
           <div className='display-div'>  
-            <SearchOverview products={products}/>
-            <DisplayFilteredProducts products={products} />
+            <SearchOverview products={filteredProducts}/>
+            <DisplayFilteredProducts products={filteredProducts} />
           </div>
         </div>
       </div> 
@@ -34,11 +34,12 @@ class FilteredProductsPage extends React.Component {
 }
  
 const mapStateToProps = (state, ownProps) => {
-  const products = filterProducts(state.products, ownProps.match.params.searchValue)
+  const filteredProducts = filterProducts(state.products, ownProps.match.params.searchValue)
 
-  if (products) {
+  if (filteredProducts) {
     return { 
-      products,
+      products: state.products,
+      filteredProducts,
       sortValue: state.sortValue
     }
   } else {
