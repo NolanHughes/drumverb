@@ -21,8 +21,8 @@
 
 8. Look in product_image model for thumbnail size and styling
 
-9. Add NotFound and Edit component
-
-10. Delete Routes.js
+9. Add Edit component
 
 11. Paperclip doesn't like certain photos (my oktava)
+
+12. Create error messages for vaildating form?

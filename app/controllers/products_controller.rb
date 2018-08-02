@@ -20,10 +20,13 @@ class ProductsController < ApplicationController
   end
 
   def create 
-    #Maybe add in if/else statement and new/save to handle errors
-  	product = Product.create(product_params)
+    product = Product.new(product_params)
 
-    render json: product
+    if product.save
+      render json: product, status: :created, location: product
+    else
+      render json: product.errors, status: :unprocessable_entity
+    end
   end
 
   def update

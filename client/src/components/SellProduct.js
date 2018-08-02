@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import axiosClient from '../axiosClient';
 
 import { addNewProduct } from '../actions/index';//Add to this when implementing filteredProducts***
 
@@ -25,7 +24,7 @@ class RefactorForm extends React.Component {
       category: '',
       description: '',
       created_at: '',
-      errors: {}
+      error: ''
     }
   };
 
@@ -42,193 +41,193 @@ class RefactorForm extends React.Component {
             </div>
             <div id="new-product-form">
               
+              <div id="error-message">
+                {this.renderProductError()}
+              </div>
 
-                <div className='ui grid'>
-                  <div className="six wide column">
-                    <label>Brand*</label>
-                    <input
-                      type="text"
-                      onChange={e => this.handleProductAttributeChange(e)}
-                      value={this.state.product.brand}
-                      className="form-control"
-                      name="brand"
-                    />
-                    {this.renderProductTitleInlineError()}
-                    <p>e.g. Tama</p>
-                  </div>
-                  <div className="ten wide column">
-                    <label>Model*</label>
-                    <input
-                      type="text"
-                      onChange={e => this.handleProductAttributeChange(e)}
-                      value={this.state.product.model}
-                      className="form-control"
-                      name="model"
-                    />
-                    {this.renderProductTitleInlineError()}
-                    <p>e.g. Starclassic Performer B/B Lacquer 5-piece</p>
-                  </div>   
-                </div>
-
-                <div className='ui grid' id="condition-row">
-                  <div className="five wide column">
-                    <label>Condition*</label>
-                    <select onChange={e => this.handleProductAttributeChange(e)} id="product-condition" name="condition">
-                      <option value="">Select Condition</option>
-                      <option value=""></option>
-                      <option value="brand-new">Brand New</option>
-                      <option value="mint">Mint</option>
-                      <option value="excellent">Excellent</option>
-                      <option value="very-good">Very Good</option>
-                      <option value="good">Good</option>
-                      <option value="fair">Fair</option>
-                      <option value="poor">Poor</option>
-                      <option value="non-functioning">Non Functioning</option>
-                    </select>
-                  </div>
-                  <div className="five wide column">
-                    <label>Year</label>
-                    <input
-                      type="text"
-                      onChange={e => this.handleProductAttributeChange(e)}
-                      value={this.state.product.year}
-                      className="form-control"
-                      name="year"
-                    />
-                  </div>
-                  <div className="five wide column">
-                    <label>Finish</label>
-                    <input
-                      type="text"
-                      onChange={e => this.handleProductAttributeChange(e)}
-                      value={this.state.product.finish}
-                      className="form-control"
-                      name="finish"
-                    />
-                  </div>
-                </div>
-
-                <div className="ui grid">
-                  <div className="column">
-                    <label>Listing Title*</label>
-                    <input
-                      type="text"
-                      onChange={e => this.handleProductAttributeChange(e)}
-                      value={this.state.product.title}
-                      className="form-control"
-                      name="title"
-                    />
-                    {this.renderProductTitleInlineError()}
-                    <p>Feel free to modify this</p>
-                  </div>
-                </div>
-
-                <div className="ui grid">
-                  <div className="six wide column">
-                    <span>$</span>
-                    <input
-                      type="text"
-                      onChange={e => this.handleProductAttributeChange(e)}
-                      value={this.state.product.price}
-                      id="product_price"
-                      className="form-control"
-                      name="price"
-                    />
-                    <span>USD</span>
-                  </div>
-                  <div className="ten wide column">
-                    <label>Where was it made?</label>
-                    <select onChange={e => this.handleProductAttributeChange(e)} id="country-select" name="made_in">
-                      <option value="US">United States</option>
-                      <option value="CA">Canada</option>
-                      <option value="GB">United Kingdom</option>
-                      <option value="AU">Australia</option>
-                      <option value="FR">France</option>
-                      <option value="DE">Germany</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="ui grid">
-                  <div className="column">
-                    <label>Category*</label>
-                    <select onChange={e => this.handleProductAttributeChange(e)} id="category-select" name="category">
-                      <option value="1">Find Category</option>
-                      <option value="2">Drums and Percussion &gt; Acoustic Drums &gt; Bass Drum</option>
-                      <option value="3">Drums and Percussion &gt; Acoustic Drums &gt; Full Acoustic Kits</option>
-                      <option value="4">Drums and Percussion &gt; Acoustic Drums &gt; Snare</option>
-                      <option value="5">Drums and Percussion &gt; Acoustic Drums &gt; Tom</option>
-                      <option value="6">Drums and Percussion &gt; Auxiliary Percussion</option>
-                      <option value="7">Drums and Percussion &gt; Concert Percussion &gt; Concert Bass Drums</option>
-                      <option value="8">Drums and Percussion &gt; Concert Percussion &gt; Concert Cymbals</option>
-                      <option value="9">Drums and Percussion &gt; Concert Percussion &gt; Concert Snare Drums</option>
-                      <option value="10">Drums and Percussion &gt; Concert Percussion &gt; Concert Toms</option>
-                      <option value="11">Drums and Percussion &gt; Concert Percussion &gt; Gongs</option>
-                      <option value="12">Drums and Percussion &gt; Concert Percussion &gt; Timpani</option>
-                      <option value="13">Drums and Percussion &gt; Cymbals &gt; Crash</option>
-                      <option value="14">Drums and Percussion &gt; Cymbals &gt; Cymbal Packs</option>
-                      <option value="15">Drums and Percussion &gt; Cymbals &gt; Hi-Hats</option>
-                      <option value="16">Drums and Percussion &gt; Cymbals &gt; Other (Splash, China, etc)</option>
-                      <option value="17">Drums and Percussion &gt; Cymbals &gt; Ride</option>
-                      <option value="18">Drums and Percussion &gt; Drum Machines and Samplers</option>
-                      <option value="19">Drums and Percussion &gt; Electronic Drums &gt; Full Electronic Kits</option>
-                      <option value="20">Drums and Percussion &gt; Electronic Drums &gt; Modules</option>
-                      <option value="21">Drums and Percussion &gt; Hand Drums &gt; Cajons</option>
-                      <option value="22">Drums and Percussion &gt; Hand Drums &gt; Congas and Bongos</option>
-                      <option value="23">Drums and Percussion &gt; Hand Drums &gt; Djembes</option>
-                      <option value="24">Drums and Percussion &gt; Hand Drums &gt; Shakers</option>
-                      <option value="25">Drums and Percussion &gt; Mallet Percussion &gt; Bells and Glockenspiels</option>
-                      <option value="26">Drums and Percussion &gt; Mallet Percussion &gt; Marimbas</option>
-                      <option value="27">Drums and Percussion &gt; Mallet Percussion &gt; Vibraphones</option>
-                      <option value="28">Drums and Percussion &gt; Mallet Percussion &gt; Xylophones</option>
-                      <option value="29">Drums and Percussion &gt; Marching Percussion &gt; Marching Bass Drums</option>
-                      <option value="30">Drums and Percussion &gt; Marching Percussion &gt; Marching Cymbals</option>
-                      <option value="31">Drums and Percussion &gt; Marching Percussion &gt; Marching Snare Drums</option>
-                      <option value="32">Drums and Percussion &gt; Marching Percussion &gt; Marching Toms and Tenors</option>
-                      <option value="33">Drums and Percussion &gt; Pad Controllers</option>
-                      <option value="34">Drums and Percussion &gt; Parts and Accessories &gt; Cases and Bags</option>
-                      <option value="35">Drums and Percussion &gt; Parts and Accessories &gt; Drum Keys and Tuners</option>
-                      <option value="36">Drums and Percussion &gt; Parts and Accessories &gt; Drum Parts</option>
-                      <option value="37">Drums and Percussion &gt; Parts and Accessories &gt; Drum Sticks and Mallets</option>
-                      <option value="38">Drums and Percussion &gt; Parts and Accessories &gt; Heads</option>
-                      <option value="39">Drums and Percussion &gt; Parts and Accessories &gt; Mounts</option>
-                      <option value="40">Drums and Percussion &gt; Parts and Accessories &gt; Pedals</option>
-                      <option value="41">Drums and Percussion &gt; Parts and Accessories &gt; Stands</option>
-                      <option value="42">Drums and Percussion &gt; Parts and Accessories &gt; Thrones</option>
-                      <option value="43">Drums and Percussion &gt; Practice Pads</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="form-group">
-                  <label>Images</label>
-                  {this.renderUploadImagesButton()}
-                  {this.renderSelectedProductImageFiles()}
-                </div>
-
-                <div className="ui grid">
-                  <div className="column">
-                    <label>Description</label>
-                    <textarea
+              <div className='ui grid'>
+                <div className="six wide column">
+                  <label>Brand*</label>
+                  <input
                     type="text"
                     onChange={e => this.handleProductAttributeChange(e)}
-                    value={this.state.product.description}
+                    value={this.state.product.brand}
                     className="form-control"
-                    id="description-text-area"
-                    name="description"
-                    />
-                    {this.renderProductDescriptionInlineError()}
-                  </div>
+                    name="brand"
+                  />
+                  <p>e.g. Tama</p>
                 </div>
+                <div className="ten wide column">
+                  <label>Model*</label>
+                  <input
+                    type="text"
+                    onChange={e => this.handleProductAttributeChange(e)}
+                    value={this.state.product.model}
+                    className="form-control"
+                    name="model"
+                  />
+                  <p>e.g. Starclassic Performer B/B Lacquer 5-piece</p>
+                </div>   
+              </div>
 
-                {this.renderUploadFormProgress()}
+              <div className='ui grid' id="condition-row">
+                <div className="five wide column">
+                  <label>Condition*</label>
+                  <select onChange={e => this.handleProductAttributeChange(e)} id="product-condition" name="condition">
+                    <option value="">Select Condition</option>
+                    <option value=""></option>
+                    <option value="brand-new">Brand New</option>
+                    <option value="mint">Mint</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="very-good">Very Good</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                    <option value="poor">Poor</option>
+                    <option value="non-functioning">Non Functioning</option>
+                  </select>
+                </div>
+                <div className="five wide column">
+                  <label>Year</label>
+                  <input
+                    type="text"
+                    onChange={e => this.handleProductAttributeChange(e)}
+                    value={this.state.product.year}
+                    className="form-control"
+                    name="year"
+                  />
+                </div>
+                <div className="five wide column">
+                  <label>Finish</label>
+                  <input
+                    type="text"
+                    onChange={e => this.handleProductAttributeChange(e)}
+                    value={this.state.product.finish}
+                    className="form-control"
+                    name="finish"
+                  />
+                </div>
+              </div>
 
-                <button
-                  disabled={this.state.isSubmittingForm}
-                  onClick={e => this.handleFormSubmit()}
-                  className="btn btn-primary">
-                  {this.state.isSubmittingForm ? 'Saving...' : 'Save Listing'}
-                </button>
+              <div className="ui grid">
+                <div className="column">
+                  <label>Listing Title*</label>
+                  <input
+                    type="text"
+                    onChange={e => this.handleProductAttributeChange(e)}
+                    value={this.state.product.title}
+                    className="form-control"
+                    name="title"
+                  />
+                  <p>Feel free to modify this</p>
+                </div>
+              </div>
+
+              <div className="ui grid">
+                <div className="six wide column" id="product-price-div">
+                  <label>Price*</label> 
+                  <span>$</span>
+                  <input
+                    type="text"
+                    onChange={e => this.handleProductAttributeChange(e)}
+                    value={this.state.product.price}
+                    id="product_price"
+                    className="form-control"
+                    name="price"
+                  />
+                  <span>USD</span>
+                </div>
+                <div className="ten wide column">
+                  <label>Where was it made?</label>
+                  <select onChange={e => this.handleProductAttributeChange(e)} id="country-select" name="made_in">
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="AU">Australia</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="ui grid">
+                <div className="column">
+                  <label>Category*</label>
+                  <select onChange={e => this.handleProductAttributeChange(e)} id="category-select" name="category">
+                    <option value="1">Find Category</option>
+                    <option value="2">Drums and Percussion &gt; Acoustic Drums &gt; Bass Drum</option>
+                    <option value="3">Drums and Percussion &gt; Acoustic Drums &gt; Full Acoustic Kits</option>
+                    <option value="4">Drums and Percussion &gt; Acoustic Drums &gt; Snare</option>
+                    <option value="5">Drums and Percussion &gt; Acoustic Drums &gt; Tom</option>
+                    <option value="6">Drums and Percussion &gt; Auxiliary Percussion</option>
+                    <option value="7">Drums and Percussion &gt; Concert Percussion &gt; Concert Bass Drums</option>
+                    <option value="8">Drums and Percussion &gt; Concert Percussion &gt; Concert Cymbals</option>
+                    <option value="9">Drums and Percussion &gt; Concert Percussion &gt; Concert Snare Drums</option>
+                    <option value="10">Drums and Percussion &gt; Concert Percussion &gt; Concert Toms</option>
+                    <option value="11">Drums and Percussion &gt; Concert Percussion &gt; Gongs</option>
+                    <option value="12">Drums and Percussion &gt; Concert Percussion &gt; Timpani</option>
+                    <option value="13">Drums and Percussion &gt; Cymbals &gt; Crash</option>
+                    <option value="14">Drums and Percussion &gt; Cymbals &gt; Cymbal Packs</option>
+                    <option value="15">Drums and Percussion &gt; Cymbals &gt; Hi-Hats</option>
+                    <option value="16">Drums and Percussion &gt; Cymbals &gt; Other (Splash, China, etc)</option>
+                    <option value="17">Drums and Percussion &gt; Cymbals &gt; Ride</option>
+                    <option value="18">Drums and Percussion &gt; Drum Machines and Samplers</option>
+                    <option value="19">Drums and Percussion &gt; Electronic Drums &gt; Full Electronic Kits</option>
+                    <option value="20">Drums and Percussion &gt; Electronic Drums &gt; Modules</option>
+                    <option value="21">Drums and Percussion &gt; Hand Drums &gt; Cajons</option>
+                    <option value="22">Drums and Percussion &gt; Hand Drums &gt; Congas and Bongos</option>
+                    <option value="23">Drums and Percussion &gt; Hand Drums &gt; Djembes</option>
+                    <option value="24">Drums and Percussion &gt; Hand Drums &gt; Shakers</option>
+                    <option value="25">Drums and Percussion &gt; Mallet Percussion &gt; Bells and Glockenspiels</option>
+                    <option value="26">Drums and Percussion &gt; Mallet Percussion &gt; Marimbas</option>
+                    <option value="27">Drums and Percussion &gt; Mallet Percussion &gt; Vibraphones</option>
+                    <option value="28">Drums and Percussion &gt; Mallet Percussion &gt; Xylophones</option>
+                    <option value="29">Drums and Percussion &gt; Marching Percussion &gt; Marching Bass Drums</option>
+                    <option value="30">Drums and Percussion &gt; Marching Percussion &gt; Marching Cymbals</option>
+                    <option value="31">Drums and Percussion &gt; Marching Percussion &gt; Marching Snare Drums</option>
+                    <option value="32">Drums and Percussion &gt; Marching Percussion &gt; Marching Toms and Tenors</option>
+                    <option value="33">Drums and Percussion &gt; Pad Controllers</option>
+                    <option value="34">Drums and Percussion &gt; Parts and Accessories &gt; Cases and Bags</option>
+                    <option value="35">Drums and Percussion &gt; Parts and Accessories &gt; Drum Keys and Tuners</option>
+                    <option value="36">Drums and Percussion &gt; Parts and Accessories &gt; Drum Parts</option>
+                    <option value="37">Drums and Percussion &gt; Parts and Accessories &gt; Drum Sticks and Mallets</option>
+                    <option value="38">Drums and Percussion &gt; Parts and Accessories &gt; Heads</option>
+                    <option value="39">Drums and Percussion &gt; Parts and Accessories &gt; Mounts</option>
+                    <option value="40">Drums and Percussion &gt; Parts and Accessories &gt; Pedals</option>
+                    <option value="41">Drums and Percussion &gt; Parts and Accessories &gt; Stands</option>
+                    <option value="42">Drums and Percussion &gt; Parts and Accessories &gt; Thrones</option>
+                    <option value="43">Drums and Percussion &gt; Practice Pads</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label>Images*</label>
+                {this.renderUploadImagesButton()}
+                {this.renderSelectedProductImageFiles()}
+              </div>
+
+              <div className="ui grid">
+                <div className="column">
+                  <label>Description*</label>
+                  <textarea
+                  type="text"
+                  onChange={e => this.handleProductAttributeChange(e)}
+                  value={this.state.product.description}
+                  className="form-control"
+                  id="description-text-area"
+                  name="description"
+                  />
+                </div>
+              </div>
+
+              {this.renderUploadFormProgress()}
+
+              <button
+                disabled={this.state.isSubmittingForm}
+                onClick={e => this.handleFormSubmit()}
+                className="btn btn-primary">
+                {this.state.isSubmittingForm ? 'Saving...' : 'Save Listing'}
+              </button>
 
              
             </div>
@@ -238,7 +237,7 @@ class RefactorForm extends React.Component {
     );
   }
 
-  //THIS IS FOR WHEN I HAVE AN EDIT PAGE
+  //THIS IS FOR WHEN I HAVE EDIT ABILITIES
   // componentWillMount() {
   //   if (this.props.match.params.id) {
   //     axiosClient.get(`/products/${this.props.match.params.id}`).then(response => {
@@ -257,7 +256,7 @@ class RefactorForm extends React.Component {
   //           category: response.data.category,
   //           description: response.data.description,
   //           created_at: response.data.created_at,
-  //           errors: {}
+  //           error: ''
   //         }
   //       });
   //     });
@@ -289,14 +288,14 @@ class RefactorForm extends React.Component {
             position: 'absolute',
             zIndex: -1
           }}
-          id="product_covers"
+          id="product_images"
           onChange={e => this.handleProductImagesChange(e)}
           className="form-control"
         />
         <label
           disabled={this.state.isSubmittingForm}
           className="btn btn-success"
-          htmlFor="product_covers">
+          htmlFor="product_images">
           <span className="glyphicon glyphicon-cloud-upload" />
           &nbsp; &nbsp;
           {numberOfSelectedImages === 0
@@ -311,7 +310,7 @@ class RefactorForm extends React.Component {
 
   renderSelectedProductImageFiles() {
     let fileDOMs = this.state.selectedProductImageFiles.map((el, index) => {
-      if (el._destroy) { // we use _destroy to mark the removed photo
+      if (el._destroy) { 
         return null;
       }
 
@@ -385,7 +384,7 @@ class RefactorForm extends React.Component {
     let { selectedProductImageFiles } = this.state;
     for (let i = 0; i < selectedFiles.length; i++) {
       selectedProductImageFiles.push(selectedFiles.item(i));
-    } //end for
+    } 
 
     this.setState(
       {
@@ -404,23 +403,11 @@ class RefactorForm extends React.Component {
     this.setState({ product: product });
   }
 
-  renderProductTitleInlineError() {
-    if (this.state.product.errors.title) {
+  renderProductError() {
+    if (this.state.product.error !== '') {
       return (
         <div className="inline-error alert alert-danger">
-          {this.state.product.errors.title.join(', ')}
-        </div>
-      );
-    } else {
-      return null;
-    }
-  }
-
-  renderProductDescriptionInlineError() {
-    if (this.state.product.errors.description) {
-      return (
-        <div className="inline-error alert alert-danger">
-          {this.state.product.errors.description.join(', ')}
+          {this.state.product.error}
         </div>
       );
     } else {
@@ -430,7 +417,7 @@ class RefactorForm extends React.Component {
 
   buildFormData() {
     let formData = new FormData();
-
+    
     formData.append('product[category]', this.state.product.category);
     formData.append('product[made_in]', this.state.product.made_in);
     formData.append('product[price]', this.state.product.price);
@@ -462,40 +449,37 @@ class RefactorForm extends React.Component {
   }
 
   submitForm() {
-    let submitMethod = this.state.product.id ? 'patch' : 'post';
-    let url = this.state.product.id
-      ? `/products/${this.state.product.id}.json`
-      : '/products.json';
+    //USE THESE TWO VARIABLES IF EDIT FUNCTION IS IMPLEMENTED
+    // let submitMethod = this.state.product.id ? 'patch' : 'post';
+    // let url = this.state.product.id
+    //   ? `/products/${this.state.product.id}.json`
+    //   : '/products.json';
 
-    axiosClient
-      [submitMethod](url, this.buildFormData(), {
-        onUploadProgress: progressEvent => {
-          let percentage = progressEvent.loaded * 100.0 / progressEvent.total;
-          this.setState({
-            submitFormProgress: percentage
-          });
-        }
-      })
-      .then(response => {
-        this.setState({
-          didFormSubmissionComplete: true
-        });
-        this.props.history.push('/');
-      })
-      .catch(error => {
+    fetch('http://localhost:3000/products', {
+      method: "POST",
+      body: this.buildFormData()
+    })
+    .then(response => {
+      if (!response.ok) {
         let { product } = this.state;
-        product.errors = error.response.data;
+        product.error = response.statusText.concat('. It is possible you did not fill out all of the inputs that have * by them or some other error is happening.')
         this.setState({
           isSubmittingForm: false,
           submitFormProgress: 0,
           product: product
+        })
+      } else {
+        this.setState({
+          didFormSubmissionComplete: true
         });
-      });
+        this.props.history.push('/');
+      }
+    }) 
   }
 
   handleFormSubmit() {
     let { product } = this.state;
-    product.errors = {};
+    product.error = '';
     this.setState(
       {
         isSubmittingForm: true,
