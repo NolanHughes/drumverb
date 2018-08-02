@@ -17,7 +17,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
   }
 
   if(Object.keys(product).length !== 0) {
-    productImage = <img className="pop-up-image" src={product.product_image_photos[0].url} alt={product.title}/>
+    productImage = <img className="pop-up-image" src={product.product_image_photos[0].thumbnail_url} alt={product.title}/>
   }
 
   return(

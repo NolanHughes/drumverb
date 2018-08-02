@@ -28,6 +28,8 @@ class Product < ActiveRecord::Base
       product_image_photos: product_images.map do |x|
         {
           url: x.photo.url,
+          medium_url: x.photo.url(:medium),
+          thumbnail_url: x.photo.url(:thumb),
           name: x.photo_file_name,
           id: x.id
         }

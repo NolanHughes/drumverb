@@ -313,7 +313,7 @@ class RefactorForm extends React.Component {
       if (el._destroy) { 
         return null;
       }
-
+      debugger
       return (
         <li key={index}>
           <div className="photo">
