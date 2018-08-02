@@ -17,7 +17,7 @@
 8. adjust origins and resources in config/application.rb (screenshot)
 		-http://jameshuynh.com/rails/react/upload/2017/09/17/how-to-upload-files-using-react-and-rails-like-a-boss/
 
-9. Look in product_image model for thumbnail size and styling
+9. Look in product_image model for thumbnail size and styling (might be done)
 
 10. Add Edit component
 
