@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import SearchOverview from '../components/SearchOverview';
 import Intro from '../components/Intro'
 import DisplayFilteredProducts from '../components/DisplayFilteredProducts'
+import SidebarNav from '../components/SidebarNav'
 // import { setFilteredProducts } from '../actions/index'
  
 class FilteredProductsPage extends React.Component {
@@ -19,10 +20,13 @@ class FilteredProductsPage extends React.Component {
 
     return (
       <div>
-        <Intro />      
-        <div className='ui container display-div'>  
-          <SearchOverview products={products}/>
-          <DisplayFilteredProducts products={products} />
+        <Intro />
+        <div>
+          <SidebarNav products={products}/>      
+          <div className='display-div'>  
+            <SearchOverview products={products}/>
+            <DisplayFilteredProducts products={products} />
+          </div>
         </div>
       </div> 
     );

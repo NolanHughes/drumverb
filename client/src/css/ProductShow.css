@@ -49,7 +49,7 @@
 
 .pop-up-image { 
 	width: 112px;
-  height: 112px;
+  height: auto;
   border-radius: 3px;
 }
 

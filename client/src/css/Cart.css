@@ -46,7 +46,7 @@
 }
 
 .in-cart-product-image {
-	height: 120px;
+	height: auto;
 	width: 120px;
 	border-radius: 6px;
 }

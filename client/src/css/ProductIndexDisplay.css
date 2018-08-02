@@ -1,7 +1,7 @@
 .productImage {
 	width: 100%;
-  width: 259px;
-  height: 259px;
+  width: 244px;
+  height: 244px;
 }
 
 .product-info {
@@ -36,14 +36,21 @@
 }
 
 .reframe {
-  height: 259px;
-  width: 259px;
+  height: 244px;
+  width: auto;
   overflow: hidden;
+  position: relative;
 }
 
 .reframe img {
   height: 259px;
   width: auto;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
 }
 
 .search-overview {

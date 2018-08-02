@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import '../css/SidebarNav.css'
 
 const SidebarNav = ({products}) => {
-	const snares = products.filter(products => products.category === "Snare drum")
+
+	const snares = products.filter(products => products.category === "4")
 	
 	return(
 		<nav id="sidebar-nav">
@@ -18,7 +19,7 @@ const SidebarNav = ({products}) => {
 						</Link>
 						<ul id="nested-ul">
 							<li>
-								<Link to={`/filtered-products/snare%20drum`}>
+								<Link to={`/filtered-products/4`}>
 									<span>Snare drums </span>
 									<div className="category-count">({snares.length})</div>
 								</Link>

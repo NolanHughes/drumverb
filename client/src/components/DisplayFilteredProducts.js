@@ -7,7 +7,7 @@ const DisplayFilteredProducts = ({ products }) => {
     <li key={product.id} className="four wide column centered list-item ">
       <Link to={`/products/${product.id}`}>
         <div className="reframe">
-          <img className="productImage" src={product.image.url} alt={product.title}/>
+          <img className="productImage" src={product.product_image_photos[0].url} alt={product.title}/>
         </div>
         <div className="product-info">
           <h4>{product.title}</h4>
