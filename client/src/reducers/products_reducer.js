@@ -52,7 +52,7 @@ export function searchValue(state = '', action) {
 export function cart(state = [], action) {
 	switch (action.type) {
 		case 'ADD_PRODUCT_TO_CART':
-			return [...state, action.product];//Alert on success?
+			return [...state, action.product];
 		case 'REMOVE_PRODUCT_FROM_CART':
 			return [
 				...state.slice(0, action.index),
