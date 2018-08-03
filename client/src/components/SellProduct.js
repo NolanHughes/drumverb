@@ -207,7 +207,8 @@ class RefactorForm extends React.Component {
   //THIS IS FOR WHEN I HAVE EDIT ABILITIES
   // componentWillMount() {
   //   if (this.props.match.params.id) {
-  //     axiosClient.get(`/products/${this.props.match.params.id}`).then(response => {
+  //     fetch(`http://localhost:3000/products/${this.props.match.params.id}`)
+  //     .then(response => {
   //       this.setState({
   //         selectedProductImageFiles: response.data.product_image_photos,
   //         product: {
