@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { setSortValue } from '../actions/index';
 
-const SearchOverview = ({products, setSortValue, sortValue}) => {
+const SearchOverview = ({products, setSortValue, sortValue, filteredBy}) => {
 
   return (
     <div className="search-overview">
@@ -12,7 +12,7 @@ const SearchOverview = ({products, setSortValue, sortValue}) => {
       </div> 
       <div className="search-overview_secondary ui grid">
         <div className="twelve wide column" id="filtered-by">
-          Filtered by:
+          Filtered by: {filteredBy}
         </div>
         <div className="four wide column" id="sort-dropdown">
           <select name="sort" id="sort" onChange={setSortValue} defaultValue={sortValue}>
@@ -29,7 +29,8 @@ const SearchOverview = ({products, setSortValue, sortValue}) => {
 {/*Make FilteredProducts state work better so it can be implemented*/}
 const mapStateToProps = (state) => {
   return {
-    sortValue: state.sortValue
+    sortValue: state.sortValue,
+    filteredBy: state.filteredBy
   }
 }
 

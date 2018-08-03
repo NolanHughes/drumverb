@@ -1,9 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+
+import { changeFilteredBy } from '../actions/index';
 
 import '../css/SidebarNav.css'
 
-const SidebarNav = ({products}) => {
+const SidebarNav = ({products, changeFilteredBy}) => {
 
 	const categoriesArray = [
 		{value: "1", name: "Bass Drum"}, 
@@ -19,7 +22,7 @@ const SidebarNav = ({products}) => {
 
 	const sidebarCategories = categoriesArray.map((category, index) => (
 		<li key={index} className="sidebar-categories">
-			<Link to={`/filtered-products/${category.value}`}>
+			<Link to={`/filtered-products/${category.value}`} onClick={() => changeFilteredBy(category.name)}>
 				<span>{category.name} </span>
 				<div className="category-count">({
 					`${products.filter(product => product.category === category.value).length}`
@@ -35,7 +38,7 @@ const SidebarNav = ({products}) => {
 				<div id="categories-heading">Categories</div>
 				<ul>
 					<li>
-						<Link to={'/'}>
+						<Link to={'/'} onClick={() => changeFilteredBy('Drums and Percussion')}>
 							<span>Drums and Percussion </span>
 							<div className="category-count">({products.length})</div>
 						</Link>
@@ -50,4 +53,10 @@ const SidebarNav = ({products}) => {
 	)
 }
 
-export default SidebarNav
+const mapDispatchToProps = (dispatch) => {
+  return {
+  	changeFilteredBy: (categoryName) => dispatch(changeFilteredBy(categoryName))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SidebarNav)

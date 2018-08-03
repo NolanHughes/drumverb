@@ -9,6 +9,15 @@ export function products(state = [], action) {
 	}
 }
 
+export function filteredBy(state = 'Drums and Percussion', action) {
+	switch (action.type) {
+		case 'SET_FILTERED_BY':
+			return action.string
+		default:
+			return state;
+	}
+}
+
 // export function filteredProducts(state = [], action) {
 // 	switch (action.type) {
 // 		case 'SET_FILTERED_PRODUCTS':

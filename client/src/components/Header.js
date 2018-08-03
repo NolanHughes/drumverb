@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 import ProductSearch from '../containers/ProductSearch';
+import { changeFilteredBy } from '../actions/index';
+
 import '../css/Header.css'
 
-const Header = ({cart}) => (
+const Header = ({cart, changeFilteredBy}) => (
 
   <header>
 	  <nav id="main-nav" className="ui grid middle aligned">
-	    <Link to='/' id="nav-logo" className="nav-element three wide column">Drumverb</Link>
+	    <Link to='/' id="nav-logo" className="nav-element three wide column" onClick={() => changeFilteredBy('Drums and Percussion')}>Drumverb</Link>
 	  	<ProductSearch />
 	  	<ul  className="four wide column" id='header-right-li'>
 	  		<li id="sell-product-li">
@@ -48,4 +50,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Header)
+const mapDispatchToProps = (dispatch) => {
+ return {
+  	changeFilteredBy: (categoryName) => dispatch(changeFilteredBy(categoryName))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

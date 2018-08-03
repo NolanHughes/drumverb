@@ -6,6 +6,7 @@ import { withRouter } from 'react-router'
 
 import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/index';
 import QueriedProducts from '../components/QueriedProducts'
+import { changeFilteredBy } from '../actions/index';
 import '../css/ProductSearch.css'
 
 class ProductSearch extends React.Component {
@@ -19,6 +20,7 @@ class ProductSearch extends React.Component {
     this.props.history.push(`/searched-products/${this.props.searchValue}`);
     this.props.clearQueriedProducts()
     this.props.clearSearchValue()
+    this.props.changeFilteredBy(this.props.searchValue)
   }
 
   render() {   
@@ -27,7 +29,8 @@ class ProductSearch extends React.Component {
       clearQueriedProducts, 
       queryProducts, 
       searchValue,
-      clearSearchValue } = this.props
+      clearSearchValue, 
+      changeFilteredBy } = this.props
 
     return (
       <div id='product-search' className="nav-element nine wide column">
@@ -41,11 +44,12 @@ class ProductSearch extends React.Component {
           />
           <button id="search-button"><i className="search icon"></i></button>
         </form>     
-        <Link to='/' id="products-link">Products</Link>
+        <Link to='/' id="products-link" onClick={() => changeFilteredBy('Drums and Percussion')}>Products</Link>
         <QueriedProducts 
           queriedProducts={queriedProducts}
           clearQueriedProducts={clearQueriedProducts} 
           clearSearchValue={clearSearchValue}
+          changeFilteredBy={changeFilteredBy}
         />
       </div>     
     )
@@ -63,7 +67,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     clearQueriedProducts: () => dispatch(clearQueriedProducts()),
     clearSearchValue: () => dispatch(clearSearchValue()),
-    queryProducts: (query) => dispatch(queriedProductsFetchData(query))
+    queryProducts: (query) => dispatch(queriedProductsFetchData(query)),
+    changeFilteredBy: (categoryName) => dispatch(changeFilteredBy(categoryName))
   };
 };
 

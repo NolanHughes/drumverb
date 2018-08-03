@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 
 import '../css/ProductSearch.css'
 
-const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchValue, searchValue }) => {
+const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchValue, searchValue, changeFilteredBy }) => {
 	const productRows = queriedProducts.slice(0, 4).map((product, idx) => (
-    <Link style={{ display: 'block' }} key={product.id} to={`/searched-products/${product.title}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{product.title}</Link>
+    <Link style={{ display: 'block' }} key={product.id} to={`/searched-products/${product.title}`} onClick={() => {changeFilteredBy(product.title);clearQueriedProducts(); clearSearchValue() }}>{product.title}</Link>
 	));
 
-	const searchValueLink = <Link style={{ display: 'block' }} key={0} to={`/searched-products/${searchValue}`} onClick={() => {clearQueriedProducts(); clearSearchValue();}}>{searchValue}</Link>
+	const searchValueLink = <Link style={{ display: 'block' }} key={0} to={`/searched-products/${searchValue}`} onClick={() => {changeFilteredBy(searchValue); clearQueriedProducts(); clearSearchValue() }}>{searchValue}</Link>
 
   return (
 		<div>

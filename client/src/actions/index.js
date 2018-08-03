@@ -12,9 +12,8 @@ import {
 	fetchAllProductsSuccess
 } from './allProducts'
 import { setSortValue } from './sort'
+import { changeFilteredBy } from './filteredProducts'
 // import { setFilteredProducts } from './filteredProducts'
-
-
 
 export { addProductToCart }
 export { removeProductFromCart }
@@ -29,4 +28,5 @@ export { addNewProductSuccess }
 export { fetchAllProducts }
 export { fetchAllProductsSuccess }
 export { setSortValue }
+export { changeFilteredBy }
 // export { setFilteredProducts }
