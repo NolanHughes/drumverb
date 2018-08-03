@@ -5,8 +5,29 @@ import '../css/SidebarNav.css'
 
 const SidebarNav = ({products}) => {
 
-	const snares = products.filter(products => products.category === "4")
-	
+	const categoriesArray = [
+		{value: "1", name: "Bass Drum"}, 
+		{value: "2", name: "Full Acoustic Kits"}, 
+		{value: "3", name: "Snare"},
+		{value: "4", name: "Tom"},
+		{value: "5", name: "Crash"},
+		{value: "6", name: "Cymbal Packs"},
+		{value: "7", name: "Hi-Hats"},
+		{value: "8", name: "Other (Splash, China, etc)"},
+		{value: "9", name: "Ride"}
+	]
+
+	// debugger
+
+	const sidebarCategories = categoriesArray.map((category, index) => (
+		<li key={index} className="sidebar-categories">
+			<Link to={`/filtered-products/${category.value}`}>
+				<span>{category.name} </span>
+				<div className="category-count">({`${products.filter(product => product.category === category.value).length}`})</div>
+			</Link>
+		</li>
+	))
+
 	return(
 		<nav id="sidebar-nav">
 			<div id="sidebar-categories">
@@ -18,12 +39,7 @@ const SidebarNav = ({products}) => {
 							<div className="category-count">({products.length})</div>
 						</Link>
 						<ul id="nested-ul">
-							<li>
-								<Link to={`/filtered-products/4`}>
-									<span>Snare drums </span>
-									<div className="category-count">({snares.length})</div>
-								</Link>
-							</li>
+							{sidebarCategories}
 						</ul>
 					</li>
 					

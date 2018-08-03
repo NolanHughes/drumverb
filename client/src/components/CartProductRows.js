@@ -6,6 +6,7 @@ import { removeProductFromCart } from '../actions/index';
 import '../css/Cart.css'
 
 const CartProductRows = ({ cart, removeProductFromCart }) => {
+  debugger
   const productRows = cart.map((product, index) => (
     <div className="ui grid row cart-row" key={product.id}>
       <div className="four wide column image-div">
@@ -28,7 +29,7 @@ const CartProductRows = ({ cart, removeProductFromCart }) => {
       </div>
     </div>
   ));
-
+  debugger
   return (
     <div>
       {productRows}

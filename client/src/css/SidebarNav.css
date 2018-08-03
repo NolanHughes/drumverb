@@ -45,3 +45,7 @@
 	font-size: 90%;
   opacity: .5;
 }
+
+.sidebar-categories {
+  display: block;
+}
