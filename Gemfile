@@ -16,7 +16,7 @@ gem 'foreman', '~> 0.82.0'
 # Responders for more dry controller code
 gem 'responders'
 # Paperclip for uploading images
-gem 'paperclip', '~> 5.1.0'
+gem 'paperclip', '~> 5.2.0'
 #Rack-cors for cross domain call
 gem 'rack-cors'
 

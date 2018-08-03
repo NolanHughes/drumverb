@@ -1,3 +1,5 @@
+0. Modify SellProduct to update redux state instead of react
+
 1. Finish styling it just like reverb
 	-Adjust thumbnail size and styling in product_image model so it is completely right no matter the upload dimensions
 
