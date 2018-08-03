@@ -16,7 +16,7 @@ class ProductSearch extends React.Component {
   searchButton = (e) => {
     e.preventDefault()
 
-    this.props.history.push(`/filtered-products/${this.props.searchValue}`);
+    this.props.history.push(`/searched-products/${this.props.searchValue}`);
     this.props.clearQueriedProducts()
     this.props.clearSearchValue()
   }

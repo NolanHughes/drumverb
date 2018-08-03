@@ -17,13 +17,14 @@ const SidebarNav = ({products}) => {
 		{value: "9", name: "Ride"}
 	]
 
-	// debugger
-
 	const sidebarCategories = categoriesArray.map((category, index) => (
 		<li key={index} className="sidebar-categories">
 			<Link to={`/filtered-products/${category.value}`}>
 				<span>{category.name} </span>
-				<div className="category-count">({`${products.filter(product => product.category === category.value).length}`})</div>
+				<div className="category-count">({
+					`${products.filter(product => product.category === category.value).length}`
+				})
+				</div>
 			</Link>
 		</li>
 	))
