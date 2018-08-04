@@ -8,6 +8,7 @@ import '../css/SidebarNav.css'
 
 const SidebarNav = ({products, changeFilteredBy}) => {
 
+	//Set as state?
 	const categoriesArray = [
 		{value: "1", name: "Bass Drum"}, 
 		{value: "2", name: "Full Acoustic Kits"}, 

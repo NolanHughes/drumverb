@@ -8,7 +8,22 @@ import '../css/ProductShow.css'
  
 const ProductShow = ({ product, addProductToCart, cart }) =>{
   let addToCartButton 
-  let productImage
+  let productThumbnail
+  let firstProductImage
+  let categoryName
+
+  //Set as state?
+  const categoriesArray = [
+    {value: "1", name: "Bass Drum"}, 
+    {value: "2", name: "Full Acoustic Kits"}, 
+    {value: "3", name: "Snare"},
+    {value: "4", name: "Tom"},
+    {value: "5", name: "Crash"},
+    {value: "6", name: "Cymbal Packs"},
+    {value: "7", name: "Hi-Hats"},
+    {value: "8", name: "Other (Splash, China, etc)"},
+    {value: "9", name: "Ride"}
+  ]
 
   if(cart.includes(product)) {
     addToCartButton = <div>This product is already in your cart</div>   
@@ -17,12 +32,15 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
   }
 
   if(Object.keys(product).length !== 0) {
-    productImage = <img className="pop-up-image" src={product.product_image_photos[0].thumbnail_url} alt={product.title}/>
+    productThumbnail = <img className="pop-up-image" src={product.product_image_photos[0].thumbnail_url} alt={product.title}/>
+    firstProductImage = <img src={product.product_image_photos[0].url} alt={product.title}/>
+    categoryName = categoriesArray.find(c => c.value === product.category).name
   }
 
   return(
-    <div id="product-show" className="col-md-8 ui container">
-  
+    <div id="product-show" className="ui container">
+      <h1>{product.title}</h1>
+      
       <div id="confirmBox">
         <button className="ui icon button" id="pop-up-close-button" onClick={() => closePopUp()}>
           <i className="window close outline icon"></i>
@@ -31,7 +49,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
         <div id="pop-up-body"> 
           <div className="ui grid row cart-row" key={product.id}>
             <div className="three wide column">
-              {productImage}
+              {productThumbnail}
             </div>
             <div className="eight wide column" id="pop-up-product-title">
               <p>{product.title}</p>
@@ -41,16 +59,55 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
               <Link to='/cart'><button id="pop-up-cart-button">View Cart</button></Link>
             </div>
           </div> 
-        </div>  
-        
+        </div>         
       </div>
-  
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <p>${product.price}</p>
-      {addToCartButton}
+      
+      <div id="product-show-image-div">
+        {firstProductImage}
+      </div>
+
+{/*      <div>
+        <p>${product.price}</p>
+        {addToCartButton}
+      </div>*/}
+      
+      <div id="product-info">
+        <ul>
+          <li>Description</li>
+        </ul>
+        <div id="product-info-content">
+          <section className="section--listing-readmore">
+            <p>{product.description}</p>
+          </section>
+          <section>
+            <h4>Product Specs</h4>
+            <dl className="description-section__spec-list">
+
+              <dt>Condition:</dt>
+              <dd>
+                <span>{ product.condition }</span>
+              </dd>
+
+              <dt>Brand:</dt>
+              <dd>
+                <Link to={`/searched-products/${product.brand}`}>{product.brand}</Link>
+              </dd>
+
+              <dt>Model:</dt>
+              <dd>
+                <Link rel="nofollow" to={`/searched-products/${product.model}`}>{product.model}</Link>
+              </dd>
+
+              <dt>Category:</dt>
+              <dd>
+                <Link to={`/filtered-products/${product.category}`}>{categoryName}</Link>
+              </dd>
+            </dl>
+          </section>
+        </div>
+      </div>
     </div>
-    )
+  )
 }
  
 const mapStateToProps = (state, ownProps) => {
