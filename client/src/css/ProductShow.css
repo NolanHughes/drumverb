@@ -1,33 +1,45 @@
 #product-show {
   position: relative;
-  top: 140px;
+  top: 100px;
   width: 960px;
+}
+.back-to-category-link {
+  color: #747474;
+  font-size: 14.4px;
+  font-weight: 700;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.back-to-category-link:hover {
+  color: #e37a09;
 }
 
 #product-show h1 {
   font-size: 32px;
   color: #414141;
+  margin-top: 10px;
 }
 
 #product-show-image-div {
-  height: 633px;
+  height: 620px;
   position: relative;
-  width: 633px;
+  width: 620px;
   background-color: #F0F0F0;
-  line-height: 633px;
+  line-height: 620px;
   text-align:center;
   box-shadow: inset 0 0 30px 10px rgba(0,0,0,.05);
 }
 
 #product-show-image-div img {
   vertical-align: middle;
-  max-height: 633px;
-  max-width: 633px;
+  max-height: 620px;
+  max-width: 620px;
 }
 
 #product-info {
   background: white;
-  width: 633px;
+  width: 620px;
   margin-top: 20px;
 }
 
@@ -75,12 +87,18 @@
 #confirmBox {
   display: none;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 4px;
   position: fixed;
   width: 780px;
-  margin: 0% -2%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 1px solid;
+  margin: 0% 5%;
+  box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  top: 150px;
+}
+
+#confirmBox i {
+  color: white;
+  margin: 4px 4px 6px 0px;
 }
 
 #pop-up-close-button {
@@ -90,7 +108,7 @@
   border: 3px solid #fff;
   border-radius: 50%;
   position: absolute;
-  bottom: 182px;
+  bottom: 189px;
   right: -19px;
   background: #414141;
   color: #fff;
@@ -137,4 +155,31 @@
   height: 32px;
   font-weight: 700;
   margin-top: 58px;
+}
+
+.buy-div {
+  background: white;
+  top: 108px;
+  height: 185px;
+  padding: 18px;
+  text-align: center;
+}
+
+#product-show .buy-div span {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 70;
+  color: #414141;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+#product-show .buy-div button {
+  background-color: rgb(243, 145, 38);
+  border: 1px solid #f39126;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10.4px 16px;
+  width: 100%;
 }

@@ -26,7 +26,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
   ]
 
   if(cart.includes(product)) {
-    addToCartButton = <div>This product is already in your cart</div>   
+    addToCartButton = <Link to={'/cart'}><button>Go to cart</button></Link>  
   } else {
     addToCartButton = <button onClick={() => { addProductToCart(product); popUp() }}>Add to cart</button>
   }
@@ -39,8 +39,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
 
   return(
     <div id="product-show" className="ui container">
-      <h1>{product.title}</h1>
-      
+
       <div id="confirmBox">
         <button className="ui icon button" id="pop-up-close-button" onClick={() => closePopUp()}>
           <i className="window close outline icon"></i>
@@ -61,49 +60,62 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
           </div> 
         </div>         
       </div>
-      
-      <div id="product-show-image-div">
-        {firstProductImage}
-      </div>
 
-{/*      <div>
-        <p>${product.price}</p>
-        {addToCartButton}
-      </div>*/}
-      
-      <div id="product-info">
-        <ul>
-          <li>Description</li>
-        </ul>
-        <div id="product-info-content">
-          <section className="section--listing-readmore">
-            <p>{product.description}</p>
-          </section>
-          <section>
-            <h4>Product Specs</h4>
-            <dl className="description-section__spec-list">
+      <div className="ui grid">
+        <div className="eleven wide column">
+          <Link to={`/filtered-products/${product.category}`} className="back-to-category-link">
+            <i className="arrow circle left icon"></i>Back to {categoryName}
+          </Link>
+          <h1>{product.title}</h1>
+          
+          
+          
+          <div id="product-show-image-div">
+            {firstProductImage}
+          </div>
+          
+          <div id="product-info">
+            <ul>
+              <li>Description</li>
+            </ul>
+            <div id="product-info-content">
+              <section className="section--listing-readmore">
+                <p>{product.description}</p>
+              </section>
+              <section>
+                <h4>Product Specs</h4>
+                <dl className="description-section__spec-list">
 
-              <dt>Condition:</dt>
-              <dd>
-                <span>{ product.condition }</span>
-              </dd>
+                  <dt>Condition:</dt>
+                  <dd>
+                    <span>{ product.condition }</span>
+                  </dd>
 
-              <dt>Brand:</dt>
-              <dd>
-                <Link to={`/searched-products/${product.brand}`}>{product.brand}</Link>
-              </dd>
+                  <dt>Brand:</dt>
+                  <dd>
+                    <Link to={`/searched-products/${product.brand}`}>{product.brand}</Link>
+                  </dd>
 
-              <dt>Model:</dt>
-              <dd>
-                <Link rel="nofollow" to={`/searched-products/${product.model}`}>{product.model}</Link>
-              </dd>
+                  <dt>Model:</dt>
+                  <dd>
+                    <Link rel="nofollow" to={`/searched-products/${product.model}`}>{product.model}</Link>
+                  </dd>
 
-              <dt>Category:</dt>
-              <dd>
-                <Link to={`/filtered-products/${product.category}`}>{categoryName}</Link>
-              </dd>
-            </dl>
-          </section>
+                  <dt>Category:</dt>
+                  <dd>
+                    <Link to={`/filtered-products/${product.category}`}>{categoryName}</Link>
+                  </dd>
+                </dl>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <div className="five wide column buy-div">
+          <div>
+            <span>${product.price}.00</span>
+          </div>
+          {addToCartButton}
         </div>
       </div>
     </div>

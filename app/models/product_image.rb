@@ -3,7 +3,7 @@ class ProductImage < ApplicationRecord
   has_attached_file \
     :photo,
 
-    styles: { original: "", medium: '239x239>', thumb: ['112x112#', 'jpg'] },
+    styles: { original: "", medium: '265x265#', thumb: ['112x112#', 'jpg'] },
     # convert_options: {
     #   all: '-interlace Plane'
     # },

@@ -1,7 +1,7 @@
 .productImage {
 	width: 100%;
-  width: 244px;
-  height: 244px;
+  width: 265px;
+  height: 265px;
 }
 
 .product-info {
@@ -20,7 +20,7 @@
 #product-list > * {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 0px;
-  width: 23%!important;
+  width: 265px!important;
 }
 
 .list-item {

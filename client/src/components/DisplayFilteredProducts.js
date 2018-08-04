@@ -6,9 +6,7 @@ const DisplayFilteredProducts = ({ products }) => {
   const renderProducts = products.map(product => (
     <li key={product.id} className="four wide column centered list-item ">
       <Link to={`/products/${product.id}`}>
-        <div className="reframe">
-          <img className="productImage" src={product.product_image_photos[0].url} alt={product.title}/>
-        </div>
+        <img className="productImage" src={product.product_image_photos[0].medium_url} alt={product.title}/>
         <div className="product-info">
           <h4>{product.title}</h4>
           <span>${product.price}</span>

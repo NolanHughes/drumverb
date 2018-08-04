@@ -1,7 +1,7 @@
 0. Modify SellProduct to update redux state instead of react
 
 1. Finish styling it just like reverb
-	-Adjust thumbnail size and styling in product_image model so it is completely right no matter the upload dimensions
+	-require upload width of 620px
 
 2. Check to see if you can make components stateless at end
 	-Refactor SellProduct.js	

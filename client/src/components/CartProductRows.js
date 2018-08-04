@@ -6,12 +6,11 @@ import { removeProductFromCart } from '../actions/index';
 import '../css/Cart.css'
 
 const CartProductRows = ({ cart, removeProductFromCart }) => {
-  debugger
   const productRows = cart.map((product, index) => (
     <div className="ui grid row cart-row" key={product.id}>
       <div className="four wide column image-div">
         <Link to={`/products/${product.id}`}>
-          <img className="in-cart-product-image" src={product.product_image_photos[0].url} alt="title"/>
+          <img className="in-cart-product-image" src={product.product_image_photos[0].thumbnail_url} alt="title"/>
         </Link>
       </div>
       <div className="eight wide column">
@@ -29,7 +28,7 @@ const CartProductRows = ({ cart, removeProductFromCart }) => {
       </div>
     </div>
   ));
-  debugger
+
   return (
     <div>
       {productRows}
