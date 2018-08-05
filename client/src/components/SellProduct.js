@@ -30,11 +30,11 @@ class RefactorForm extends React.Component {
 
   render() {
     return (
-      <div id="new-product" className="ui two column centered grid">
-        <div className="column">
+      <div id="new-product" className="ui grid container">
+        <div className="sixteen wide column">
           <h1>Sell on Drumverb. No listing fees. Reach millions of musicians.</h1>
         </div>
-        <div className="two column centered row">
+        <div className="eleven wide column">
           <div className="column listing-editor">
             <div className="listing-header">
               <h3>What are you selling?</h3>
@@ -55,7 +55,7 @@ class RefactorForm extends React.Component {
                     className="form-control"
                     name="brand"
                   />
-                  <p>e.g. Tama</p>
+                  <p className="sell-product-under-text">e.g. Tama</p>
                 </div>
                 <div className="ten wide column">
                   <label>Model*</label>
@@ -66,7 +66,7 @@ class RefactorForm extends React.Component {
                     className="form-control"
                     name="model"
                   />
-                  <p>e.g. Starclassic Performer B/B Lacquer 5-piece</p>
+                  <p className="sell-product-under-text">e.g. Starclassic Performer B/B Lacquer 5-piece</p>
                 </div>   
               </div>
 
@@ -97,7 +97,7 @@ class RefactorForm extends React.Component {
                   />
                 </div>
                 <div className="five wide column">
-                  <label>Finish</label>
+                  <label>Finish/Color</label>
                   <input
                     type="text"
                     onChange={e => this.handleProductAttributeChange(e)}
@@ -118,7 +118,7 @@ class RefactorForm extends React.Component {
                     className="form-control"
                     name="title"
                   />
-                  <p>Feel free to modify this</p>
+                  <p className="sell-product-under-text">Feel free to modify this</p>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@ class RefactorForm extends React.Component {
                     className="form-control"
                     name="price"
                   />
-                  <span>USD</span>
+                  <span className="usd-span">USD</span>
                 </div>
                 <div className="ten wide column">
                   <label>Where was it made?</label>
@@ -165,40 +165,54 @@ class RefactorForm extends React.Component {
                     <option value="9">Drums and Percussion &gt; Ride</option>
                   </select>              
                 </div>
-              </div>
-
-              <div className="form-group">
-                <label>Images*</label>
-                {this.renderUploadImagesButton()}
-                {this.renderSelectedProductImageFiles()}
-              </div>
-
-              <div className="ui grid">
-                <div className="column">
-                  <label>Description*</label>
-                  <textarea
-                  type="text"
-                  onChange={e => this.handleProductAttributeChange(e)}
-                  value={this.state.product.description}
-                  className="form-control"
-                  id="description-text-area"
-                  name="description"
-                  />
-                </div>
-              </div>
-
-              {this.renderUploadFormProgress()}
-
-              <button
-                disabled={this.state.isSubmittingForm}
-                onClick={e => this.handleFormSubmit()}
-                className="btn btn-primary">
-                {this.state.isSubmittingForm ? 'Saving...' : 'Save Listing'}
-              </button>
-
-             
+              </div>           
             </div>
           </div>
+
+          <div className="form-group sell-product-images-div">
+            <div className="listing-header">
+              <h3>What does it look like?</h3>
+            </div>
+            <div className="images-upload-content-div">
+              <h4>Click below to upload photos of your gear</h4>
+              <div>
+                {this.renderSelectedProductImageFiles()}
+                {this.renderUploadImagesButton()}      
+              </div>       
+            </div>
+          </div>
+
+          <div className="ui grid">
+            <div className="column">
+              <label>Description*</label>
+              <textarea
+              type="text"
+              onChange={e => this.handleProductAttributeChange(e)}
+              value={this.state.product.description}
+              className="form-control"
+              id="description-text-area"
+              name="description"
+              />
+            </div>
+          </div>
+
+          {this.renderUploadFormProgress()}
+
+          <button
+            disabled={this.state.isSubmittingForm}
+            onClick={e => this.handleFormSubmit()}
+            className="btn btn-primary">
+            {this.state.isSubmittingForm ? 'Saving...' : 'Save Listing'}
+          </button>
+
+        </div>
+        <div className="five wide column right-side-sell-column">
+          <h3>The lowest fees around</h3>
+          <ul>
+            <li><i className="check icon"></i>3.5% selling fee.</li>
+            <li><i className="check icon"></i>2.7% + $0.25 payment processing fee. </li>
+            <li><i className="check icon"></i>$0.50 min and a $350 max selling fee.</li>
+          </ul>
         </div>
       </div>
     );
@@ -240,7 +254,7 @@ class RefactorForm extends React.Component {
   renderUploadImagesButton() {
     let numberOfSelectedImages = this.getNumberOfSelectedFiles();
     return (
-      <div>
+      <div id="image-upload-div">
         <input
           name="images[]"
           ref={field => (this.productImagesField = field)}
@@ -248,30 +262,22 @@ class RefactorForm extends React.Component {
           disabled={this.state.isSubmittingForm}
           multiple={true}
           accept="image/*"
-          style={{
-            width: 0.1,
-            height: 0.1,
-            opacity: 0,
-            overflow: 'hidden',
-            position: 'absolute',
-            zIndex: -1
-          }}
           id="product_images"
           onChange={e => this.handleProductImagesChange(e)}
           className="form-control"
         />
-        <label
-          disabled={this.state.isSubmittingForm}
-          className="btn btn-success"
-          htmlFor="product_images">
-          <span className="glyphicon glyphicon-cloud-upload" />
-          &nbsp; &nbsp;
-          {numberOfSelectedImages === 0
-            ? 'Upload Files'
-            : `${numberOfSelectedImages} file${numberOfSelectedImages !== 1
-                ? 's'
-                : ''} selected`}
-        </label>
+{/*        <label
+        //   disabled={this.state.isSubmittingForm}
+        //   className="btn btn-success"
+        //   htmlFor="product_images">
+        //   <span className="glyphicon glyphicon-cloud-upload" />
+        //   &nbsp; &nbsp;
+        //   {numberOfSelectedImages === 0
+        //     ? 'Upload Files'
+        //     : `${numberOfSelectedImages} file${numberOfSelectedImages !== 1
+        //       ? 's'
+        //       : ''} selected`}
+        // </label>*/}
       </div>
     );
   }
