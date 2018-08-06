@@ -252,9 +252,13 @@ class RefactorForm extends React.Component {
   }
 
   renderUploadImagesButton() {
-    let numberOfSelectedImages = this.getNumberOfSelectedFiles();
+    // let numberOfSelectedImages = this.getNumberOfSelectedFiles();
     return (
       <div id="image-upload-div">
+        <div className="icon-label-div">
+          <i className="plus icon"></i>
+          <label>Upload Photos</label>
+        </div>
         <input
           name="images[]"
           ref={field => (this.productImagesField = field)}
