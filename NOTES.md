@@ -17,7 +17,7 @@
 5.2 Could make searchbar not allow you to search with nothing entered
 
 6. Cart
-	-Have this post to api (Add users so the functionality works)(ignore this) 
+	-Have this post to api (Have to add users)(ignore this) 
 	-Maybe have background color overlay for pop ups
 
 7. Maybe fix navbar changing size? when the intro component is present vs not.

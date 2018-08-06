@@ -254,11 +254,11 @@ class RefactorForm extends React.Component {
   renderUploadImagesButton() {
     // let numberOfSelectedImages = this.getNumberOfSelectedFiles();
     return (
-      <div id="image-upload-div">
-        <div className="icon-label-div">
+      <div id="image-upload-div">        
+        <label htmlFor="product_images" className="custom-file-upload">
           <i className="plus icon"></i>
-          <label>Upload Photos</label>
-        </div>
+          Upload Photos
+        </label>
         <input
           name="images[]"
           ref={field => (this.productImagesField = field)}
@@ -270,6 +270,7 @@ class RefactorForm extends React.Component {
           onChange={e => this.handleProductImagesChange(e)}
           className="form-control"
         />
+
 {/*        <label
         //   disabled={this.state.isSubmittingForm}
         //   className="btn btn-success"
@@ -306,9 +307,6 @@ class RefactorForm extends React.Component {
               onClick={() => this.removeSelectedProductImageFile(el, index)}>
               <span style={{ top: 2 }} className="glyphicon glyphicon-remove" />
             </div>
-          </div>
-          <div className="file-name">
-            {el.name}
           </div>
         </li>
       );
