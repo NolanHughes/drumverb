@@ -20,7 +20,16 @@ class ProductSearch extends React.Component {
     this.props.history.push(`/searched-products/${this.props.searchValue}`);
     this.props.clearQueriedProducts()
     this.props.clearSearchValue()
+    document.getElementById("queried-products-div").style.opacity = 0
     this.props.changeFilteredBy(this.props.searchValue)
+  }
+
+  showQueriedProducts = () => {
+    document.getElementById("queried-products-div").style.opacity = 1
+  }
+
+  hideQueriedProducts = () => {
+    document.getElementById("queried-products-div").style.opacity = 0
   }
 
   render() {   
@@ -34,7 +43,11 @@ class ProductSearch extends React.Component {
 
     return (
       <div id='product-search' className="nav-element nine wide column">
-        <form onSubmit={this.searchButton.bind(this)}>
+        <form 
+          onSubmit={this.searchButton.bind(this)} 
+          onFocus={() => this.showQueriedProducts()} 
+          onBlur={() => this.hideQueriedProducts()}
+        >
           <input
             id='product-input'
             type='text'
@@ -44,13 +57,15 @@ class ProductSearch extends React.Component {
           />
           <button id="search-button"><i className="search icon"></i></button>
         </form>     
-        <Link to='/' id="products-link" onClick={() => changeFilteredBy('Drums and Percussion')}>Products</Link>
+
         <QueriedProducts 
           queriedProducts={queriedProducts}
           clearQueriedProducts={clearQueriedProducts} 
           clearSearchValue={clearSearchValue}
           changeFilteredBy={changeFilteredBy}
         />
+
+        <Link to='/' id="products-link" onClick={() => changeFilteredBy('Drums and Percussion')}>Products</Link>
       </div>     
     )
   }

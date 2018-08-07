@@ -33,8 +33,6 @@
 	border-radius: 4px;
 }
 
-
-
 #new-product-form {
 	padding: 18px;
 }
@@ -165,4 +163,32 @@
 .selected-images {
 	display: inline-block;
 	padding: 0px;
+}
+
+#sell-product-description-div {
+	background-color: white;
+  margin: 40px 0 28px;
+  display: block;
+}
+
+#description-content-div {
+	padding: 18px;
+}
+
+#description-content-div label {
+	margin-bottom: 10px;
+}
+
+#description-content-div textarea{
+	resize: none;
+}
+
+#save-listing-button {
+	background-color: #F6870F;
+  border-color: #F6870F;
+  height: 38px;
+  width: 187px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }

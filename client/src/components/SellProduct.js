@@ -171,7 +171,7 @@ class RefactorForm extends React.Component {
 
           <div className="form-group sell-product-images-div">
             <div className="listing-header">
-              <h3>What does it look like?</h3>
+              <h3>What does it look like?*</h3>
             </div>
             <div className="images-upload-content-div">
               <h4>Click below to upload photos of your gear</h4>
@@ -182,16 +182,19 @@ class RefactorForm extends React.Component {
             </div>
           </div>
 
-          <div className="ui grid">
-            <div className="column">
-              <label>Description*</label>
+          <div className="ui grid" id="sell-product-description-div">
+            <div className="listing-header">
+              <h3>How would you describe it?*</h3>
+            </div>
+            <div id="description-content-div">
+              <label>Describe your item</label>
               <textarea
-              type="text"
-              onChange={e => this.handleProductAttributeChange(e)}
-              value={this.state.product.description}
-              className="form-control"
-              id="description-text-area"
-              name="description"
+                type="text"
+                onChange={e => this.handleProductAttributeChange(e)}
+                value={this.state.product.description}
+                className="form-control"
+                id="description-text-area"
+                name="description"
               />
             </div>
           </div>
@@ -201,11 +204,14 @@ class RefactorForm extends React.Component {
           <button
             disabled={this.state.isSubmittingForm}
             onClick={e => this.handleFormSubmit()}
-            className="btn btn-primary">
+            className="btn btn-primary"
+            id="save-listing-button"
+          >
             {this.state.isSubmittingForm ? 'Saving...' : 'Save Listing'}
           </button>
 
         </div>
+
         <div className="five wide column right-side-sell-column">
           <h3>The lowest fees around</h3>
           <ul>
@@ -245,14 +251,7 @@ class RefactorForm extends React.Component {
   //   }
   // }
 
-  getNumberOfSelectedFiles() {
-    return this.state.selectedProductImageFiles.filter(el => {
-      return el._destroy !== true;
-    }).length;
-  }
-
   renderUploadImagesButton() {
-    // let numberOfSelectedImages = this.getNumberOfSelectedFiles();
     return (
       <div id="image-upload-div">        
         <label htmlFor="product_images" className="custom-file-upload">
@@ -270,19 +269,6 @@ class RefactorForm extends React.Component {
           onChange={e => this.handleProductImagesChange(e)}
           className="form-control"
         />
-
-{/*        <label
-        //   disabled={this.state.isSubmittingForm}
-        //   className="btn btn-success"
-        //   htmlFor="product_images">
-        //   <span className="glyphicon glyphicon-cloud-upload" />
-        //   &nbsp; &nbsp;
-        //   {numberOfSelectedImages === 0
-        //     ? 'Upload Files'
-        //     : `${numberOfSelectedImages} file${numberOfSelectedImages !== 1
-        //       ? 's'
-        //       : ''} selected`}
-        // </label>*/}
       </div>
     );
   }
@@ -292,7 +278,7 @@ class RefactorForm extends React.Component {
       if (el._destroy) { 
         return null;
       }
-      // debugger
+
       return (
         <li key={index}>
           <div className="photo">
@@ -344,7 +330,7 @@ class RefactorForm extends React.Component {
 
   removeSelectedProductImageFile(image, index) {
     let { selectedProductImageFiles } = this.state;
-    if (image.id) { // cover file that has been uploaded will be marked as destroy
+    if (image.id) { 
       selectedProductImageFiles[index]._destroy = true;
     } else {
       selectedProductImageFiles.splice(index, 1);

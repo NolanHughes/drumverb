@@ -37,3 +37,20 @@ form {
   border-left: none;
   background: linear-gradient(180deg,#f6f6f6,#fff);
 }
+
+#queried-products-div {
+	position: absolute;
+  z-index: 1;
+  background-color: white;
+  width: 96.6%;
+  border: 1px solid #dbdbdb;
+  top: 50px;
+  opacity: 0;
+}
+
+#queried-products-div a {
+	padding: 3.6px 10px;
+  color: #414141;
+}
+
+

@@ -15,8 +15,8 @@ const CartProductRows = ({ cart, removeProductFromCart }) => {
       </div>
       <div className="eight wide column">
         <p className="cart-item-paragraph">{product.title}</p>
-        <p className="cart-item-paragraph">Seller: A seller</p>
-        <p className="cart-item-paragraph">Ships from: A place</p>
+        <p className="cart-item-paragraph"></p>
+        <p className="cart-item-paragraph"></p>
         <ul id="remove-link-ul">
           <li>
             <a id="remove-link" onClick={() => removeProductFromCart(index)}><span className="remove-product-icon">x</span>Remove</a>

@@ -12,7 +12,7 @@ const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchVal
 	const searchValueLink = <Link style={{ display: 'block' }} key={0} to={`/searched-products/${searchValue}`} onClick={() => {changeFilteredBy(searchValue); clearQueriedProducts(); clearSearchValue() }}>{searchValue}</Link>
 
   return (
-		<div>
+		<div id="queried-products-div">
 			{searchValueLink}
       {productRows}
     </div>
