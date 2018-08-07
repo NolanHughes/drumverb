@@ -8,9 +8,7 @@ import '../css/NewProduct.css'
 class RefactorForm extends React.Component {
     state = {
     selectedProductImageFiles: [],
-    submitFormProgress: 0,
     isSubmittingForm: false,
-    didFormSubmissionComplete: false,
     product: {
       id: this.props.match.params.id,
       brand: '',
@@ -29,6 +27,7 @@ class RefactorForm extends React.Component {
   };
 
   render() {
+
     return (
       <div id="new-product" className="ui grid container">
         <div className="sixteen wide column">
@@ -311,18 +310,10 @@ class RefactorForm extends React.Component {
     }
 
     return (
-      <div className="progress">
-        <div
-          className={
-            'progress-bar progress-bar-info progress-bar-striped' +
-            (this.state.submitFormProgress < 100 ? 'active' : '')
-          }
-          role="progressbar"
-          aria-valuenow={this.state.submitFormProgress}
-          areavaluemin="0"
-          areavaluemax="100"
-          style={{ width: this.state.submitFormProgress + '%' }}>
-          {this.state.submitFormProgress}% Complete
+      <div>
+        <div className="loader"></div>
+        <div>
+          Your product is posting
         </div>
       </div>
     );
@@ -427,13 +418,9 @@ class RefactorForm extends React.Component {
         product.error = response.statusText.concat('. It is possible you did not fill out all of the inputs that have * by them or some other error is happening.')
         this.setState({
           isSubmittingForm: false,
-          submitFormProgress: 0,
           product: product
         })
       } else {
-        this.setState({
-          didFormSubmissionComplete: true
-        });
         this.props.history.push('/');
       }
     }) 
