@@ -18,7 +18,7 @@ gem 'responders'
 # Paperclip for uploading images
 gem 'paperclip', '~> 5.2.0'
 #Rack-cors for cross domain call
-gem 'rack-cors'
+# gem 'rack-cors'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'

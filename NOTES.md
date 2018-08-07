@@ -3,9 +3,8 @@
 
 2. Check to make sure components stateless
 
-3. Adjust origins and resources in config/application.rb (screenshot)
-		-http://jameshuynh.com/rails/react/upload/2017/09/17/how-to-upload-files-using-react-and-rails-like-a-boss/
 
+3. I don't need rack-cors?
 
 4. Refactor more
 
