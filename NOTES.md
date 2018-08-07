@@ -1,5 +1,4 @@
-1. Modify SellProduct to update redux state instead of react
-	-Refactor SellProduct.js	
+1. Refactor SellProduct.js to separate display component and maybe put in containers
 
 2. Check to make sure components stateless
 
@@ -20,7 +19,6 @@
 
 10. Styling
 	-require upload width of 620px
-	-Re-style product upload progress bar
 	-Have dropdown searchbar have a default list
 	-Have background color overlay for pop ups
 	-Maybe fix navbar changing size? when the intro component is present vs not. Different screen size makes this happen so it's hard to debug.

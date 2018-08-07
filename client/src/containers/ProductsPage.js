@@ -58,5 +58,4 @@ function dynamicSort(property) {
   }
 }
 
-
 export default connect(mapStateToProps)(ProductsPage);

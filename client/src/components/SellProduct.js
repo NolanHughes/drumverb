@@ -5,7 +5,7 @@ import { addNewProduct } from '../actions/index';//Add to this when implementing
 
 import '../css/NewProduct.css'
 
-class RefactorForm extends React.Component {
+class SellProduct extends React.Component {
     state = {
     selectedProductImageFiles: [],
     isSubmittingForm: false,
@@ -27,7 +27,6 @@ class RefactorForm extends React.Component {
   };
 
   render() {
-
     return (
       <div id="new-product" className="ui grid container">
         <div className="sixteen wide column">
@@ -223,33 +222,6 @@ class RefactorForm extends React.Component {
     );
   }
 
-  //THIS IS FOR WHEN I HAVE EDIT ABILITIES
-  // componentWillMount() {
-  //   if (this.props.match.params.id) {
-  //     fetch(`http://localhost:3000/products/${this.props.match.params.id}`)
-  //     .then(response => {
-  //       this.setState({
-  //         selectedProductImageFiles: response.data.product_image_photos,
-  //         product: {
-  //           id: response.data.id, 
-  //           brand: response.data.brand,
-  //           model: response.data.model,
-  //           condition: response.data.condition,
-  //           year: response.data.year,
-  //           finish: response.data.finish,
-  //           title: response.data.title,
-  //           price: response.data.price,
-  //           made_in: response.data.made_in,
-  //           category: response.data.category,
-  //           description: response.data.description,
-  //           created_at: response.data.created_at,
-  //           error: ''
-  //         }
-  //       });
-  //     });
-  //   }
-  // }
-
   renderUploadImagesButton() {
     return (
       <div id="image-upload-div">        
@@ -401,18 +373,12 @@ class RefactorForm extends React.Component {
     return formData;
   }
 
-  submitForm() {
-    //USE THESE TWO VARIABLES IF EDIT FUNCTION IS IMPLEMENTED
-    // let submitMethod = this.state.product.id ? 'patch' : 'post';
-    // let url = this.state.product.id
-    //   ? `/products/${this.state.product.id}.json`
-    //   : '/products.json';
-
+  submitForm() {    
     fetch('http://localhost:3000/products', {
       method: "POST",
       body: this.buildFormData()
     })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         let { product } = this.state;
         product.error = response.statusText.concat('. It is possible you did not fill out all of the inputs that have * by them or some other error is happening.')
@@ -420,17 +386,20 @@ class RefactorForm extends React.Component {
           isSubmittingForm: false,
           product: product
         })
-      } else {
-        this.props.history.push('/');
       }
+      return response
+    })
+    .then((response) => response.json())
+    .then((product) => {
+      this.props.addNewProduct(product)
+      this.props.history.push('/');
     }) 
   }
 
   handleFormSubmit() {
     let { product } = this.state;
     product.error = '';
-    this.setState(
-      {
+    this.setState({
         isSubmittingForm: true,
         product: product
       },
@@ -447,5 +416,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(RefactorForm);
-
+export default connect(null, mapDispatchToProps)(SellProduct);
