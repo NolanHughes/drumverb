@@ -1,24 +1,11 @@
-# README
+About
+This app is a slimed down version of Reverb.com only dealing with drums.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
+You can fork and clone the repo from github (https://github.com/NolanHughes/drumverb). Run bundle install and then 'rake start' to start both the React and Rails servers.
 
-Things you may want to cover:
+Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/NolanHughes/drumverb. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+License
+The project is available as open source under the terms of the MIT License.
