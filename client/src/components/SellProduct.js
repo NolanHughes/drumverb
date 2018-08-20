@@ -184,7 +184,10 @@ class SellProduct extends React.Component {
             </div>
           </div>
 
-          <SellProductDescription description={this.state.product.description} descriptionChange={e => this.handleProductAttributeChange(e)}/>
+          <SellProductDescription 
+            description={this.state.product.description} 
+            descriptionChange={e => this.handleProductAttributeChange(e)}
+          />
 
           {this.renderUploadFormProgress()}
 
@@ -208,7 +211,7 @@ class SellProduct extends React.Component {
             <li><i className="check icon"></i>$0.50 min and a $350 max selling fee.</li>
           </ul>
         </div>
-        
+
       </div>
     );
   }
@@ -275,9 +278,6 @@ class SellProduct extends React.Component {
     return (
       <div>
         <div className="loader"></div>
-        <div>
-          Your product is posting
-        </div>
       </div>
     );
   }
@@ -372,19 +372,23 @@ class SellProduct extends React.Component {
     .then((response) => {
       if (!response.ok) {
         let { product } = this.state;
-        product.error = response.statusText.concat('. It is possible you did not fill out all of the inputs that have * by them or some other error is happening.')
+        product.error = response.statusText.concat('. It is likely you did not fill out all of the inputs that have * by them or some other error is happening.')
         this.setState({
           isSubmittingForm: false,
           product: product
         })
-      }
+      } 
       return response
     })
     .then((response) => response.json())
+    //Add else statement that uses product attributes as errors.
     .then((product) => {
-      this.props.addNewProduct(product)
-      this.props.history.push('/');
+      if (!Array.isArray(product.brand)) {
+        this.props.addNewProduct(product)
+        this.props.history.push('/');
+      }
     }) 
+
   }
 
   handleFormSubmit() {
