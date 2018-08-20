@@ -208,6 +208,7 @@ class SellProduct extends React.Component {
             <li><i className="check icon"></i>$0.50 min and a $350 max selling fee.</li>
           </ul>
         </div>
+        
       </div>
     );
   }

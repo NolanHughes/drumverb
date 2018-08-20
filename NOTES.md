@@ -2,6 +2,8 @@
 
 2. Check to make sure components stateless
 
+2.1 Error handling on sell page is screwed up.
+
 
 3. I don't need rack-cors?
 
