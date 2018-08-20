@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { addNewProduct } from '../actions/index';//Add to this when implementing filteredProducts***
 
+import SellProductDescription from './SellProductDescription'
 import '../css/NewProduct.css'
 
 class SellProduct extends React.Component {
@@ -33,6 +34,8 @@ class SellProduct extends React.Component {
           <h1>Sell on Drumverb. No listing fees. Reach millions of musicians.</h1>
         </div>
         <div className="eleven wide column">
+
+          {/*PRODUCT INFO*/}
           <div className="column listing-editor">
             <div className="listing-header">
               <h3>What are you selling?</h3>
@@ -167,6 +170,7 @@ class SellProduct extends React.Component {
             </div>
           </div>
 
+          {/*IMAGE UPLOAD*/}
           <div className="form-group sell-product-images-div">
             <div className="listing-header">
               <h3>What does it look like?*</h3>
@@ -180,22 +184,7 @@ class SellProduct extends React.Component {
             </div>
           </div>
 
-          <div className="ui grid" id="sell-product-description-div">
-            <div className="listing-header">
-              <h3>How would you describe it?*</h3>
-            </div>
-            <div id="description-content-div">
-              <label>Describe your item</label>
-              <textarea
-                type="text"
-                onChange={e => this.handleProductAttributeChange(e)}
-                value={this.state.product.description}
-                className="form-control"
-                id="description-text-area"
-                name="description"
-              />
-            </div>
-          </div>
+          <SellProductDescription description={this.state.product.description} descriptionChange={e => this.handleProductAttributeChange(e)}/>
 
           {this.renderUploadFormProgress()}
 
@@ -210,6 +199,7 @@ class SellProduct extends React.Component {
 
         </div>
 
+        {/*SIDEBAR*/}
         <div className="five wide column right-side-sell-column">
           <h3>The lowest fees around</h3>
           <ul>
