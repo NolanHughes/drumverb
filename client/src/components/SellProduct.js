@@ -11,7 +11,6 @@ class SellProduct extends React.Component {
     selectedProductImageFiles: [],
     isSubmittingForm: false,
     errors: {},
-    //product.error is not neccessary anymore
     product: {
       id: this.props.match.params.id,
       brand: '',
@@ -24,8 +23,7 @@ class SellProduct extends React.Component {
       made_in: 'US',
       category: '',
       description: '',
-      created_at: '',
-      error: ''
+      created_at: ''
     }
   };
 
@@ -341,7 +339,6 @@ class SellProduct extends React.Component {
 
   renderProductError(name) {
     if (Object.keys(this.state.errors).length !== 0 && this.state.errors[name]) {
-      debugger
       return (
         <div className="inline-error alert alert-danger error-content">
           {this.state.errors[name][0]}{/*Iterate through all errors*/}
@@ -390,25 +387,14 @@ class SellProduct extends React.Component {
       method: "POST",
       body: this.buildFormData()
     })
-    .then((response) => {
-      if (!response.ok) {
-        let { product } = this.state;
-        product.error = response.statusText.concat('. It is likely you did not fill out all of the inputs that have * by them or some other error is happening.')
-        this.setState({
-          isSubmittingForm: false,
-          product: product
-        })
-      } 
-      return response
-    })
     .then((response) => response.json())
-    //Add else statement that uses product attributes as errors.
     .then((product) => {
       if (product.hasOwnProperty('id')) {
         this.props.addNewProduct(product)
         this.props.history.push('/');
       } else {
         this.setState({
+          isSubmittingForm: false,
           errors: product
         })
       }
@@ -418,7 +404,7 @@ class SellProduct extends React.Component {
 
   handleFormSubmit() {
     let { product } = this.state;
-    product.error = '';
+
     this.setState({
         isSubmittingForm: true,
         product: product
