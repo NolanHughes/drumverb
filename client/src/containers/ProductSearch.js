@@ -24,14 +24,6 @@ class ProductSearch extends React.Component {
     this.props.changeFilteredBy(this.props.searchValue)
   }
 
-  showQueriedProducts = () => {
-    document.getElementById("queried-products-div").style.opacity = 1
-  }
-
-  hideQueriedProducts = () => {
-    document.getElementById("queried-products-div").style.opacity = 0
-  }
-
   render() {   
     const { 
       queriedProducts, 
@@ -43,11 +35,7 @@ class ProductSearch extends React.Component {
 
     return (
       <div id='product-search' className="nav-element nine wide column">
-        <form 
-          onSubmit={this.searchButton.bind(this)} 
-          onFocus={() => this.showQueriedProducts()} 
-          onBlur={() => this.hideQueriedProducts()}
-        >
+        <form onSubmit={this.searchButton.bind(this)}>
           <input
             id='product-input'
             type='text'

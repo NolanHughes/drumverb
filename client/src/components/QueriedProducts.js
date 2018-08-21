@@ -11,8 +11,16 @@ const QueriedProducts = ({ queriedProducts, clearQueriedProducts, clearSearchVal
 
 	const searchValueLink = <Link style={{ display: 'block' }} key={0} to={`/searched-products/${searchValue}`} onClick={() => {changeFilteredBy(searchValue); clearQueriedProducts(); clearSearchValue() }}>{searchValue}</Link>
 
+	let opacityValue
+
+	if (searchValue.length > 0) {
+		opacityValue = 1
+	} else {
+		opacityValue = 0
+	}
+
   return (
-		<div id="queried-products-div">
+		<div id="queried-products-div" style={{opacity: opacityValue}}>
 			{searchValueLink}
       {productRows}
     </div>
