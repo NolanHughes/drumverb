@@ -10,6 +10,8 @@ class SellProduct extends React.Component {
     state = {
     selectedProductImageFiles: [],
     isSubmittingForm: false,
+    errors: {},
+    //product.error is not neccessary anymore
     product: {
       id: this.props.match.params.id,
       brand: '',
@@ -41,11 +43,6 @@ class SellProduct extends React.Component {
               <h3>What are you selling?</h3>
             </div>
             <div id="new-product-form">
-              
-              <div id="error-message">
-                {this.renderProductError()}
-              </div>
-
               <div className='ui grid'>
                 <div className="six wide column">
                   <label>Brand*</label>
@@ -56,8 +53,12 @@ class SellProduct extends React.Component {
                     className="form-control"
                     name="brand"
                   />
+                  <div id="error-message">
+                    {this.renderProductError("brand")}
+                  </div>
                   <p className="sell-product-under-text">e.g. Tama</p>
                 </div>
+
                 <div className="ten wide column">
                   <label>Model*</label>
                   <input
@@ -67,6 +68,9 @@ class SellProduct extends React.Component {
                     className="form-control"
                     name="model"
                   />
+                  <div id="error-message">
+                    {this.renderProductError("model")}
+                  </div>
                   <p className="sell-product-under-text">e.g. Starclassic Performer B/B Lacquer 5-piece</p>
                 </div>   
               </div>
@@ -86,6 +90,9 @@ class SellProduct extends React.Component {
                     <option value="poor">Poor</option>
                     <option value="non-functioning">Non Functioning</option>
                   </select>
+                  <div id="error-message">
+                    {this.renderProductError("condition")}
+                  </div>
                 </div>
                 <div className="five wide column">
                   <label>Year</label>
@@ -119,6 +126,9 @@ class SellProduct extends React.Component {
                     className="form-control"
                     name="title"
                   />
+                  <div id="error-message">
+                    {this.renderProductError("title")}
+                  </div>
                   <p className="sell-product-under-text">Feel free to modify this</p>
                 </div>
               </div>
@@ -136,6 +146,9 @@ class SellProduct extends React.Component {
                     name="price"
                   />
                   <span className="usd-span">USD</span>
+                  <div id="error-message">
+                    {this.renderProductError("price")}
+                  </div>
                 </div>
                 <div className="ten wide column">
                   <label>Where was it made?</label>
@@ -164,7 +177,10 @@ class SellProduct extends React.Component {
                     <option value="7">Drums and Percussion &gt; Hi-Hats</option>
                     <option value="8">Drums and Percussion &gt; Other (Splash, China, etc)</option>
                     <option value="9">Drums and Percussion &gt; Ride</option>
-                  </select>              
+                  </select>
+                  <div id="error-message">
+                    {this.renderProductError("category")}
+                  </div>              
                 </div>
               </div>           
             </div>
@@ -180,6 +196,9 @@ class SellProduct extends React.Component {
               <div>
                 {this.renderSelectedProductImageFiles()}
                 {this.renderUploadImagesButton()}      
+              </div> 
+              <div id="error-message">
+                {this.renderProductError("product_images")}
               </div>       
             </div>
           </div>
@@ -187,6 +206,7 @@ class SellProduct extends React.Component {
           <SellProductDescription 
             description={this.state.product.description} 
             descriptionChange={e => this.handleProductAttributeChange(e)}
+            descriptionError={this.renderProductError("description")}
           />
 
           {this.renderUploadFormProgress()}
@@ -319,11 +339,12 @@ class SellProduct extends React.Component {
     this.setState({ product: product });
   }
 
-  renderProductError() {
-    if (this.state.product.error !== '') {
+  renderProductError(name) {
+    if (Object.keys(this.state.errors).length !== 0 && this.state.errors[name]) {
+      debugger
       return (
-        <div className="inline-error alert alert-danger">
-          {this.state.product.error}
+        <div className="inline-error alert alert-danger error-content">
+          {this.state.errors[name][0]}{/*Iterate through all errors*/}
         </div>
       );
     } else {
@@ -383,9 +404,13 @@ class SellProduct extends React.Component {
     .then((response) => response.json())
     //Add else statement that uses product attributes as errors.
     .then((product) => {
-      if (!Array.isArray(product.brand)) {
+      if (product.hasOwnProperty('id')) {
         this.props.addNewProduct(product)
         this.props.history.push('/');
+      } else {
+        this.setState({
+          errors: product
+        })
       }
     }) 
 

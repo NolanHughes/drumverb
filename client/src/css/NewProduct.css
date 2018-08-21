@@ -70,9 +70,13 @@
 }
 
 #error-message {
-	font-size: 20px;
-	color: red;
-	padding-bottom: 10px;
+  font-size: 14px;
+  color: red;
+}
+
+.error-content {
+  padding: 5px;
+  margin-bottom: 5px;
 }
 
 .right-side-sell-column {

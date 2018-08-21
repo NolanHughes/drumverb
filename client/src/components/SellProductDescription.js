@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../css/NewProduct.css'
 
-const SellProductDescription = ({description, descriptionChange}) => {
+const SellProductDescription = ({description, descriptionChange, descriptionError}) => {
 	return(
   <div className="ui grid" id="sell-product-description-div">
 	    <div className="listing-header">
@@ -18,6 +18,9 @@ const SellProductDescription = ({description, descriptionChange}) => {
 	        id="description-text-area"
 	        name="description"
 	      />
+	      <div id="error-message">
+	        {descriptionError}
+	      </div>  
 	    </div>
 	  </div>
 	)
