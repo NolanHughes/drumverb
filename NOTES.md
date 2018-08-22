@@ -1,8 +1,7 @@
 1. Check to make sure components are stateless
 2. Make FilteredProductsPage, ProductsPage, and SearchedProductsPage into one.
 
-
-3. I don't need rack-cors?
+3. I don't need rack-cors? (Already deleted but we'll see once deployed)
 4. Refactor more
 5. Make searching go into category array
 6. Make default filtered_by be drums and percussion || tail end of url depending on url (now it's always defaulted to drums and percussion)

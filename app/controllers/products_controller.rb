@@ -2,22 +2,17 @@ class ProductsController < ApplicationController
   # before_action :set_product, only: [:show, :update, :destroy]
 
   def index
-    # render(
-    #   status: 200,
-    #   json: Product.all
-    # )
-    # Old way
     q = params[:q]
 
     render(
       status: 200,
-      json: Product.all.where(["title LIKE ? OR description LIKE ?", "%#{q}%", "%#{q}%"]).limit(100)#Maybe modify this
+      json: Product.all.where(["title LIKE ? OR description LIKE ?", "%#{q}%", "%#{q}%"]).limit(100)
     )
   end
 
-  def show
-    render json: @product
-  end
+  # def show
+  #   render json: @product
+  # end
 
   def create 
     product = Product.new(product_params)
@@ -29,23 +24,23 @@ class ProductsController < ApplicationController
     end
   end
 
-  def update
-    if @product.update(product_params)
-      render json: @product
-    else
-      render json: @product.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @product.update(product_params)
+  #     render json: @product
+  #   else
+  #     render json: @product.errors, status: :unprocessable_entity
+  #   end
+  # end
 
-  def destroy
-    @product.destroy
-  end
+  # def destroy
+  #   @product.destroy
+  # end
 
   private
 
-    def set_product
-      @product = Product.find(params[:id])
-    end
+    # def set_product
+    #   @product = Product.find(params[:id])
+    # end
 
 	  def product_params
 	    params.require(:product).permit(

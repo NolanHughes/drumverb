@@ -4,9 +4,6 @@ class ProductImage < ApplicationRecord
     :photo,
 
     styles: { original: "", medium: '265x265#', thumb: ['112x112#', 'jpg'] },
-    # convert_options: {
-    #   all: '-interlace Plane'
-    # },
     source_file_options: { all: '-auto-orient' },
     default_url: '/images/default_:style_photo.png'
 

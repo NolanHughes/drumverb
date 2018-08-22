@@ -10,11 +10,18 @@
   margin-top: -5px;
   color: #414141;
   height: 100px;
+  position: relative;
 }
 
 .product-info * {
 	padding: 7px;
-  font-size: 1.3em;
+  font-size: 15.2px;
+  font-weight: 700;
+}
+.product-info span {
+  font-size: 18.2px;
+  position: absolute;
+  bottom: 0;
 }
 
 #product-list > * {
