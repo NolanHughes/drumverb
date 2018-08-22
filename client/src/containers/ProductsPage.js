@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import DisplayIndexProducts from '../components/DisplayIndexProducts';
+import DisplayProducts from '../components/DisplayProducts';
 import SearchOverview from '../components/SearchOverview';
 import Intro from '../components/Intro'
 import SidebarNav from '../components/SidebarNav'
@@ -19,7 +19,7 @@ class ProductsPage extends React.Component {
           <SidebarNav products={products}/>
           <div className='display-div'>              
             <SearchOverview products={products}/>
-            <DisplayIndexProducts products={products} />
+            <DisplayProducts products={products} />
           </div>
         </div>
       </div>
@@ -34,6 +34,7 @@ const mapStateToProps = (state) => {
   };
 };
 
+//Change to case statement
 function sortProducts(products, sortValue) {
   if (sortValue === "published_at|desc") {
       products.sort(dynamicSort("-created_at"))

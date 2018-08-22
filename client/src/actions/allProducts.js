@@ -3,11 +3,11 @@ export function fetchAllProducts(url) {
 
     fetch(url)
     .then((response) => {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
 
-        return response;
+      return response;
     })
     .then((response) => response.json())
     .then((products) => dispatch(fetchAllProductsSuccess(products)))

@@ -1,4 +1,3 @@
-//***Make sure to add filteredProducts back in when reimplemented***
 import { combineReducers } from 'redux';
 import {products, queriedProducts, searchValue, cart, sortValue, filteredBy} from './products_reducer';
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import '../css/Cart.css'
 
-const CartProductRows = () => {
+const EmptyCart = () => {
   return (
     <div id="empty-cart-div">
       <img className="empty-cart-icon" src="https://static.reverb.com/assets/icons/empty-states/empty-basket@2x-eb75105fc1729efd4326871977458126.png" alt="Empty basket@2x" />
@@ -15,5 +15,4 @@ const CartProductRows = () => {
   );
 }
 
-
-export default CartProductRows
+export default EmptyCart

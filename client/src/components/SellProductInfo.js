@@ -60,6 +60,7 @@ const SellProductInfo = ({product, handleAttributeChange, productInfoError}) => 
               {productInfoError("condition")}
             </div>
           </div>
+
           <div className="five wide column">
             <label>Year</label>
             <input
@@ -70,6 +71,7 @@ const SellProductInfo = ({product, handleAttributeChange, productInfoError}) => 
               name="year"
             />
           </div>
+
           <div className="five wide column">
             <label>Finish/Color</label>
             <input
@@ -116,6 +118,7 @@ const SellProductInfo = ({product, handleAttributeChange, productInfoError}) => 
               {productInfoError("price")}
             </div>
           </div>
+          
           <div className="ten wide column">
             <label>Where was it made?</label>
             <select onChange={e => handleAttributeChange(e)} id="country-select" name="made_in">

@@ -39,7 +39,7 @@ class ProductSearch extends React.Component {
           <input
             id='product-input'
             type='text'
-            placeholder='Shop for new & used drums...'//Change to products upon expanding
+            placeholder='Shop for new & used drums...'
             value={searchValue}
             onChange={queryProducts}
           />

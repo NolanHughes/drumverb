@@ -3,11 +3,11 @@ import { Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 
-import Header from './components/Header'
+import Header from './containers/Header'
 import ProductShow from './components/ProductShow'
 import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
-import { fetchAllProducts } from './actions/index';//***
+import { fetchAllProducts } from './actions/index';
 import SellProduct from './containers/SellProduct'
 import FilteredProductsPage from './containers/FilteredProductsPage'
 import SearchedProductsPage from './containers/SearchedProductsPage'

@@ -3,14 +3,10 @@ import { connect } from 'react-redux';
 
 import SearchOverview from '../components/SearchOverview';
 import Intro from '../components/Intro'
-import DisplaySearchedProducts from '../components/DisplaySearchedProducts'
+import DisplayProducts from '../components/DisplayProducts'
 import SidebarNav from '../components/SidebarNav'
-// import { setFilteredProducts } from '../actions/index'
  
 class SearchedProductsPage extends React.Component {
-  // componentDidMount() {
-  //   this.props.setFilteredProducts(this.props.products);
-  // }
 
   render(){
     const { searchedProducts, sortValue, products } = this.props
@@ -24,7 +20,7 @@ class SearchedProductsPage extends React.Component {
           <SidebarNav products={products}/>      
           <div className='display-div'>  
             <SearchOverview products={searchedProducts}/>
-            <DisplaySearchedProducts products={searchedProducts} />
+            <DisplayProducts products={searchedProducts} />
           </div>
         </div>
       </div> 
@@ -79,11 +75,4 @@ function dynamicSort(property) {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     setFilteredProducts: (products) => dispatch(setFilteredProducts(products))
-//   }
-// }
-
-//Add mapDispatchToProps here when you uncomment FilteredProducts 
 export default connect(mapStateToProps)(SearchedProductsPage);

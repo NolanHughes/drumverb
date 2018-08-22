@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
- 
-const DisplayFilteredProducts = ({ products }) => {
+
+import '../css/ProductIndexDisplay.css'
+
+const DisplayProduct = ({ products }) => {
 
   const renderProducts = products.map(product => (
     <li key={product.id} className="four wide column centered list-item ">
       <Link to={`/products/${product.id}`}>
-        <img className="productImage" src={product.product_image_photos[0].medium_url} alt={product.title}/>
+          <img className="productImage" src={product.product_image_photos[0].medium_url} alt={product.title}/>
         <div className="product-info">
           <h4>{product.title}</h4>
           <span>${product.price}</span>
@@ -23,5 +25,6 @@ const DisplayFilteredProducts = ({ products }) => {
     </div>
   );
 }
- 
-export default (DisplayFilteredProducts);
+
+export default DisplayProduct
+

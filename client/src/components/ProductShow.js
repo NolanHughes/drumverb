@@ -12,7 +12,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
   let firstProductImage
   let categoryName
 
-  //Set as state?
+  //Set as a model?
   const categoriesArray = [
     {value: "1", name: "Bass Drum"}, 
     {value: "2", name: "Full Acoustic Kits"}, 
@@ -67,9 +67,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
             <i className="arrow circle left icon"></i>Back to {categoryName}
           </Link>
           <h1>{product.title}</h1>
-          
-          
-          
+                   
           <div id="product-show-image-div">
             {firstProductImage}
           </div>

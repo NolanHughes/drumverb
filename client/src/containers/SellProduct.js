@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-import { addNewProduct } from '../actions/index';//Add to this when implementing filteredProducts***
+import { addNewProduct } from '../actions/index';
 
 import SellProductDescription from '../components/SellProductDescription'
 import SellProductSidebar from '../components/SellProductSidebar'
@@ -25,8 +25,7 @@ class SellProduct extends React.Component {
       price: '',
       made_in: 'US',
       category: '',
-      description: '',
-      created_at: ''
+      description: ''
     }
   };
 
@@ -114,7 +113,7 @@ class SellProduct extends React.Component {
           <div className="photo">
             <img
               width={150}
-              src={el.id ? el.url : URL.createObjectURL(el)}
+              src={URL.createObjectURL(el)}
               style={{ alignSelf: 'center' }}
               alt={''}
             />
@@ -178,11 +177,8 @@ class SellProduct extends React.Component {
   }
 
   handleFormSubmit() {
-    let { product } = this.state;
-
     this.setState({
-        isSubmittingForm: true,
-        product: product
+        isSubmittingForm: true
       },
       () => {
         this.submitForm();

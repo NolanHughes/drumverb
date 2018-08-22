@@ -26,7 +26,6 @@ const SearchOverview = ({products, setSortValue, sortValue, filteredBy}) => {
   )
 }
 
-{/*Make FilteredProducts state work better so it can be implemented*/}
 const mapStateToProps = (state) => {
   return {
     sortValue: state.sortValue,
