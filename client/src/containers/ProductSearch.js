@@ -38,7 +38,7 @@ class ProductSearch extends React.Component {
         <form onSubmit={this.searchButton.bind(this)}>
           <input
             id='product-input'
-            type='text'
+            type='text' 
             placeholder='Shop for new & used drums...'
             value={searchValue}
             onChange={queryProducts}

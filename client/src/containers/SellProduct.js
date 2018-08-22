@@ -10,10 +10,9 @@ import SellProductInfo from '../components/SellProductInfo'
 import '../css/NewProduct.css'
 
 class SellProduct extends React.Component {
-    state = {
+  state = {
     selectedProductImageFiles: [],
     isSubmittingForm: false,
-    errors: {},
     product: {
       id: this.props.match.params.id,
       brand: '',
@@ -165,10 +164,10 @@ class SellProduct extends React.Component {
   }
 
   renderProductError(name) {
-    if (Object.keys(this.state.errors).length !== 0 && this.state.errors[name]) {
+    if (Object.keys(this.props.errors).length !== 0 && this.props.errors[name]) {
       return (
         <div className="inline-error alert alert-danger error-content">
-          {this.state.errors[name][0]}{/*Iterate through all errors*/}
+          {this.props.errors[name][0]}{/*Iterate through all errors*/}
         </div>
       );
     } else {
@@ -177,65 +176,11 @@ class SellProduct extends React.Component {
   }
 
   handleFormSubmit() {
-    this.setState({
-        isSubmittingForm: true
-      },
-      () => {
-        this.submitForm();
-      }
-    );
-  }
+    // this.setState({
+    //   isSubmittingForm: true
+    // })
 
-  buildFormData() {
-    let formData = new FormData();
-    
-    formData.append('product[category]', this.state.product.category);
-    formData.append('product[made_in]', this.state.product.made_in);
-    formData.append('product[price]', this.state.product.price);
-    formData.append('product[finish]', this.state.product.finish);
-    formData.append('product[year]', this.state.product.year);
-    formData.append('product[condition]', this.state.product.condition);
-    formData.append('product[model]', this.state.product.model);
-    formData.append('product[brand]', this.state.product.brand);
-    formData.append('product[title]', this.state.product.title);
-    formData.append('product[description]', this.state.product.description);
-
-    let { selectedProductImageFiles } = this.state;
-    for (let i = 0; i < selectedProductImageFiles.length; i++) {
-      let file = selectedProductImageFiles[i];
-      if (file.id) {
-        if (file._destroy) {
-          formData.append(`product[images_attributes][${i}][id]`, file.id);
-          formData.append(`product[images_attributes][${i}][_destroy]`, '1');
-        }
-      } else {
-        formData.append(
-          `product[product_images_attributes][${i}][photo]`,
-          file,
-          file.name
-        );
-      }
-    }
-    return formData;
-  }
-
-  submitForm() {    
-    fetch('http://localhost:3000/products', {
-      method: "POST",
-      body: this.buildFormData()
-    })
-    .then((response) => response.json())
-    .then((product) => {
-      if (product.hasOwnProperty('id')) {
-        this.props.addNewProduct(product)
-        this.props.history.push('/');
-      } else {
-        this.setState({
-          isSubmittingForm: false,
-          errors: product
-        })
-      }
-    }) 
+    this.props.addNewProduct(this.state, this.props.history);
   }
 
   renderUploadFormProgress() {
@@ -252,10 +197,16 @@ class SellProduct extends React.Component {
 
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    addNewProduct: (product) => dispatch(addNewProduct(product))
+    errors: state.errors
   };
 };
 
-export default connect(null, mapDispatchToProps)(SellProduct);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addNewProduct: (state, history) => dispatch(addNewProduct(state, history))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SellProduct);

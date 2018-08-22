@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_181039) do
+ActiveRecord::Schema.define(version: 2018_08_22_165216) do
 
   create_table "product_images", force: :cascade do |t|
     t.integer "product_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_181039) do
     t.string "finish"
     t.string "category"
     t.string "made_in"
+    t.integer "likes", default: 0
   end
 
 end

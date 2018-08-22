@@ -24,6 +24,7 @@ class Product < ActiveRecord::Base
       made_in: made_in,
       category: category,
       description: description,
+      likes: likes,
       created_at: created_at,
       product_image_photos: product_images.map do |x|
         {

@@ -6,7 +6,7 @@ import {
 	clearSearchValue,
 	clearQueriedProducts
 } from './searchbar'
-import { addNewProduct, addNewProductSuccess } from './newProduct'
+import { addNewProduct, addNewProductSuccess, clearProductErrors, addNewProductFailed } from './newProduct'
 import {
 	fetchAllProducts, 
 	fetchAllProductsSuccess
@@ -24,6 +24,8 @@ export { clearSearchValue }
 export { clearQueriedProducts }
 export { addNewProduct }
 export { addNewProductSuccess }
+export { clearProductErrors }
+export { addNewProductFailed }
 export { fetchAllProducts }
 export { fetchAllProductsSuccess }
 export { setSortValue }

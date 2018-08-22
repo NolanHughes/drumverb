@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: [:show, :update, :destroy]
 
   def index
     q = params[:q]
@@ -10,9 +10,9 @@ class ProductsController < ApplicationController
     )
   end
 
-  # def show
-  #   render json: @product
-  # end
+  def show
+    render json: @product
+  end
 
   def create 
     product = Product.new(product_params)
@@ -24,13 +24,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  # def update
-  #   if @product.update(product_params)
-  #     render json: @product
-  #   else
-  #     render json: @product.errors, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    if @product.update(product_params)
+      render json: @product
+    else
+      render json: @product.errors, status: :unprocessable_entity
+    end
+  end
 
   # def destroy
   #   @product.destroy
@@ -38,9 +38,9 @@ class ProductsController < ApplicationController
 
   private
 
-    # def set_product
-    #   @product = Product.find(params[:id])
-    # end
+    def set_product
+      @product = Product.find(params[:id])
+    end
 
 	  def product_params
 	    params.require(:product).permit(
@@ -54,6 +54,7 @@ class ProductsController < ApplicationController
          :made_in, 
          :category, 
          :description,
+         :likes,
          product_images_attributes: %I[ id photo _destroy ]
        ]
       )

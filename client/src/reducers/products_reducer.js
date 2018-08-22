@@ -9,6 +9,17 @@ export function products(state = [], action) {
 	}
 }
 
+export function errors(state = {}, action) {
+	switch (action.type) {
+		case 'ADD_NEW_PRODUCT_FAILED':
+			return action.errors;
+		case 'CLEAR_PRODUCT_ERROR':
+			return {};
+		default:
+			return state;
+	}
+}
+
 export function filteredBy(state = 'Drums and Percussion', action) {
 	switch (action.type) {
 		case 'SET_FILTERED_BY':
