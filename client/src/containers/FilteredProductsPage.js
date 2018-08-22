@@ -48,11 +48,7 @@ const mapStateToProps = (state, ownProps) => {
 
 function filterProducts(products, searchValue) {
   return products.filter(product => 
-    // product.title.toLowerCase().includes(searchValue.toLowerCase()) ||
     product.category.toLowerCase().includes(searchValue.toLowerCase()) 
-    // product.brand.toLowerCase().includes(searchValue.toLowerCase()) ||
-    // product.model.toLowerCase().includes(searchValue.toLowerCase()) ||
-    // product.description.toLowerCase().includes(searchValue.toLowerCase())
   )
 }
 

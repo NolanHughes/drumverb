@@ -8,7 +8,7 @@ import ProductShow from './components/ProductShow'
 import ProductsPage from './containers/ProductsPage';
 import Cart from './components/Cart'
 import { fetchAllProducts } from './actions/index';//***
-import SellProduct from './components/SellProduct'
+import SellProduct from './containers/SellProduct'
 import FilteredProductsPage from './containers/FilteredProductsPage'
 import SearchedProductsPage from './containers/SearchedProductsPage'
 import NotFound from './NotFound'
