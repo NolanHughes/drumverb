@@ -4,23 +4,6 @@ import { Link } from 'react-router-dom'
 import '../css/ProductIndexDisplay.css'
 
 class DisplayProduct extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      products: []
-    };
-  }
-
-  static getDerivedStateFromProps(props, current_state) {
-    if (current_state.products !== props.products) {
-      return {
-        products: props.products
-      }
-    }
-    return null; 
-  }
-
   render(){
     let products = this.props.products
 
@@ -57,10 +40,6 @@ class DisplayProduct extends React.Component {
     const product = products.find(product => product.id === parseInt(e.target.id, 10))
     product.likes = product.likes + 1 
 
-    this.setState({
-      products: products
-    })
-
     this.submitLike(product)
   }
 
@@ -72,16 +51,11 @@ class DisplayProduct extends React.Component {
         'Content-Type': 'application/json'
       }
     })
-    // .then(response => {
-    //   // const button = document.getElementById(product.id)
-    //   // button.innerHTML = `Likes ${parseInt(button.value, 10) + 1}`
-    //   // button.value = parseInt(button.value, 10) + 1
-
-    //   // let p = product
-    //   // this.setState({
-    //   //   products: product
-    //   // })
-    // })
+    .then(response => {
+      const button = document.getElementById(product.id)
+      button.innerHTML = `Likes ${parseInt(button.value, 10) + 1}`
+      button.value = parseInt(button.value, 10) + 1
+    })
   }
 
 }
