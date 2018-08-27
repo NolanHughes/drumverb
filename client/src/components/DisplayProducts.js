@@ -72,16 +72,6 @@ class DisplayProduct extends React.Component {
         'Content-Type': 'application/json'
       }
     })
-    // .then(response => {
-    //   // const button = document.getElementById(product.id)
-    //   // button.innerHTML = `Likes ${parseInt(button.value, 10) + 1}`
-    //   // button.value = parseInt(button.value, 10) + 1
-
-    //   // let p = product
-    //   // this.setState({
-    //   //   products: product
-    //   // })
-    // })
   }
 
 }
