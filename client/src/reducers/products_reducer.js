@@ -13,7 +13,7 @@ export function errors(state = {}, action) {
 	switch (action.type) {
 		case 'ADD_NEW_PRODUCT_FAILED':
 			return action.errors;
-		case 'CLEAR_PRODUCT_ERROR':
+		case 'CLEAR_PRODUCT_ERRORS':
 			return {};
 		default:
 			return state;

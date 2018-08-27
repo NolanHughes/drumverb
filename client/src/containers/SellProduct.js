@@ -176,10 +176,6 @@ class SellProduct extends React.Component {
   }
 
   handleFormSubmit() {
-    // this.setState({
-    //   isSubmittingForm: true
-    // })
-
     this.props.addNewProduct(this.state, this.props.history);
   }
 
