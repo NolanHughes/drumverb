@@ -13,6 +13,7 @@ class DisplayProduct extends React.Component {
   }
 
   static getDerivedStateFromProps(props, current_state) {
+    debugger
     if (current_state.products !== props.products) {
       return {
         products: props.products
@@ -22,7 +23,7 @@ class DisplayProduct extends React.Component {
   }
 
   render(){
-    let products = this.props.products
+    let products = this.state.products
 
     const renderProducts = products.map(product => {
       return(
@@ -45,6 +46,7 @@ class DisplayProduct extends React.Component {
     
     return (
       <div>
+        <button onClick={() => this.filterByLikes(5)}>More than 5 likes</button>
         <ul className="ui grid center container pics" id="product-list">
           {renderProducts}
         </ul>
@@ -52,8 +54,17 @@ class DisplayProduct extends React.Component {
     );
   }
 
+  filterByLikes(number) {
+    const filteredProducts = this.state.products.filter(product => product.likes > 5 )
+    // debugger
+    this.setState({
+      products: filteredProducts
+    })
+    debugger
+  }
+
   addToCounter(e) {
-    const products = this.props.products
+    const products = this.state.products
     const product = products.find(product => product.id === parseInt(e.target.id, 10))
     product.likes = product.likes + 1 
 
