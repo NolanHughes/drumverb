@@ -4,8 +4,18 @@ import { Link } from 'react-router-dom'
 import '../css/ProductIndexDisplay.css'
 
 class DisplayProduct extends React.Component {
+  state = {
+    filteredProducts: []
+  }
+
   render(){
-    let products = this.props.products
+    let products
+
+    if (this.state.filteredProducts.length !== 0) {
+      products = this.state.filteredProducts
+    } else {
+      products = this.props.products
+    }
 
     const renderProducts = products.map(product => {
       return(
@@ -28,11 +38,20 @@ class DisplayProduct extends React.Component {
     
     return (
       <div>
+        <button onClick={() => this.filterByLikes(5)}>More than 5 likes</button>
         <ul className="ui grid center container pics" id="product-list">
           {renderProducts}
         </ul>
       </div>
     );
+  }
+
+  filterByLikes(number) {
+    const filteredProducts = this.props.products.filter(product => product.likes > number)
+
+    this.setState({
+      filteredProducts: filteredProducts
+    })
   }
 
   addToCounter(e) {
