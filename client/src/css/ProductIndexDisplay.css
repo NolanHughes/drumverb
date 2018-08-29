@@ -24,10 +24,6 @@
   bottom: 0;
 }
 
-#product-list {
-  margin-top: 50px;
-}
-
 #product-list > * {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 0px;
@@ -83,15 +79,4 @@
 #sort-dropdown {
   text-align: right;
   width: 23%!important;
-}
-
-.like-button {
-  position: relative;
-  bottom: 25px;
-  left: 190px;
-  width: 67px;
-}
-
-.like-button-div {
-  background: white;
 }
