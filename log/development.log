@@ -1818,3 +1818,16 @@ Processing by ProductsController#index as */*
 Completed 200 OK in 388ms (Views: 143.1ms | ActiveRecord: 229.0ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2018-09-14 13:06:26 -0500
+  [1m[35m (33.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (title LIKE '%%' OR description LIKE '%%') LIMIT $1[0m  [["LIMIT", 100]]
+  ↳ app/controllers/products_controller.rb:7
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:29
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:29
+Completed 200 OK in 164ms (Views: 143.2ms | ActiveRecord: 11.3ms)
+
+
