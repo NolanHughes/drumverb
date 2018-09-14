@@ -1369,3 +1369,452 @@ Processing by ProductsController#index as */*
 Completed 200 OK in 454ms (Views: 291.9ms | ActiveRecord: 4.4ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2018-09-13 13:31:38 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+pg (1.1.3) lib/pg.rb:56:in `initialize'
+pg (1.1.3) lib/pg.rb:56:in `new'
+pg (1.1.3) lib/pg.rb:56:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:684:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-13 13:33:06 -0500
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+pg (1.1.3) lib/pg.rb:56:in `initialize'
+pg (1.1.3) lib/pg.rb:56:in `new'
+pg (1.1.3) lib/pg.rb:56:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:684:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-09-13 13:35:51 -0500
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "db/development.sqlite3" does not exist
+):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:688:in `rescue in connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:684:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-09-13 13:35:53 -0500
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "db/development.sqlite3" does not exist
+):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:688:in `rescue in connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:684:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (1688.5ms)[0m  [1m[35mCREATE DATABASE "drumverb_development" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (401.0ms)[0m  [1m[35mCREATE DATABASE "drumverb_test" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (84.2ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "likes" integer DEFAULT 0)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (16.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180822165216)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (16.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (34.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-13 18:41:05.331990"], ["updated_at", "2018-09-13 18:41:05.331990"]]
+  ↳ db/schema.rb:13
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (132.7ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (89.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "likes" integer DEFAULT 0)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180822165216)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-13 18:41:05.664018"], ["updated_at", "2018-09-13 18:41:05.664018"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-09-13 18:41:05.669583"], ["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/tama-bubinga.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-1l8445o.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-1l8445o.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-4d6gve.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-4d6gve.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-1l8445o.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-1l8445o.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-1l8445o.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/dce16b550dc5cd9d3e368b7bfcdedc5c20180913-1990-g2eq8d'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/dce16b550dc5cd9d3e368b7bfcdedc5c20180913-1990-g2eq8d to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56aac804c9cc06c020e98fdc15d4239c20180913-1990-zjsc5z
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56aac804c9cc06c020e98fdc15d4239c20180913-1990-zjsc5z[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56aac804c9cc06c020e98fdc15d4239c20180913-1990-zjsc5z[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56aac804c9cc06c020e98fdc15d4239c20180913-1990-zjsc5z[0]' -auto-orient -resize "x265" -crop "265x265+91+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/45b0d20651987ea1998e15e521fb03d520180913-1990-1qe91of'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/45b0d20651987ea1998e15e521fb03d520180913-1990-1qe91of to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2886bd98af31ef6f770f1aee005fff6d20180913-1990-j1em6e
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56aac804c9cc06c020e98fdc15d4239c20180913-1990-zjsc5z[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56aac804c9cc06c020e98fdc15d4239c20180913-1990-zjsc5z[0]' -auto-orient -resize "x112" -crop "112x112+38+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/45b0d20651987ea1998e15e521fb03d520180913-1990-h3ghxy.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/45b0d20651987ea1998e15e521fb03d520180913-1990-h3ghxy.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/76fee09204d664980998fec181527d4220180913-1990-1bxz8i2.jpg
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56aac804c9cc06c020e98fdc15d4239c20180913-1990-zjsc5z to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-1qobfbq.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180913-1990-1qobfbq.jpg'
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["title", "Tama ST"], ["description", "Tama snare"], ["price", 500], ["created_at", "2018-09-13 18:41:08.432132"], ["updated_at", "2018-09-13 18:41:08.432132"], ["brand", "T"], ["model", "Starclassic"], ["condition", "good"], ["year", 1999], ["finish", "Black"], ["category", "3"], ["made_in", "DE"]]
+  ↳ db/seeds.rb:38
+  [1m[36mProductImage Create (0.5ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 1], ["created_at", "2018-09-13 18:41:08.436409"], ["updated_at", "2018-09-13 18:41:08.436409"], ["photo_file_name", "tama-bubinga.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 273301], ["photo_updated_at", "2018-09-13 18:41:05.955372"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/daisy-cutter.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-1ydsl2z.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-1ydsl2z.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-mexqy6.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-mexqy6.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-1ydsl2z.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-1ydsl2z.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-1ydsl2z.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/aee2b78b9f09af18a8184c54c1efdc0c20180913-1990-to345t'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/aee2b78b9f09af18a8184c54c1efdc0c20180913-1990-to345t to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee9f5f18794f1e75348966c65e19c35420180913-1990-k1lpqr
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee9f5f18794f1e75348966c65e19c35420180913-1990-k1lpqr[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee9f5f18794f1e75348966c65e19c35420180913-1990-k1lpqr[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee9f5f18794f1e75348966c65e19c35420180913-1990-k1lpqr[0]' -auto-orient -resize "x265" -crop "265x265+44+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/20f533051cbcc9c09a6de2f5076c65c620180913-1990-11j0mg5'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/20f533051cbcc9c09a6de2f5076c65c620180913-1990-11j0mg5 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/d66672f0dad6340d9a9417df52b92c1b20180913-1990-1qtizkl
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee9f5f18794f1e75348966c65e19c35420180913-1990-k1lpqr[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee9f5f18794f1e75348966c65e19c35420180913-1990-k1lpqr[0]' -auto-orient -resize "x112" -crop "112x112+18+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/20f533051cbcc9c09a6de2f5076c65c620180913-1990-1bs82ku.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/20f533051cbcc9c09a6de2f5076c65c620180913-1990-1bs82ku.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/d9a456aff186a6080a0be7f95c92623b20180913-1990-k516tp.jpg
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee9f5f18794f1e75348966c65e19c35420180913-1990-k1lpqr to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-4f3ioi.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180913-1990-4f3ioi.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["title", "Mapex Daisy Cutter"], ["description", "Daisy cutter"], ["price", 150], ["created_at", "2018-09-13 18:41:09.316259"], ["updated_at", "2018-09-13 18:41:09.316259"], ["brand", "M"], ["model", "Daisy Cutter"], ["condition", "excellent"], ["year", 2015], ["finish", "steel"], ["category", "3"], ["made_in", "US"]]
+  ↳ db/seeds.rb:38
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 2], ["created_at", "2018-09-13 18:41:09.319213"], ["updated_at", "2018-09-13 18:41:09.319213"], ["photo_file_name", "daisy-cutter.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 135433], ["photo_updated_at", "2018-09-13 18:41:08.713693"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2887630801530902070)[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2887630801530902070)[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-09-13 13:41:35 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nolanhughes/.rvm/gems/ruby-2.3.5/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nolanhughes/.rvm/gems/ruby-2.3.5/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 48ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-09-13 13:41:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2018-09-13 13:42:09 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (title LIKE '%%' OR description LIKE '%%') LIMIT $1[0m  [["LIMIT", 100]]
+  ↳ app/controllers/products_controller.rb:7
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:29
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:29
+Completed 200 OK in 168ms (Views: 148.2ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-09-13 13:42:15 -0500
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (title LIKE '%%' OR description LIKE '%%') LIMIT $1[0m  [["LIMIT", 100]]
+  ↳ app/controllers/products_controller.rb:7
+  [1m[36mProductImage Load (0.7ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:29
+  [1m[36mProductImage Load (0.6ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:29
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/products" for ::1 at 2018-09-13 13:42:21 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (title LIKE '%%' OR description LIKE '%%') LIMIT $1[0m  [["LIMIT", 100]]
+  ↳ app/controllers/products_controller.rb:7
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:29
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:29
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2018-09-13 13:42:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2018-09-14 10:18:16 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.3.5/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (title LIKE '%%' OR description LIKE '%%') LIMIT $1[0m  [["LIMIT", 100]]
+  ↳ app/controllers/products_controller.rb:7
+  [1m[36mProductImage Load (215.3ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:29
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:29
+Completed 200 OK in 388ms (Views: 143.1ms | ActiveRecord: 229.0ms)
+
+
