@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
          :made_in, 
          :category, 
          :description,
-         :shiping_price,
+         :shipping_price,
          product_images_attributes: %I[ id photo _destroy ]
        ]
       )
