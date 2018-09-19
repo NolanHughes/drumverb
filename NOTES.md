@@ -12,3 +12,11 @@
 	-Have dropdown searchbar have a default list
 	-Have background color overlay for pop ups
 	-Maybe fix navbar changing size? when the intro component is present vs not. Different screen size makes this happen so it's hard to debug.
+
+
+	form
+		display: flex;
+
+	button 
+		border: 1px rgb(209, 209, 209) solid;
+		border-left: 0;

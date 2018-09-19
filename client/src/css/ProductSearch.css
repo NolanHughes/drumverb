@@ -25,6 +25,7 @@
 
 form {
 	margin-bottom: 10px;
+	display: flex;
 }
 
 #search-button {
@@ -36,6 +37,8 @@ form {
   color: #414141;
   border-left: none;
   background: linear-gradient(180deg,#f6f6f6,#fff);
+  border: 1px rgb(209, 209, 209) solid;
+	border-left: 0;
 }
 
 #queried-products-div {
