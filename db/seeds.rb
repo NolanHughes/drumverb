@@ -143,20 +143,6 @@ product_list = [
 		photo_name: 'mapex-tom.jpg'
 	},
 	{
-		brand: "Pearl",
-		model: "Masters Kick Drum",
-		condition: "excellent",
-		year: 2005,
-		finish: "Natural",
-		title: "Pearl Masters Kick Drum",
-		price: 500,
-		shipping_price: 100,
-		made_in: "US",
-		category: "1",
-		description: "Pearl Masters Kick Drum",
-		photo_name: 'pearl-kick.jpg'
-	},
-	{
 		brand: "Ludwig",
 		model: "Vistalite Kick",
 		condition: "good",
