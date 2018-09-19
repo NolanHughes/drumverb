@@ -29,6 +29,34 @@ product_list = [
 		category: "3",
 		description: "Daisy cutter",
 		photo_name: 'daisy-cutter.jpg'
+	},
+	{
+		brand: "Ludwig",
+		model: "Supra",
+		condition: "excellent",
+		year: 2015,
+		finish: "Aluminium",
+		title: "Supra",
+		price: 150,
+		shipping_price: 20,
+		made_in: "US",
+		category: "3",
+		description: "Supra",
+		photo_name: 'supra.jpg'
+	},
+	{
+		brand: "Ludwig",
+		model: "Supra",
+		condition: "excellent",
+		year: 2015,
+		finish: "Aluminium",
+		title: "Another Supra",
+		price: 150,
+		shipping_price: 30,
+		made_in: "US",
+		category: "3",
+		description: "Supra",
+		photo_name: 'supra.jpg'
 	}
 ]
 

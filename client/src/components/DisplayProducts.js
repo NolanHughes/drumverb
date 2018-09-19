@@ -14,7 +14,7 @@ class DisplayProduct extends React.Component {
               <img className="productImage" src={product.product_image_photos[0].medium_url} alt={product.title}/>
             <div className="product-info">
               <h4>{product.title}</h4>
-              <span>${product.price}</span>
+              <span className="price">${product.price} <span className="shipping-price">+ ${product.shipping_price} Shipping</span></span>
             </div>
           </Link>
         </li>

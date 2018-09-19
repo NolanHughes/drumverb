@@ -2727,3 +2727,311 @@ Processing by ProductsController#index as */*
 Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.1ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (236.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_development"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (183.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_test"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (1112.1ms)[0m  [1m[35mCREATE DATABASE "drumverb_development" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (413.6ms)[0m  [1m[35mCREATE DATABASE "drumverb_test" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "shipping_price" integer)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180919183154)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039),
+(20180822165216),
+(20180919182851);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 19:21:09.002802"], ["updated_at", "2018-09-19 19:21:09.002802"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (138.3ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "shipping_price" integer)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180919183154)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039),
+(20180822165216),
+(20180919182851);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 19:21:09.239417"], ["updated_at", "2018-09-19 19:21:09.239417"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-09-19 19:21:09.243248"], ["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (130.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_development"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (135.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_test"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (421.1ms)[0m  [1m[35mCREATE DATABASE "drumverb_development" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (353.7ms)[0m  [1m[35mCREATE DATABASE "drumverb_test" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "shipping_price" integer)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180919183154)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039),
+(20180822165216),
+(20180919182851);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 19:21:33.910452"], ["updated_at", "2018-09-19 19:21:33.910452"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "shipping_price" integer)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180919183154)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039),
+(20180822165216),
+(20180919182851);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 19:21:34.005980"], ["updated_at", "2018-09-19 19:21:34.005980"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-09-19 19:21:34.009350"], ["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/tama-bubinga.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-tcgp57.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-tcgp57.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-108yoxz.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-108yoxz.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-tcgp57.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-tcgp57.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-tcgp57.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/db62bc893148d0e363405fe2df3564c320180919-31887-1cid5w6'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/db62bc893148d0e363405fe2df3564c320180919-31887-1cid5w6 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1eea502b620dcb1ec88b4ac7ef9a726f20180919-31887-1fywqvh
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1eea502b620dcb1ec88b4ac7ef9a726f20180919-31887-1fywqvh[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1eea502b620dcb1ec88b4ac7ef9a726f20180919-31887-1fywqvh[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1eea502b620dcb1ec88b4ac7ef9a726f20180919-31887-1fywqvh[0]' -auto-orient -resize "x265" -crop "265x265+91+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e716eb4eb5dd4d972fb14f89728ff15d20180919-31887-nvxn6c'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e716eb4eb5dd4d972fb14f89728ff15d20180919-31887-nvxn6c to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5d519b1c527dca1b2b6384a251f7689020180919-31887-11xkgvf
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1eea502b620dcb1ec88b4ac7ef9a726f20180919-31887-1fywqvh[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1eea502b620dcb1ec88b4ac7ef9a726f20180919-31887-1fywqvh[0]' -auto-orient -resize "x112" -crop "112x112+38+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e716eb4eb5dd4d972fb14f89728ff15d20180919-31887-9nesmx.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e716eb4eb5dd4d972fb14f89728ff15d20180919-31887-9nesmx.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/15820047f670d95e7e71d776dd68779f20180919-31887-v76un7.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1eea502b620dcb1ec88b4ac7ef9a726f20180919-31887-1fywqvh to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-16vnplz.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-31887-16vnplz.jpg'
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Tama ST"], ["description", "Tama snare"], ["price", 500], ["created_at", "2018-09-19 19:21:35.454369"], ["updated_at", "2018-09-19 19:21:35.454369"], ["brand", "T"], ["model", "Starclassic"], ["condition", "good"], ["year", 1999], ["finish", "Black"], ["category", "3"], ["made_in", "DE"], ["shipping_price", 25]]
+  ↳ db/seeds.rb:54
+  [1m[36mProductImage Create (0.5ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 1], ["created_at", "2018-09-19 19:21:35.458283"], ["updated_at", "2018-09-19 19:21:35.458283"], ["photo_file_name", "tama-bubinga.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 273301], ["photo_updated_at", "2018-09-19 19:21:34.083623"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/daisy-cutter.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-t8a0pi.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-t8a0pi.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-1f42f9e.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-1f42f9e.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-t8a0pi.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-t8a0pi.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-t8a0pi.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5f0db4531b6898bb37e5f1b2b12d0c0620180919-31887-1gx2rq6'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5f0db4531b6898bb37e5f1b2b12d0c0620180919-31887-1gx2rq6 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3c74be942fc92a0ebc56c135769f015720180919-31887-nfg22a
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3c74be942fc92a0ebc56c135769f015720180919-31887-nfg22a[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3c74be942fc92a0ebc56c135769f015720180919-31887-nfg22a[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3c74be942fc92a0ebc56c135769f015720180919-31887-nfg22a[0]' -auto-orient -resize "x265" -crop "265x265+44+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3ef808a958f1214ead19197bd48bf52f20180919-31887-ktl7jn'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3ef808a958f1214ead19197bd48bf52f20180919-31887-ktl7jn to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4982b91ffdba8207539269ddefa537cc20180919-31887-5drpah
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3c74be942fc92a0ebc56c135769f015720180919-31887-nfg22a[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3c74be942fc92a0ebc56c135769f015720180919-31887-nfg22a[0]' -auto-orient -resize "x112" -crop "112x112+18+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3ef808a958f1214ead19197bd48bf52f20180919-31887-17qfjh1.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3ef808a958f1214ead19197bd48bf52f20180919-31887-17qfjh1.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/530ef937161fc7ee264a6f9967c6a8d520180919-31887-y00inr.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3c74be942fc92a0ebc56c135769f015720180919-31887-nfg22a to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-9uddn2.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-31887-9uddn2.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Mapex Daisy Cutter"], ["description", "Daisy cutter"], ["price", 150], ["created_at", "2018-09-19 19:21:36.075121"], ["updated_at", "2018-09-19 19:21:36.075121"], ["brand", "M"], ["model", "Daisy Cutter"], ["condition", "excellent"], ["year", 2015], ["finish", "steel"], ["category", "3"], ["made_in", "US"], ["shipping_price", 25]]
+  ↳ db/seeds.rb:54
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 2], ["created_at", "2018-09-19 19:21:36.078321"], ["updated_at", "2018-09-19 19:21:36.078321"], ["photo_file_name", "daisy-cutter.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 135433], ["photo_updated_at", "2018-09-19 19:21:35.484997"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/supra.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-e4tzt8.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-e4tzt8.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-d1ptgg.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-d1ptgg.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-e4tzt8.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-e4tzt8.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-e4tzt8.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f9fada0bfbe1bcf0afbc286feca3013120180919-31887-d5di5b'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f9fada0bfbe1bcf0afbc286feca3013120180919-31887-d5di5b to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9928d3624685d48ff7001855de54fa2520180919-31887-2vuswy
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9928d3624685d48ff7001855de54fa2520180919-31887-2vuswy[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9928d3624685d48ff7001855de54fa2520180919-31887-2vuswy[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9928d3624685d48ff7001855de54fa2520180919-31887-2vuswy[0]' -auto-orient -resize "265x" -crop "265x265+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c856c5ad53589a940a72955b3ae57ba320180919-31887-2ncaxn'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c856c5ad53589a940a72955b3ae57ba320180919-31887-2ncaxn to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3ed09e544fb065bf755c658db393e70520180919-31887-1nslh6t
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9928d3624685d48ff7001855de54fa2520180919-31887-2vuswy[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9928d3624685d48ff7001855de54fa2520180919-31887-2vuswy[0]' -auto-orient -resize "112x" -crop "112x112+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c856c5ad53589a940a72955b3ae57ba320180919-31887-i8y8yk.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c856c5ad53589a940a72955b3ae57ba320180919-31887-i8y8yk.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/961766aaf44b89b32efc0bea076f570720180919-31887-6489x8.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:54
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9928d3624685d48ff7001855de54fa2520180919-31887-2vuswy to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-1emmcsb.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-31887-1emmcsb.jpg'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Supra"], ["description", "Supra"], ["price", 150], ["created_at", "2018-09-19 19:21:36.963743"], ["updated_at", "2018-09-19 19:21:36.963743"], ["brand", "Ludwig"], ["model", "Supra"], ["condition", "excellent"], ["year", 2015], ["finish", "Aluminium"], ["category", "3"], ["made_in", "US"], ["shipping_price", 20]]
+  ↳ db/seeds.rb:54
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 3], ["created_at", "2018-09-19 19:21:36.967192"], ["updated_at", "2018-09-19 19:21:36.967192"], ["photo_file_name", "supra.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 166313], ["photo_updated_at", "2018-09-19 19:21:36.104003"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:54
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
