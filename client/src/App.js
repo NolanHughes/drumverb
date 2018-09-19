@@ -17,7 +17,7 @@ import './css/App.css'
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.fetchAllProducts('http://localhost:3000/products');
+    this.props.fetchAllProducts('https://drumverb.herokuapp.com/products');
   }
 
   render() {

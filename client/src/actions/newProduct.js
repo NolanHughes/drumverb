@@ -1,6 +1,6 @@
 export function addNewProduct(state, history) {
 	return(dispatch) => {
-		fetch('http://localhost:3000/products', {
+		fetch('https://drumverb.herokuapp.com/products', {
 	    method: "POST",
 	    body: buildFormData(state)
 	  })

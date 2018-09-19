@@ -1,6 +1,6 @@
 export function queriedProductsFetchData(query) {
   const value = query.target.value
-  const url = `http://localhost:3000/products?q=${value}`
+  const url = `https://drumverb.herokuapp.com/products?q=${value}`
 
   return (dispatch) => {
     dispatch(searchValue(query.target.value))
