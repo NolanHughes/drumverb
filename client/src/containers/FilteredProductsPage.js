@@ -66,7 +66,14 @@ function dynamicSort(property) {
   }
 
   return function (a,b) {
-    var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+    let result
+    
+      if(property.includes("price")) {
+        result = (a.price + a.shipping_price < b.price + b.shipping_price) ? -1 : (a.price + a.shipping_price > b.price + b.shipping_price) ? 1 : 0; 
+      } else {
+        result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+      }
+
     return result * sortOrder;
   }
 }
