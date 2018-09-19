@@ -4675,3 +4675,161 @@ puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
 puma (3.11.4) lib/puma/server.rb:446:in `process_client'
 puma (3.11.4) lib/puma/server.rb:306:in `block in run'
 puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (248.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_development"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (138.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_test"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (548.4ms)[0m  [1m[35mCREATE DATABASE "drumverb_development" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (536.2ms)[0m  [1m[35mCREATE DATABASE "drumverb_test" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2887630801530902070)[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to AddProductsTable (20180712153833)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (35.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180712153833_add_products_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180712153833"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to AddImageColumnProductsTable (20180721174829)
+  [1m[35m (16.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "image_url" text[0m
+  ↳ db/migrate/20180721174829_add_image_column_products_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180721174829"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to AddColumnsToProductsTable (20180725025959)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "brand" character varying[0m
+  ↳ db/migrate/20180725025959_add_columns_to_products_table.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ADD "model" character varying[0m
+  ↳ db/migrate/20180725025959_add_columns_to_products_table.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ADD "condition" character varying[0m
+  ↳ db/migrate/20180725025959_add_columns_to_products_table.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ADD "year" integer[0m
+  ↳ db/migrate/20180725025959_add_columns_to_products_table.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ADD "finish" character varying[0m
+  ↳ db/migrate/20180725025959_add_columns_to_products_table.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ADD "category" character varying[0m
+  ↳ db/migrate/20180725025959_add_columns_to_products_table.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "products" ADD "made_in" character varying[0m
+  ↳ db/migrate/20180725025959_add_columns_to_products_table.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180725025959"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to ChangeImageUrlNameToImage (20180731192538)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (19.5ms)[0m  [1m[35mALTER TABLE "products" RENAME COLUMN "image_url" TO "image"[0m
+  ↳ db/migrate/20180731192538_change_image_url_name_to_image.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180731192538"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to ChangeImageTypeToString (20180731193824)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (15.7ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "image" TYPE character varying[0m
+  ↳ db/migrate/20180731193824_change_image_type_to_string.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180731193824"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to RemoveImageColumnFromProducts (20180801174456)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "image"[0m
+  ↳ db/migrate/20180801174456_remove_image_column_from_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180801174456"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to CreateProductImages (20180801174808)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180801174808_create_product_images.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180801174808"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to AddAttachmentPhotoToProductImages (20180801181039)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (18.5ms)[0m  [1m[35mALTER TABLE "product_images" ADD "photo_file_name" character varying[0m
+  ↳ db/migrate/20180801181039_add_attachment_photo_to_product_images.rb:4
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "product_images" ADD "photo_content_type" character varying[0m
+  ↳ db/migrate/20180801181039_add_attachment_photo_to_product_images.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "product_images" ADD "photo_file_size" integer[0m
+  ↳ db/migrate/20180801181039_add_attachment_photo_to_product_images.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "product_images" ADD "photo_updated_at" timestamp[0m
+  ↳ db/migrate/20180801181039_add_attachment_photo_to_product_images.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180801181039"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to AddLikesToProduct (20180822165216)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (247.3ms)[0m  [1m[35mALTER TABLE "products" ADD "likes" integer DEFAULT 0[0m
+  ↳ db/migrate/20180822165216_add_likes_to_product.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180822165216"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (105.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to RemoveLikesColumnFromProducts (20180919182851)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "likes"[0m
+  ↳ db/migrate/20180919182851_remove_likes_column_from_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180919182851"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+Migrating to AddShippingPriceToProducts (20180919183154)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "shipping_price" integer[0m
+  ↳ db/migrate/20180919183154_add_shipping_price_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180919183154"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (27.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 21:04:11.990235"], ["updated_at", "2018-09-19 21:04:11.990235"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2887630801530902070)[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
