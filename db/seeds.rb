@@ -44,7 +44,7 @@ product_list = [
 		description: "Supra",
 		photo_name: 'supra.jpg'
 	},
-		{
+	{
 		brand: "Paiste",
 		model: "Dark Hi-Hats",
 		condition: "mint",
@@ -86,7 +86,7 @@ product_list = [
 		description: "Kick ass china cymbal.",
 		photo_name: 'holy-china.jpg'
 	},
-		{
+	{
 		brand: "Meinl",
 		model: "Extra Dry Dual-Hats",
 		condition: "great",
@@ -128,7 +128,7 @@ product_list = [
 		description: "A tama starclassic tom in white.",
 		photo_name: 'tama-tom.jpg'
 	},
-		{
+	{
 		brand: "Mapex",
 		model: "Armory Tom",
 		condition: "good",
@@ -156,7 +156,7 @@ product_list = [
 		description: "Ludwig Vistalite Kick in Tequila Sunrise",
 		photo_name: 'vistalite-kick.jpg'
 	},
-		{
+	{
 		brand: "Paiste",
 		model: "22 inch 2002 ride",
 		condition: "good",
@@ -198,7 +198,7 @@ product_list = [
 		description: 'Meinl Byzance 14" dark hi-hats',
 		photo_name: 'meinl-byzance-dark-14-hihat.jpg'
 	},
-		{
+	{
 		brand: "Tama",
 		model: "Bell Brass Snare",
 		condition: "good",
