@@ -3590,3 +3590,1088 @@ Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427
   [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mProductImage Load (0.6ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 18]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (1377.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_development"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (381.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "drumverb_test"[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (922.4ms)[0m  [1m[35mCREATE DATABASE "drumverb_development" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (334.8ms)[0m  [1m[35mCREATE DATABASE "drumverb_test" ENCODING = 'unicode'[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "shipping_price" integer)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180919183154)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039),
+(20180822165216),
+(20180919182851);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 20:45:18.932379"], ["updated_at", "2018-09-19 20:45:18.932379"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "product_images" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "product_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "title" character varying, "description" text, "price" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "brand" character varying, "model" character varying, "condition" character varying, "year" integer, "finish" character varying, "category" character varying, "made_in" character varying, "shipping_price" integer)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180919183154)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180712153833),
+(20180721174829),
+(20180725025959),
+(20180731192538),
+(20180731193824),
+(20180801174456),
+(20180801174808),
+(20180801181039),
+(20180822165216),
+(20180919182851);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 20:45:19.050652"], ["updated_at", "2018-09-19 20:45:19.050652"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-09-19 20:45:19.057706"], ["key", "environment"]]
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/bin/rake:23
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/tama-bubinga.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-107ep6g.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-107ep6g.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-o9syhk.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-o9syhk.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-107ep6g.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-107ep6g.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-107ep6g.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b14ac626830e19cac277e68c2625889e20180919-33647-pyno3c'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b14ac626830e19cac277e68c2625889e20180919-33647-pyno3c to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/cedb1a4c6bb10ed260bbd492ebe8edfd20180919-33647-17tw1fp
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/cedb1a4c6bb10ed260bbd492ebe8edfd20180919-33647-17tw1fp[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/cedb1a4c6bb10ed260bbd492ebe8edfd20180919-33647-17tw1fp[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/cedb1a4c6bb10ed260bbd492ebe8edfd20180919-33647-17tw1fp[0]' -auto-orient -resize "x265" -crop "265x265+91+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e53ff395ccbac3585093b3d9457c9f7720180919-33647-1wgk8lo'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e53ff395ccbac3585093b3d9457c9f7720180919-33647-1wgk8lo to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2416e5360b42981e606234a81799d12620180919-33647-1yzy3r3
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/cedb1a4c6bb10ed260bbd492ebe8edfd20180919-33647-17tw1fp[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/cedb1a4c6bb10ed260bbd492ebe8edfd20180919-33647-17tw1fp[0]' -auto-orient -resize "x112" -crop "112x112+38+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e53ff395ccbac3585093b3d9457c9f7720180919-33647-rj0f15.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e53ff395ccbac3585093b3d9457c9f7720180919-33647-rj0f15.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ee0e75e733fba1e580ca5806b6045baa20180919-33647-cipnmr.jpg
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/cedb1a4c6bb10ed260bbd492ebe8edfd20180919-33647-17tw1fp to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-1jnmger.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e833e4aa321e866baeb5ec2c62dab88d20180919-33647-1jnmger.jpg'
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Tama Starclassic Snare"], ["description", "Tama Starclassic Bubinga Snare"], ["price", 500], ["created_at", "2018-09-19 20:45:21.469503"], ["updated_at", "2018-09-19 20:45:21.469503"], ["brand", "Tama"], ["model", "Starclassic Bubinga Snare"], ["condition", "good"], ["year", 1999], ["finish", "red"], ["category", "3"], ["made_in", "DE"], ["shipping_price", 25]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (1.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 1], ["created_at", "2018-09-19 20:45:21.475853"], ["updated_at", "2018-09-19 20:45:21.475853"], ["photo_file_name", "tama-bubinga.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 273301], ["photo_updated_at", "2018-09-19 20:45:19.167803"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/daisy-cutter.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-13ty3x.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-13ty3x.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-94oyq5.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-94oyq5.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-13ty3x.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-13ty3x.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-13ty3x.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/82c72841cd373538b728b32876c8098220180919-33647-110rkqh'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/82c72841cd373538b728b32876c8098220180919-33647-110rkqh to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8a79626f825c570933af054a5566b0ed20180919-33647-1r973r8
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8a79626f825c570933af054a5566b0ed20180919-33647-1r973r8[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8a79626f825c570933af054a5566b0ed20180919-33647-1r973r8[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8a79626f825c570933af054a5566b0ed20180919-33647-1r973r8[0]' -auto-orient -resize "x265" -crop "265x265+44+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/37f1827dc1bf9447f3b16add890a2fd120180919-33647-1jsddee'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/37f1827dc1bf9447f3b16add890a2fd120180919-33647-1jsddee to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9e729e79acfd15d76da603339eb23fd420180919-33647-s5t8j9
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8a79626f825c570933af054a5566b0ed20180919-33647-1r973r8[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8a79626f825c570933af054a5566b0ed20180919-33647-1r973r8[0]' -auto-orient -resize "x112" -crop "112x112+18+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/37f1827dc1bf9447f3b16add890a2fd120180919-33647-1pf8dmh.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/37f1827dc1bf9447f3b16add890a2fd120180919-33647-1pf8dmh.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7418eef55101a93dbda84a25bb03217020180919-33647-1v1nk6q.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8a79626f825c570933af054a5566b0ed20180919-33647-1r973r8 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-dq9djj.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7fe4c75b98919fa363bf7ad05f83de0d20180919-33647-dq9djj.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Mapex Daisy Cutter"], ["description", "Daisy cutter"], ["price", 150], ["created_at", "2018-09-19 20:45:22.137060"], ["updated_at", "2018-09-19 20:45:22.137060"], ["brand", "Mapex"], ["model", "Daisy Cutter"], ["condition", "excellent"], ["year", 2015], ["finish", "steel"], ["category", "3"], ["made_in", "US"], ["shipping_price", 25]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 2], ["created_at", "2018-09-19 20:45:22.140962"], ["updated_at", "2018-09-19 20:45:22.140962"], ["photo_file_name", "daisy-cutter.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 135433], ["photo_updated_at", "2018-09-19 20:45:21.523566"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/supra.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-uigbrx.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-uigbrx.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-1f3zix7.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-1f3zix7.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-uigbrx.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-uigbrx.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-uigbrx.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/46111def8b36351e06c33915b5a2e68720180919-33647-u4po3l'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/46111def8b36351e06c33915b5a2e68720180919-33647-u4po3l to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/84279771ef6f927dce30a0c8213068a620180919-33647-fa3bzt
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/84279771ef6f927dce30a0c8213068a620180919-33647-fa3bzt[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/84279771ef6f927dce30a0c8213068a620180919-33647-fa3bzt[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/84279771ef6f927dce30a0c8213068a620180919-33647-fa3bzt[0]' -auto-orient -resize "265x" -crop "265x265+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1f8d6bba836a4e3189c51469134d70be20180919-33647-1grrrub'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1f8d6bba836a4e3189c51469134d70be20180919-33647-1grrrub to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/aeb0f9b9842ab6881bf567a7ec2b0a3a20180919-33647-z2lak6
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/84279771ef6f927dce30a0c8213068a620180919-33647-fa3bzt[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/84279771ef6f927dce30a0c8213068a620180919-33647-fa3bzt[0]' -auto-orient -resize "112x" -crop "112x112+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1f8d6bba836a4e3189c51469134d70be20180919-33647-ryquos.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1f8d6bba836a4e3189c51469134d70be20180919-33647-ryquos.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/485e72c2fdd9e9cf579c1ace37a4e34920180919-33647-ysv3fs.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/84279771ef6f927dce30a0c8213068a620180919-33647-fa3bzt to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-1c91z5i.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f72ec7f8bb871e41822747df541dafc920180919-33647-1c91z5i.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Supraphonic"], ["description", "Supra"], ["price", 150], ["created_at", "2018-09-19 20:45:23.049610"], ["updated_at", "2018-09-19 20:45:23.049610"], ["brand", "Ludwig"], ["model", "Supra"], ["condition", "excellent"], ["year", 2015], ["finish", "Aluminium"], ["category", "3"], ["made_in", "US"], ["shipping_price", 20]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 3], ["created_at", "2018-09-19 20:45:23.052950"], ["updated_at", "2018-09-19 20:45:23.052950"], ["photo_file_name", "supra.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 166313], ["photo_updated_at", "2018-09-19 20:45:22.184833"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/paiste-dark-hi-hats.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-jh7mr5.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-jh7mr5.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-1mked5d.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-1mked5d.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-jh7mr5.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-jh7mr5.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-jh7mr5.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/76be4b862de3fa8e3b2e1f5bafc64a8020180919-33647-1vcgfff'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/76be4b862de3fa8e3b2e1f5bafc64a8020180919-33647-1vcgfff to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/198a47d83ebec99726ba68c194d3496720180919-33647-wyc210
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/198a47d83ebec99726ba68c194d3496720180919-33647-wyc210[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/198a47d83ebec99726ba68c194d3496720180919-33647-wyc210[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/198a47d83ebec99726ba68c194d3496720180919-33647-wyc210[0]' -auto-orient -resize "x265" -crop "265x265+44+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/df22445c3d2f8006b88e6a419704569820180919-33647-bdnijr'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/df22445c3d2f8006b88e6a419704569820180919-33647-bdnijr to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5240bbacc1e9b04fb68c86069b994dbb20180919-33647-1whlltt
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/198a47d83ebec99726ba68c194d3496720180919-33647-wyc210[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/198a47d83ebec99726ba68c194d3496720180919-33647-wyc210[0]' -auto-orient -resize "x112" -crop "112x112+18+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/df22445c3d2f8006b88e6a419704569820180919-33647-3zfmxf.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/df22445c3d2f8006b88e6a419704569820180919-33647-3zfmxf.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6f9a512e6486e1f58c9a1885cf03c32d20180919-33647-59e1n7.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/198a47d83ebec99726ba68c194d3496720180919-33647-wyc210 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-ke1cce.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/52287bdd96f095de3a2b7605b135535620180919-33647-ke1cce.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Paiste Dark Hi-Hats"], ["description", "A nice set of Paister Dark Hi-Hats"], ["price", 350], ["created_at", "2018-09-19 20:45:26.805528"], ["updated_at", "2018-09-19 20:45:26.805528"], ["brand", "Paiste"], ["model", "Dark Hi-Hats"], ["condition", "mint"], ["year", 2010], ["finish", "traditional"], ["category", "7"], ["made_in", "US"], ["shipping_price", 15]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 4], ["created_at", "2018-09-19 20:45:26.808244"], ["updated_at", "2018-09-19 20:45:26.808244"], ["photo_file_name", "paiste-dark-hi-hats.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 812954], ["photo_updated_at", "2018-09-19 20:45:23.093511"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/new-beats.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-146nule.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-146nule.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-4e3dkm.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-4e3dkm.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-146nule.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-146nule.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-146nule.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/73010cec0b7c2620b7342c5fa962c52d20180919-33647-1bixluj'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/73010cec0b7c2620b7342c5fa962c52d20180919-33647-1bixluj to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f337249448838a25abd1ff419ec9beea20180919-33647-1a90xt2
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f337249448838a25abd1ff419ec9beea20180919-33647-1a90xt2[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f337249448838a25abd1ff419ec9beea20180919-33647-1a90xt2[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f337249448838a25abd1ff419ec9beea20180919-33647-1a90xt2[0]' -auto-orient -resize "x265" -crop "265x265+43+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0120080932a89fcb1520ac3af081bb9120180919-33647-1550pb8'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0120080932a89fcb1520ac3af081bb9120180919-33647-1550pb8 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3e69e61fd569b8c17140370d2f9d8d4620180919-33647-ylxaak
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f337249448838a25abd1ff419ec9beea20180919-33647-1a90xt2[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f337249448838a25abd1ff419ec9beea20180919-33647-1a90xt2[0]' -auto-orient -resize "x112" -crop "112x112+18+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0120080932a89fcb1520ac3af081bb9120180919-33647-12di28i.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0120080932a89fcb1520ac3af081bb9120180919-33647-12di28i.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/56254bde001fcc837e2e27e1aad3224020180919-33647-16oh2nr.jpg
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f337249448838a25abd1ff419ec9beea20180919-33647-1a90xt2 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-mwsg1g.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/abeed55b0c8b17f8afa3c1251eb1617d20180919-33647-mwsg1g.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Zildjian New Beats"], ["description", "Zildjian hi-hats"], ["price", 200], ["created_at", "2018-09-19 20:45:27.901709"], ["updated_at", "2018-09-19 20:45:27.901709"], ["brand", "Zildjian"], ["model", "New Beats"], ["condition", "good"], ["year", 2015], ["finish", "traditional"], ["category", "7"], ["made_in", "US"], ["shipping_price", 50]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 5], ["created_at", "2018-09-19 20:45:27.904407"], ["updated_at", "2018-09-19 20:45:27.904407"], ["photo_file_name", "new-beats.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 90436], ["photo_updated_at", "2018-09-19 20:45:26.847746"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (59.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/holy-china.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-17mgs5q.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-17mgs5q.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-13xt1yb.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-13xt1yb.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-17mgs5q.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-17mgs5q.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-17mgs5q.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6ebe149327bb3a253e674430af2c73db20180919-33647-hlcwth'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6ebe149327bb3a253e674430af2c73db20180919-33647-hlcwth to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2052800109b7bc2cf4d87da48d46f79520180919-33647-a2vld
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2052800109b7bc2cf4d87da48d46f79520180919-33647-a2vld[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2052800109b7bc2cf4d87da48d46f79520180919-33647-a2vld[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2052800109b7bc2cf4d87da48d46f79520180919-33647-a2vld[0]' -auto-orient -resize "265x" -crop "265x265+0+1" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/88f0b6198683dee7e1c93387cd7e378320180919-33647-1lrdgjh'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/88f0b6198683dee7e1c93387cd7e378320180919-33647-1lrdgjh to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/66141bcb5a8814ed27ced1572a747ad420180919-33647-1fsjrn5
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2052800109b7bc2cf4d87da48d46f79520180919-33647-a2vld[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2052800109b7bc2cf4d87da48d46f79520180919-33647-a2vld[0]' -auto-orient -resize "112x" -crop "112x112+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/88f0b6198683dee7e1c93387cd7e378320180919-33647-1600c6m.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/88f0b6198683dee7e1c93387cd7e378320180919-33647-1600c6m.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b9bf5ab305ab07e5979bcea6f39de2b420180919-33647-5ga2wp.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2052800109b7bc2cf4d87da48d46f79520180919-33647-a2vld to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-1e7ypj7.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b8232caa86bec6c27ade81314b93b11920180919-33647-1e7ypj7.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Holy China"], ["description", "Kick ass china cymbal."], ["price", 250], ["created_at", "2018-09-19 20:45:28.876344"], ["updated_at", "2018-09-19 20:45:28.876344"], ["brand", "Sabian"], ["model", "Holy China"], ["condition", "fair"], ["year", 2000], ["finish", "brilliant"], ["category", "8"], ["made_in", "US"], ["shipping_price", 10]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 6], ["created_at", "2018-09-19 20:45:28.879312"], ["updated_at", "2018-09-19 20:45:28.879312"], ["photo_file_name", "holy-china.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 150435], ["photo_updated_at", "2018-09-19 20:45:27.986162"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/extra-dry-hats.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1m1vvys.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1m1vvys.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1d9qlho.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1d9qlho.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1m1vvys.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1m1vvys.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1m1vvys.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/dc1e1fa7ec4160cb85f3b694bb6fcfb820180919-33647-11hvktd'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/dc1e1fa7ec4160cb85f3b694bb6fcfb820180919-33647-11hvktd to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/096bdcacae503deeb08072edaa1ac67920180919-33647-182z9sg
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/096bdcacae503deeb08072edaa1ac67920180919-33647-182z9sg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/096bdcacae503deeb08072edaa1ac67920180919-33647-182z9sg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/096bdcacae503deeb08072edaa1ac67920180919-33647-182z9sg[0]' -auto-orient -resize "x265" -crop "265x265+103+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/412b56a18c1d2e0d292986a601ceb06720180919-33647-1rzxcs8'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/412b56a18c1d2e0d292986a601ceb06720180919-33647-1rzxcs8 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/41895d09ab95558a1f860948bf59e56a20180919-33647-ekc49d
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/096bdcacae503deeb08072edaa1ac67920180919-33647-182z9sg[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/096bdcacae503deeb08072edaa1ac67920180919-33647-182z9sg[0]' -auto-orient -resize "x112" -crop "112x112+43+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/412b56a18c1d2e0d292986a601ceb06720180919-33647-eaqfqw.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/412b56a18c1d2e0d292986a601ceb06720180919-33647-eaqfqw.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/078bdbe15497ccfc6bb9ccd41b4ea3a120180919-33647-1qqz6nf.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/096bdcacae503deeb08072edaa1ac67920180919-33647-182z9sg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1qoojvo.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c596249f843ddb4971e34b125964a8ff20180919-33647-1qoojvo.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Meinl 15\" Extra Dry Dual Hi-Hats "], ["description", "Meinl 15\" Extra Dry Dual Hi-Hats"], ["price", 550], ["created_at", "2018-09-19 20:45:29.555617"], ["updated_at", "2018-09-19 20:45:29.555617"], ["brand", "Meinl"], ["model", "Extra Dry Dual-Hats"], ["condition", "great"], ["year", 2018], ["finish", ""], ["category", "7"], ["made_in", "US"], ["shipping_price", 0]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 7], ["created_at", "2018-09-19 20:45:29.558625"], ["updated_at", "2018-09-19 20:45:29.558625"], ["photo_file_name", "extra-dry-hats.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 109186], ["photo_updated_at", "2018-09-19 20:45:28.918558"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (102.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/mj-pack.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-1enkbqe.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-1enkbqe.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-d94u3c.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-d94u3c.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-1enkbqe.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-1enkbqe.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-1enkbqe.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4bd18d9723e85babc4bad52536f8989f20180919-33647-1a6rk40'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4bd18d9723e85babc4bad52536f8989f20180919-33647-1a6rk40 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/32f88d9dfe828acea7cddc63bd21992e20180919-33647-1k1lsdi
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/32f88d9dfe828acea7cddc63bd21992e20180919-33647-1k1lsdi[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/32f88d9dfe828acea7cddc63bd21992e20180919-33647-1k1lsdi[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/32f88d9dfe828acea7cddc63bd21992e20180919-33647-1k1lsdi[0]' -auto-orient -resize "x265" -crop "265x265+88+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4090f6c3926c16a0426118420fa7b92d20180919-33647-1ky7kjz'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4090f6c3926c16a0426118420fa7b92d20180919-33647-1ky7kjz to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7e21d69159aca8f08aec76f030b2f0ab20180919-33647-h6x31t
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/32f88d9dfe828acea7cddc63bd21992e20180919-33647-1k1lsdi[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/32f88d9dfe828acea7cddc63bd21992e20180919-33647-1k1lsdi[0]' -auto-orient -resize "x112" -crop "112x112+37+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4090f6c3926c16a0426118420fa7b92d20180919-33647-1xas72v.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4090f6c3926c16a0426118420fa7b92d20180919-33647-1xas72v.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e13b13fa6aeff3223421163f3deaab7a20180919-33647-t14gkh.jpg
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/32f88d9dfe828acea7cddc63bd21992e20180919-33647-1k1lsdi to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-1b8b9zy.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a2c9684cd3baca8eb670494d9fb2363620180919-33647-1b8b9zy.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Mike Johnston cymbal pack"], ["description", "The Meinl Mike Johnston cymbal box set contains a variety of Byzance models that Mike chooses for his standard set up when conducting lessons and performing"], ["price", 1199], ["created_at", "2018-09-19 20:45:30.363467"], ["updated_at", "2018-09-19 20:45:30.363467"], ["brand", "Meinl"], ["model", "Mike Johnston cymbal pack"], ["condition", "brand new"], ["year", 2018], ["finish", "varied"], ["category", "6"], ["made_in", "US"], ["shipping_price", 0]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 8], ["created_at", "2018-09-19 20:45:30.367042"], ["updated_at", "2018-09-19 20:45:30.367042"], ["photo_file_name", "mj-pack.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 353347], ["photo_updated_at", "2018-09-19 20:45:29.684113"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/tama-tom.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-cxjte5.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-cxjte5.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-1kpdk2n.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-1kpdk2n.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-cxjte5.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-cxjte5.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-cxjte5.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2dd08905617a6eff275aff018a0c4ed420180919-33647-4hl80g'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2dd08905617a6eff275aff018a0c4ed420180919-33647-4hl80g to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e7b777e5d28ca4f7aedd0f22ecfd5b8220180919-33647-1w87gln
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e7b777e5d28ca4f7aedd0f22ecfd5b8220180919-33647-1w87gln[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e7b777e5d28ca4f7aedd0f22ecfd5b8220180919-33647-1w87gln[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e7b777e5d28ca4f7aedd0f22ecfd5b8220180919-33647-1w87gln[0]' -auto-orient -resize "x265" -crop "265x265+103+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e3dbca5fb9b537d87ac763f965b8713e20180919-33647-1hvsa5t'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e3dbca5fb9b537d87ac763f965b8713e20180919-33647-1hvsa5t to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/d3d93522c5421798b5d2a118c5122bbb20180919-33647-xbv4ve
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e7b777e5d28ca4f7aedd0f22ecfd5b8220180919-33647-1w87gln[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e7b777e5d28ca4f7aedd0f22ecfd5b8220180919-33647-1w87gln[0]' -auto-orient -resize "x112" -crop "112x112+43+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e3dbca5fb9b537d87ac763f965b8713e20180919-33647-1iw3ppy.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e3dbca5fb9b537d87ac763f965b8713e20180919-33647-1iw3ppy.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/adb26316ab00d7b76d63d462db56265f20180919-33647-2ckhcv.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e7b777e5d28ca4f7aedd0f22ecfd5b8220180919-33647-1w87gln to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-mmk2zf.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/54ee7e8fa192222d347657a07b68f0c220180919-33647-mmk2zf.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Tama Starclassic Tom"], ["description", "A tama starclassic tom in white."], ["price", 225], ["created_at", "2018-09-19 20:45:31.657243"], ["updated_at", "2018-09-19 20:45:31.657243"], ["brand", "Tama"], ["model", "Starclassic Tom"], ["condition", "poor"], ["year", 2000], ["finish", "white"], ["category", "4"], ["made_in", "US"], ["shipping_price", 0]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 9], ["created_at", "2018-09-19 20:45:31.660155"], ["updated_at", "2018-09-19 20:45:31.660155"], ["photo_file_name", "tama-tom.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 756856], ["photo_updated_at", "2018-09-19 20:45:30.417808"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/mapex-tom.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-13tgzwm.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-13tgzwm.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-1kx1f6u.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-1kx1f6u.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-13tgzwm.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-13tgzwm.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-13tgzwm.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1460c108edee599211bbd0b55485d78920180919-33647-1587f9'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/1460c108edee599211bbd0b55485d78920180919-33647-1587f9 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b002b80bdce1e55eaa5d7d33b16357ce20180919-33647-xx2b3w
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b002b80bdce1e55eaa5d7d33b16357ce20180919-33647-xx2b3w[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b002b80bdce1e55eaa5d7d33b16357ce20180919-33647-xx2b3w[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b002b80bdce1e55eaa5d7d33b16357ce20180919-33647-xx2b3w[0]' -auto-orient -resize "x265" -crop "265x265+28+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5b8bfdb36aa440be216b0b92f036669b20180919-33647-veoikw'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5b8bfdb36aa440be216b0b92f036669b20180919-33647-veoikw to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/dcf40e11cf5c27f1b42e5f6e349adbff20180919-33647-1nwjt8f
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b002b80bdce1e55eaa5d7d33b16357ce20180919-33647-xx2b3w[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b002b80bdce1e55eaa5d7d33b16357ce20180919-33647-xx2b3w[0]' -auto-orient -resize "x112" -crop "112x112+12+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5b8bfdb36aa440be216b0b92f036669b20180919-33647-1qn0tzz.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5b8bfdb36aa440be216b0b92f036669b20180919-33647-1qn0tzz.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/06ea2b281fa091644f5e7c06b0ef0bd820180919-33647-twbt51.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b002b80bdce1e55eaa5d7d33b16357ce20180919-33647-xx2b3w to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-v6ykfw.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/05f08575ec469dece263c0bb6f770d4b20180919-33647-v6ykfw.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Mapex armory tom"], ["description", "Mapex tom in walnut"], ["price", 225], ["created_at", "2018-09-19 20:45:32.310455"], ["updated_at", "2018-09-19 20:45:32.310455"], ["brand", "Mapex"], ["model", "Armory Tom"], ["condition", "good"], ["year", 2018], ["finish", "walnut"], ["category", "4"], ["made_in", "DE"], ["shipping_price", 25]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.4ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 10], ["created_at", "2018-09-19 20:45:32.313255"], ["updated_at", "2018-09-19 20:45:32.313255"], ["photo_file_name", "mapex-tom.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 143795], ["photo_updated_at", "2018-09-19 20:45:31.702799"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/pearl-kick.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-1ak4lgi.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-1ak4lgi.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-iwkipk.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-iwkipk.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-1ak4lgi.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-1ak4lgi.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-1ak4lgi.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9d4c58a767091d4fad660dd0080ed91420180919-33647-w2sqn9'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9d4c58a767091d4fad660dd0080ed91420180919-33647-w2sqn9 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/34488b84f0b53b390974686d6412bb7720180919-33647-14wpp3q
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/34488b84f0b53b390974686d6412bb7720180919-33647-14wpp3q[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/34488b84f0b53b390974686d6412bb7720180919-33647-14wpp3q[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/34488b84f0b53b390974686d6412bb7720180919-33647-14wpp3q[0]' -auto-orient -resize "x265" -crop "265x265+44+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a14b86ce19219c0fcc823e27dcef4c0020180919-33647-9t40pc'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a14b86ce19219c0fcc823e27dcef4c0020180919-33647-9t40pc to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0ec8a66b15f668fec0a04b31dbbcb2f920180919-33647-1eq4qve
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/34488b84f0b53b390974686d6412bb7720180919-33647-14wpp3q[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/34488b84f0b53b390974686d6412bb7720180919-33647-14wpp3q[0]' -auto-orient -resize "x112" -crop "112x112+18+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a14b86ce19219c0fcc823e27dcef4c0020180919-33647-1772pvp.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a14b86ce19219c0fcc823e27dcef4c0020180919-33647-1772pvp.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/958911b044066696db9e3d072a8d1bad20180919-33647-9np17.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/34488b84f0b53b390974686d6412bb7720180919-33647-14wpp3q to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-1irvm.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6d461b4e4789f57d205e3019fbac5a9a20180919-33647-1irvm.jpg'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Pearl Masters Kick Drum"], ["description", "Pearl Masters Kick Drum"], ["price", 500], ["created_at", "2018-09-19 20:45:32.954817"], ["updated_at", "2018-09-19 20:45:32.954817"], ["brand", "Pearl"], ["model", "Masters Kick Drum"], ["condition", "excellent"], ["year", 2005], ["finish", "Natural"], ["category", "1"], ["made_in", "US"], ["shipping_price", 100]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 11], ["created_at", "2018-09-19 20:45:32.958110"], ["updated_at", "2018-09-19 20:45:32.958110"], ["photo_file_name", "pearl-kick.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 147206], ["photo_updated_at", "2018-09-19 20:45:32.352336"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (16.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/vistalite-kick.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-16v0mtg.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-16v0mtg.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-173f43d.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-173f43d.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-16v0mtg.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-16v0mtg.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-16v0mtg.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6594f9f99888b7aa178128a64ba4fd9620180919-33647-1iyv57p'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6594f9f99888b7aa178128a64ba4fd9620180919-33647-1iyv57p to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/43f9816ae2d895741a87d5409a6d895420180919-33647-1k5ryil
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/43f9816ae2d895741a87d5409a6d895420180919-33647-1k5ryil[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/43f9816ae2d895741a87d5409a6d895420180919-33647-1k5ryil[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/43f9816ae2d895741a87d5409a6d895420180919-33647-1k5ryil[0]' -auto-orient -resize "265x" -crop "265x265+0+27" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/684fd86d9a352eb389dbda07d33e1cf420180919-33647-1u089xj'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/684fd86d9a352eb389dbda07d33e1cf420180919-33647-1u089xj to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4035e97e620a39b90b73577b3c38e53b20180919-33647-1mgdy9j
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/43f9816ae2d895741a87d5409a6d895420180919-33647-1k5ryil[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/43f9816ae2d895741a87d5409a6d895420180919-33647-1k5ryil[0]' -auto-orient -resize "112x" -crop "112x112+0+11" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/684fd86d9a352eb389dbda07d33e1cf420180919-33647-1hpykrf.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/684fd86d9a352eb389dbda07d33e1cf420180919-33647-1hpykrf.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/762296296d2815bb510f6d9bc3d4141b20180919-33647-wect2.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/43f9816ae2d895741a87d5409a6d895420180919-33647-1k5ryil to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-vcs6n8.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/545dd4872d75c970bbef7dc5cb12c45520180919-33647-vcs6n8.jpg'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Ludwig Vistalite Kick in Tequila Sunrise"], ["description", "Ludwig Vistalite Kick in Tequila Sunrise"], ["price", 500], ["created_at", "2018-09-19 20:45:33.596525"], ["updated_at", "2018-09-19 20:45:33.596525"], ["brand", "Ludwig"], ["model", "Vistalite Kick"], ["condition", "good"], ["year", 1970], ["finish", "Tequila Sunrise"], ["category", "1"], ["made_in", "US"], ["shipping_price", 50]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 12], ["created_at", "2018-09-19 20:45:33.599417"], ["updated_at", "2018-09-19 20:45:33.599417"], ["photo_file_name", "vistalite-kick.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 117843], ["photo_updated_at", "2018-09-19 20:45:32.998693"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/paiste-22-ride-2002.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-1ikr1gp.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-1ikr1gp.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-1rk8k8h.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-1rk8k8h.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-1ikr1gp.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-1ikr1gp.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-1ikr1gp.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5e926e6f7bdadf0108521987c304fea420180919-33647-1en6ut0'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5e926e6f7bdadf0108521987c304fea420180919-33647-1en6ut0 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7d69788e9d368ee7844d1d863349a47920180919-33647-8kclvc
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7d69788e9d368ee7844d1d863349a47920180919-33647-8kclvc[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7d69788e9d368ee7844d1d863349a47920180919-33647-8kclvc[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7d69788e9d368ee7844d1d863349a47920180919-33647-8kclvc[0]' -auto-orient -resize "x265" -crop "265x265+103+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2573dc187f42b88ab7ac0bccfd2c326120180919-33647-1ei0e13'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2573dc187f42b88ab7ac0bccfd2c326120180919-33647-1ei0e13 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/10fec4bc21b2f8b9f8b2de262fa044fb20180919-33647-ylqo8q
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7d69788e9d368ee7844d1d863349a47920180919-33647-8kclvc[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7d69788e9d368ee7844d1d863349a47920180919-33647-8kclvc[0]' -auto-orient -resize "x112" -crop "112x112+43+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2573dc187f42b88ab7ac0bccfd2c326120180919-33647-1wnlhs4.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2573dc187f42b88ab7ac0bccfd2c326120180919-33647-1wnlhs4.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c57a392184185f5c8685069abb3ae0b020180919-33647-1skuz3a.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7d69788e9d368ee7844d1d863349a47920180919-33647-8kclvc to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-159l4by.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/9681c8224e71569bfa5e25fa4af9b73520180919-33647-159l4by.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Paiste 22 inch 2002 ride"], ["description", "Paiste 22 inch 2002 ride"], ["price", 300], ["created_at", "2018-09-19 20:45:34.887849"], ["updated_at", "2018-09-19 20:45:34.887849"], ["brand", "Paiste"], ["model", "22 inch 2002 ride"], ["condition", "good"], ["year", 2010], ["finish", "brilliant"], ["category", "9"], ["made_in", "DE"], ["shipping_price", 15]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 13], ["created_at", "2018-09-19 20:45:34.895299"], ["updated_at", "2018-09-19 20:45:34.895299"], ["photo_file_name", "paiste-22-ride-2002.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 131459], ["photo_updated_at", "2018-09-19 20:45:33.639736"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/thunder-butter.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-1j79hxp.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-1j79hxp.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-edum5b.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-edum5b.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-1j79hxp.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-1j79hxp.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-1j79hxp.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a5c12da0ea8edd9a52a683ff7cf46fab20180919-33647-13a420o'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/a5c12da0ea8edd9a52a683ff7cf46fab20180919-33647-13a420o to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b36d69a27d34ab86310c7f1c5ce3798820180919-33647-qz8ibq
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b36d69a27d34ab86310c7f1c5ce3798820180919-33647-qz8ibq[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b36d69a27d34ab86310c7f1c5ce3798820180919-33647-qz8ibq[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b36d69a27d34ab86310c7f1c5ce3798820180919-33647-qz8ibq[0]' -auto-orient -resize "265x" -crop "265x265+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7468307857e3c0ef4c0591cdb5d9d9d020180919-33647-1y4mh8z'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7468307857e3c0ef4c0591cdb5d9d9d020180919-33647-1y4mh8z to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/d2dd96431b3a5c1c782514d4eba64f0120180919-33647-xsreov
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b36d69a27d34ab86310c7f1c5ce3798820180919-33647-qz8ibq[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b36d69a27d34ab86310c7f1c5ce3798820180919-33647-qz8ibq[0]' -auto-orient -resize "112x" -crop "112x112+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7468307857e3c0ef4c0591cdb5d9d9d020180919-33647-10l7cht.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7468307857e3c0ef4c0591cdb5d9d9d020180919-33647-10l7cht.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/c77259dd420f02fad6a55817d053742220180919-33647-bgefza.jpg
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b36d69a27d34ab86310c7f1c5ce3798820180919-33647-qz8ibq to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-5e6hhg.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/7471c6ac99ebeb51ad3d1d70e644267d20180919-33647-5e6hhg.jpg'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Meinl 20\" Byzance Extra Thin Hammered Crash"], ["description", "Meinl 20\" Byzance Extra Thin Hammered Crash - AKA Thunder Butter"], ["price", 500], ["created_at", "2018-09-19 20:45:36.719687"], ["updated_at", "2018-09-19 20:45:36.719687"], ["brand", "Meinl"], ["model", "20\" Byzance Extra Thin Hammered Crash"], ["condition", "brand new"], ["year", 2015], ["finish", "traditional"], ["category", "5"], ["made_in", "US"], ["shipping_price", 0]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 14], ["created_at", "2018-09-19 20:45:36.722725"], ["updated_at", "2018-09-19 20:45:36.722725"], ["photo_file_name", "thunder-butter.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 420719], ["photo_updated_at", "2018-09-19 20:45:34.933877"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/meinl-byzance-dark-14-hihat.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-118xizy.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-118xizy.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-13f2a9c.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-13f2a9c.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-118xizy.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-118xizy.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-118xizy.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3df1920a249486b250749f2d97fd024d20180919-33647-1ax03m7'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/3df1920a249486b250749f2d97fd024d20180919-33647-1ax03m7 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/78f132f30137130092a47633573d3dc720180919-33647-jgpqmf
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/78f132f30137130092a47633573d3dc720180919-33647-jgpqmf[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/78f132f30137130092a47633573d3dc720180919-33647-jgpqmf[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/78f132f30137130092a47633573d3dc720180919-33647-jgpqmf[0]' -auto-orient -resize "265x" -crop "265x265+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/51e030c94f88f27adeb71ec3f489c4f620180919-33647-yuxquc'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/51e030c94f88f27adeb71ec3f489c4f620180919-33647-yuxquc to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/bd77ceb8be45eabdfaacbb2ebd129c1520180919-33647-pupc1i
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/78f132f30137130092a47633573d3dc720180919-33647-jgpqmf[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/78f132f30137130092a47633573d3dc720180919-33647-jgpqmf[0]' -auto-orient -resize "112x" -crop "112x112+0+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/51e030c94f88f27adeb71ec3f489c4f620180919-33647-44udp.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/51e030c94f88f27adeb71ec3f489c4f620180919-33647-44udp.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/2414f92d30a46b2fad67663ef9c5c99c20180919-33647-73zlf6.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/78f132f30137130092a47633573d3dc720180919-33647-jgpqmf to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-yzgzab.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b405343d67aca6de7b100fc1cfa1e3b620180919-33647-yzgzab.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Meinl Byzance 14\" dark hi-hats"], ["description", "Meinl Byzance 14\" dark hi-hats"], ["price", 350], ["created_at", "2018-09-19 20:45:37.454108"], ["updated_at", "2018-09-19 20:45:37.454108"], ["brand", "Meinl"], ["model", "Byzance 14\" dark hi-hats"], ["condition", "very good"], ["year", 2017], ["finish", "dark"], ["category", "7"], ["made_in", "US"], ["shipping_price", 25]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 15], ["created_at", "2018-09-19 20:45:37.456869"], ["updated_at", "2018-09-19 20:45:37.456869"], ["photo_file_name", "meinl-byzance-dark-14-hihat.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 214730], ["photo_updated_at", "2018-09-19 20:45:36.765344"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/tbb.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-9n2u8k.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-9n2u8k.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-klswjm.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-klswjm.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-9n2u8k.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-9n2u8k.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-9n2u8k.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/fe8cec5b5f5e90ae211a4a161b24b28520180919-33647-poa2pz'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/fe8cec5b5f5e90ae211a4a161b24b28520180919-33647-poa2pz to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/322bf5a01817c14420d82730d0223fc120180919-33647-1lfro27
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/322bf5a01817c14420d82730d0223fc120180919-33647-1lfro27[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/322bf5a01817c14420d82730d0223fc120180919-33647-1lfro27[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/322bf5a01817c14420d82730d0223fc120180919-33647-1lfro27[0]' -auto-orient -resize "x265" -crop "265x265+103+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/49c71c0491ebbc9badb92bcc6ce435b320180919-33647-rs35wl'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/49c71c0491ebbc9badb92bcc6ce435b320180919-33647-rs35wl to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/d3f17dae9595aae0a320139bac1fbf7620180919-33647-1bvdq4l
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/322bf5a01817c14420d82730d0223fc120180919-33647-1lfro27[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/322bf5a01817c14420d82730d0223fc120180919-33647-1lfro27[0]' -auto-orient -resize "x112" -crop "112x112+43+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/49c71c0491ebbc9badb92bcc6ce435b320180919-33647-1oumijd.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/49c71c0491ebbc9badb92bcc6ce435b320180919-33647-1oumijd.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e64d1f8d51381b620f1d69955703f70120180919-33647-rmxlif.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/322bf5a01817c14420d82730d0223fc120180919-33647-1lfro27 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-bkr9co.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/8ef25ebecf5c79e2d7c845aeaf03577c20180919-33647-bkr9co.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Tama Bell Brass Snare"], ["description", "Kick ass snare!"], ["price", 1000], ["created_at", "2018-09-19 20:45:38.628277"], ["updated_at", "2018-09-19 20:45:38.628277"], ["brand", "Tama"], ["model", "Bell Brass Snare"], ["condition", "good"], ["year", 1990], ["finish", "Bronze"], ["category", "3"], ["made_in", "US"], ["shipping_price", 150]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 16], ["created_at", "2018-09-19 20:45:38.631045"], ["updated_at", "2018-09-19 20:45:38.631045"], ["photo_file_name", "tbb.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 127790], ["photo_updated_at", "2018-09-19 20:45:37.495937"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (23.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/bb-kit.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-32cds5.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-32cds5.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-h4kwrf.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-h4kwrf.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-32cds5.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-32cds5.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-32cds5.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4ee34083d93a034adb98f2ef731d286b20180919-33647-bp9hbq'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/4ee34083d93a034adb98f2ef731d286b20180919-33647-bp9hbq to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6b60510ab1a43e6c4a1b1e5c34d028c620180919-33647-1wr6p39
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6b60510ab1a43e6c4a1b1e5c34d028c620180919-33647-1wr6p39[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6b60510ab1a43e6c4a1b1e5c34d028c620180919-33647-1wr6p39[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6b60510ab1a43e6c4a1b1e5c34d028c620180919-33647-1wr6p39[0]' -auto-orient -resize "x265" -crop "265x265+44+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0ba07b81933d991e84d9019d50cd5d6920180919-33647-cbkyw1'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0ba07b81933d991e84d9019d50cd5d6920180919-33647-cbkyw1 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/b950abf9d4dd1796bf46fbc8cba7a9ae20180919-33647-1ddn0gb
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6b60510ab1a43e6c4a1b1e5c34d028c620180919-33647-1wr6p39[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6b60510ab1a43e6c4a1b1e5c34d028c620180919-33647-1wr6p39[0]' -auto-orient -resize "x112" -crop "112x112+18+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0ba07b81933d991e84d9019d50cd5d6920180919-33647-k27z1g.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/0ba07b81933d991e84d9019d50cd5d6920180919-33647-k27z1g.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/e71d7dfee2f55746c974277513db5bc220180919-33647-1ju8vx7.jpg
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6b60510ab1a43e6c4a1b1e5c34d028c620180919-33647-1wr6p39 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-11kyfsz.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/11bccc31df0f97b4e6ae003ceead5ab420180919-33647-11kyfsz.jpg'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Tama Birch/Bubinga Kit"], ["description", "Tama Birch/Bubinga Kit"], ["price", 1500], ["created_at", "2018-09-19 20:45:39.984484"], ["updated_at", "2018-09-19 20:45:39.984484"], ["brand", "Tama"], ["model", "Birch/Bubinga Kit"], ["condition", "excellent"], ["year", 2015], ["finish", ""], ["category", "2"], ["made_in", "US"], ["shipping_price", 200]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.2ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 17], ["created_at", "2018-09-19 20:45:39.987351"], ["updated_at", "2018-09-19 20:45:39.987351"], ["photo_file_name", "bb-kit.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 1806208], ["photo_updated_at", "2018-09-19 20:45:38.678685"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (65.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /Users/nolanhughes/Documents/web-dev-courses/Flatiron/react/drumverb/db/fixtures/sonor-kit.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-1ig4ohs.jpg
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-1ig4ohs.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-5k0on4.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-5k0on4.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-1ig4ohs.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-1ig4ohs.jpg[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-1ig4ohs.jpg[0]' -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ed99185ddb47e078cf1db1fd7be5e91120180919-33647-1blo4gb'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/ed99185ddb47e078cf1db1fd7be5e91120180919-33647-1blo4gb to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/13c4bc3c13f242a31a776535b749ed4620180919-33647-q6nqv7
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/13c4bc3c13f242a31a776535b749ed4620180919-33647-q6nqv7[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/13c4bc3c13f242a31a776535b749ed4620180919-33647-q6nqv7[0]'
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/13c4bc3c13f242a31a776535b749ed4620180919-33647-q6nqv7[0]' -auto-orient -resize "x265" -crop "265x265+66+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/917acb93e134520ed0e6fc9c247ae37320180919-33647-rpzds1'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/917acb93e134520ed0e6fc9c247ae37320180919-33647-rpzds1 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/f94354327f7f0da33cf6ad78fb08036820180919-33647-9w28d7
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/13c4bc3c13f242a31a776535b749ed4620180919-33647-q6nqv7[0]' 2>/dev/null
+Command :: convert -auto-orient '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/13c4bc3c13f242a31a776535b749ed4620180919-33647-q6nqv7[0]' -auto-orient -resize "x112" -crop "112x112+28+0" +repage '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/917acb93e134520ed0e6fc9c247ae37320180919-33647-3v314f.jpg'
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/917acb93e134520ed0e6fc9c247ae37320180919-33647-3v314f.jpg to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/5b38bcce57294c54dc05b5ee28e5050c20180919-33647-6pyt2m.jpg
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:265
+[paperclip] Trying to link /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/13c4bc3c13f242a31a776535b749ed4620180919-33647-q6nqv7 to /var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-179siay.jpg
+Command :: file -b --mime '/var/folders/15/g84h4_lj0sl3qh6hwvffmhv00000gn/T/6427dbc9a132f095021e7a38768c6d1f20180919-33647-179siay.jpg'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "price", "created_at", "updated_at", "brand", "model", "condition", "year", "finish", "category", "made_in", "shipping_price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["title", "Sonor Vintage Kit"], ["description", "Sonor Vintage Kit"], ["price", 1500], ["created_at", "2018-09-19 20:45:40.716824"], ["updated_at", "2018-09-19 20:45:40.716824"], ["brand", "Sonor"], ["model", "Vintage kit"], ["condition", "brand new"], ["year", 2018], ["finish", "Black"], ["category", "2"], ["made_in", "US"], ["shipping_price", 100]]
+  ↳ db/seeds.rb:265
+  [1m[36mProductImage Create (0.3ms)[0m  [1m[32mINSERT INTO "product_images" ("product_id", "created_at", "updated_at", "photo_file_name", "photo_content_type", "photo_file_size", "photo_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_id", 18], ["created_at", "2018-09-19 20:45:40.720219"], ["updated_at", "2018-09-19 20:45:40.720219"], ["photo_file_name", "sonor-kit.jpg"], ["photo_content_type", "image/jpeg"], ["photo_file_size", 180426], ["photo_updated_at", "2018-09-19 20:45:40.077189"]]
+  ↳ db/seeds.rb:265
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:265
+Started GET "/products" for ::1 at 2018-09-19 15:46:40 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (title LIKE '%%' OR description LIKE '%%') LIMIT $1[0m  [["LIMIT", 100]]
+  ↳ app/controllers/products_controller.rb:7
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.4ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.3ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 11]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 12]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 13]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 14]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 15]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 16]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 17]]
+  ↳ app/models/product.rb:30
+  [1m[36mProductImage Load (0.2ms)[0m  [1m[34mSELECT "product_images".* FROM "product_images" WHERE "product_images"."product_id" = $1[0m  [["product_id", 18]]
+  ↳ app/models/product.rb:30
+Completed 200 OK in 116ms (Views: 96.0ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/system/product_images/photos/000/000/035/medium/bb-kit.jpg?1537390091" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+Started GET "/system/product_images/photos/000/000/036/medium/sonor-kit.jpg?1537390093" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+Started GET "/system/product_images/photos/000/000/034/medium/tbb.jpg?1537390089" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+Started GET "/system/product_images/photos/000/000/033/medium/meinl-byzance-dark-14-hihat.jpg?1537390088" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+Started GET "/system/product_images/photos/000/000/032/medium/thunder-butter.jpg?1537390085" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/033/medium/meinl-byzance-dark-14-hihat.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/036/medium/sonor-kit.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (33.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/032/medium/thunder-butter.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/031/medium/paiste-22-ride-2002.jpg?1537390084" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/031/medium/paiste-22-ride-2002.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/029/medium/pearl-kick.JPG?1537390080" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/029/medium/pearl-kick.JPG"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/030/medium/vistalite-kick.jpg?1537390082" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/030/medium/vistalite-kick.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nolanhughes/.rvm/gems/ruby-2.4.4/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/034/medium/tbb.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/027/medium/tama-tom.jpg?1537390077" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+Started GET "/system/product_images/photos/000/000/028/medium/mapex-tom.jpg?1537390078" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/028/medium/mapex-tom.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/027/medium/tama-tom.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/035/medium/bb-kit.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/026/medium/mj-pack.jpg?1537390075" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/026/medium/mj-pack.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/025/medium/extra-dry-hats.jpg?1537390074" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/025/medium/extra-dry-hats.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/023/medium/new-beats.jpg?1537390071" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/023/medium/new-beats.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/022/medium/paiste-dark-hi-hats.jpg?1537390066" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/022/medium/paiste-dark-hi-hats.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/021/medium/supra.jpg?1537390065" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/021/medium/supra.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/020/medium/daisy-cutter.jpg?1537390063" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+Started GET "/system/product_images/photos/000/000/024/medium/holy-china.jpg?1537390072" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/024/medium/holy-china.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/020/medium/daisy-cutter.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/system/product_images/photos/000/000/019/medium/tama-bubinga.jpg?1537390061" for 127.0.0.1 at 2018-09-19 15:48:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/product_images/photos/000/000/019/medium/tama-bubinga.jpg"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'

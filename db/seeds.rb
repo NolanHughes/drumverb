@@ -154,7 +154,7 @@ product_list = [
 		made_in: "US",
 		category: "1",
 		description: "Pearl Masters Kick Drum",
-		photo_name: 'pearl-kick.JPG'
+		photo_name: 'pearl-kick.jpg'
 	},
 	{
 		brand: "Ludwig",
