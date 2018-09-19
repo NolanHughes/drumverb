@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     render json: @product
   end
 
-  def create 
+  def create
     product = Product.new(product_params)
 
     if product.save
@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
          :made_in, 
          :category, 
          :description,
-         :likes,
+         :shiping_price,
          product_images_attributes: %I[ id photo _destroy ]
        ]
       )
