@@ -22,6 +22,7 @@ class SellProduct extends React.Component {
       finish: '',
       title: '',
       price: '',
+      shipping_price: '',
       made_in: 'US',
       category: '',
       description: ''

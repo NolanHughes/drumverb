@@ -24,6 +24,7 @@ function buildFormData(state) {
   formData.append('product[category]', state.product.category);
   formData.append('product[made_in]', state.product.made_in);
   formData.append('product[price]', state.product.price);
+  formData.append('product[shipping_price]', state.product.shipping_price);
   formData.append('product[finish]', state.product.finish);
   formData.append('product[year]', state.product.year);
   formData.append('product[condition]', state.product.condition);

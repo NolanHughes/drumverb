@@ -133,6 +133,25 @@ const SellProductInfo = ({product, handleAttributeChange, productInfoError}) => 
         </div>
 
         <div className="ui grid">
+          <div className="six wide column" id="product-price-div">
+            <label>Shipping Price*</label> 
+            <span>$</span>
+            <input
+              type="text"
+              onChange={e => handleAttributeChange(e)}
+              value={product.shiping_price}
+              id="product_price"
+              className="form-control"
+              name="shipping_price"
+            />
+            <span className="usd-span">USD</span>
+            <div id="error-message">
+              {productInfoError("shipping_price")}
+            </div>
+          </div>
+        </div>
+
+        <div className="ui grid">
           <div className="column">
             <label>Category*</label>
             <select onChange={e => handleAttributeChange(e)} id="category-select" name="category">

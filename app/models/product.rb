@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   validates :condition, presence: true
   validates :title, presence: true
   validates :price, presence: true
+  validates :shipping_price, presence: true
   validates :category, presence: true
   validates :description, presence: true
   validates :product_images, presence: true
@@ -21,10 +22,10 @@ class Product < ActiveRecord::Base
       finish: finish,
       title: title,
       price: price,
+      shipping_price: shipping_price,
       made_in: made_in,
       category: category,
       description: description,
-      likes: likes,
       created_at: created_at,
       product_image_photos: product_images.map do |x|
         {
