@@ -20,7 +20,6 @@ class ProductSearch extends React.Component {
     this.props.history.push(`/searched-products/${this.props.searchValue}`);
     this.props.clearQueriedProducts()
     this.props.clearSearchValue()
-    document.getElementById("queried-products-div").style.opacity = 0
     this.props.changeFilteredBy(this.props.searchValue)
   }
 

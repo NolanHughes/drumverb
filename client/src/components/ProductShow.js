@@ -11,7 +11,7 @@ const ProductShow = ({ product, addProductToCart, cart }) =>{
   let productThumbnail
   let firstProductImage
   let categoryName
-
+  debugger
   //Set as a model?
   const categoriesArray = [
     {value: "1", name: "Bass Drum"}, 
