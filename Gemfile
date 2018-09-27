@@ -17,6 +17,7 @@ gem 'foreman', '~> 0.82.0'
 gem 'responders'
 # Paperclip for uploading images
 gem 'paperclip', '~> 5.2.0'
+gem 'aws-sdk', '~> 2.3'
 #Rack-cors for cross domain call
 gem 'rack-cors', require: 'rack/cors'
 
