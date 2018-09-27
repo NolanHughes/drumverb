@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 
-import { clearQueriedProducts, clearSearchValue, queriedProductsFetchData } from '../actions/index';
+import { clearQueriedProducts, clearSearchValue, setSearchValue } from '../actions/index';
 import QueriedProducts from '../components/QueriedProducts'
 import { changeFilteredBy } from '../actions/index';
 import '../css/ProductSearch.css'
@@ -28,7 +28,7 @@ class ProductSearch extends React.Component {
     const { 
       queriedProducts, 
       clearQueriedProducts, 
-      queryProducts, 
+      setSearchValue, 
       searchValue,
       clearSearchValue, 
       changeFilteredBy } = this.props
@@ -41,7 +41,7 @@ class ProductSearch extends React.Component {
             type='text' 
             placeholder='Shop for new & used drums...'
             value={searchValue}
-            onChange={queryProducts}
+            onChange={setSearchValue}
           />
           <button id="search-button"><i className="search icon"></i></button>
         </form>     
@@ -59,18 +59,36 @@ class ProductSearch extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    queriedProducts: state.queriedProducts,
-    searchValue: state.searchValue
-  };
+const mapStateToProps = (state, ownProps) => {
+  const queriedProducts = filterProducts(state.products, state.searchValue)
+
+  if (queriedProducts) {
+    return { 
+      queriedProducts: queriedProducts,
+      searchValue: state.searchValue
+    }
+  } else {
+    return { 
+      queriedProducts: state.queriedProducts,
+      searchValue: state.searchValue
+    }
+  }
 };
+
+function filterProducts(products, searchValue) {
+  return products.filter(product => 
+    product.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+    product.brand.toLowerCase().includes(searchValue.toLowerCase()) ||
+    product.model.toLowerCase().includes(searchValue.toLowerCase()) ||
+    product.description.toLowerCase().includes(searchValue.toLowerCase())
+  )
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     clearQueriedProducts: () => dispatch(clearQueriedProducts()),
     clearSearchValue: () => dispatch(clearSearchValue()),
-    queryProducts: (query) => dispatch(queriedProductsFetchData(query)),
+    setSearchValue: (query) => dispatch(setSearchValue(query)),
     changeFilteredBy: (categoryName) => dispatch(changeFilteredBy(categoryName))
   };
 };

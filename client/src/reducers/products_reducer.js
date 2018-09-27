@@ -29,17 +29,6 @@ export function filteredBy(state = 'Drums and Percussion', action) {
 	}
 }
 
-export function queriedProducts(state = [], action) {
-	switch (action.type) {
-		case 'QUERIED_PRODUCTS_FETCH_SUCCESS':
-			return action.products;
-		case 'CLEAR_QUERIED_PRODUCTS':
-			return [];
-		default:
-			return state;
-	}
-}
-
 export function searchValue(state = '', action) {
 	switch (action.type) {
 		case 'SET_SEARCH_VALUE':
